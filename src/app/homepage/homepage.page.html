@@ -11,11 +11,14 @@
 </ion-header>
 
 <ion-content>
+
   <main>
     <div class="card-wrapper">
       <div class="card" [routerLink]="card.url" *ngFor="let card of cards">
+          <ion-icon name="{{card.icon}}"></ion-icon>
         <p>{{card.title}}</p>
       </div>
     </div>
+    <p class="ayah">"Sjećajte se vi Mene, i Ja ću se vas sjetiti, i zahvaljujte Mi, i na blagodatima Mojim nemojte neblagodarni biti!"</p>
   </main>
 </ion-content>

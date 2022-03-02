@@ -1,41 +1,58 @@
 main {
-    background-image: url('/assets/img/background.jpeg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100%;
+  background-image: url("/assets/img/background.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  background-position: center;
 
-    &::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      background: rgba(255,255,255,.92);
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.85);
   }
 
   .card-wrapper {
-    padding: 20px 0;
-    height: 100%;
+    padding-top: 120px;
+    // height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 
     .card {
-      height: 80px;
-      background-size: cover;
-      background-repeat: no-repeat;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      display: inline-block;
+      text-align: center;
       position: relative;
-      width: 90%;
-      margin: 0 auto 15px;
-      border-radius: 5px;
+      border-radius: 45px;
       background: var(--ion-color-primary);
+      margin: 10px;
+      padding: 15px;
+      max-width: 160px;
+      min-width: 160px;
+      max-height: 150px;
+      min-height: 150px;
 
       p {
         color: white;
-        font-size: 21px;
         font-weight: bold;
+      }
+
+      ion-icon {
+        font-size: 50px;
+        color: white;
       }
     }
   }
+}
+.ayah {
+  text-align: center;
+  position: fixed;
+  top: 70px;
+  font-style: italic;
+  font-weight: 500;
+  padding: 5px;
 }

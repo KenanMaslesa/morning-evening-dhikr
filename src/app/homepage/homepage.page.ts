@@ -9,23 +9,33 @@ export class HomepagePage implements OnInit {
   cards = [
     {
       title: 'Jutarnji zikr',
-      url: '/morning-dhikr'
+      url: '/morning-dhikr',
+      icon: 'sunny-outline'
     },
     {
       title: 'Vecernji zikr',
-      url: '/evening-dhikr'
+      url: '/evening-dhikr',
+      icon: 'moon-outline'
     },
     {
       title: 'Zikr prije spavanja',
-      url: '/dhikr-before-sleeping'
+      url: '/dhikr-before-sleeping',
+      icon: 'bed-outline'
     },
     {
       title: 'Zikrilo',
-      url: '/counter'
+      url: '/counter',
+      icon: 'finger-print-outline'
     },
     {
       title: 'Koristi zikra',
-      url: '/benefits'
+      url: '/benefits',
+      icon: 'trophy-outline'
+    },
+    {
+      title: 'O zikru',
+      url: '/benefits',
+      icon: 'information-circle-outline'
     }
   ];
   constructor() { }
