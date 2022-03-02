@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Zikr</ion-title>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-icon class="settings-icon" name="settings-outline" routerLink="/settings"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <main>
+    <div class="card-wrapper">
+      <div class="card" [routerLink]="card.url" *ngFor="let card of cards">
+        <p>{{card.title}}</p>
+      </div>
+    </div>
+  </main>
+</ion-content>

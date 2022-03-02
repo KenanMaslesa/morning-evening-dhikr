@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Zikrilo</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<section style="background-image: url(assets/img/counter.png);background-repeat: no-repeat;
+background-position: center;">
+
+  <div class="circle" (click)="increaseCounter()"></div>
+  <div class="result">{{counter}}</div>
+  <div class="reset" (click)="resetCounter()"></div>
+
+</section>
+
+</ion-content>

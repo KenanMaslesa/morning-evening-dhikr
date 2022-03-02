@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Postavke</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>Prikazi arapski jezik u zikrovima</ion-label>
+      <ion-toggle [(ngModel)]="dhikrService.showArabicDhikr"
+        (ngModelChange)="dhikrService.onModelChange(dhikrLocalStoarge.showArabicDhikr, dhikrService.showArabicDhikr)">
+      </ion-toggle>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Prikazi transkripciju u zikrovima</ion-label>
+      <ion-toggle [(ngModel)]="dhikrService.showDhikrTranslation"
+        (ngModelChange)="dhikrService.onModelChange(dhikrLocalStoarge.showDhikrTranslation, dhikrService.showDhikrTranslation)">
+      </ion-toggle>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Prikazi bosanski jezik u zikrovima</ion-label>
+      <ion-toggle [(ngModel)]="dhikrService.showBosnianDhikr"
+        (ngModelChange)="dhikrService.onModelChange(dhikrLocalStoarge.showBosnianDhikr, dhikrService.showBosnianDhikr)">
+      </ion-toggle>
+    </ion-item>
+  </ion-list>
+
+  <h4 style="text-align: center;">Notifikacije</h4>
+
+  <ion-item>
+    <ion-label>Prikazi notifikacije za zikr</ion-label>
+    <ion-toggle #isNotificationEnabled [(ngModel)]="notificationsService.isNotificationEnabled"
+      (ngModelChange)="notificationsService.isNotificationEnabledChanged(isNotificationEnabled.checked); getLocationAndPrayerTimes(isNotificationEnabled.checked)">
+    </ion-toggle>
+  </ion-item>
+  <ng-container *ngIf="notificationsService.isNotificationEnabled">
+    <ng-container *ngIf="prayerTimesService.prayerTimes">
+      <div style="padding: 10px 0;">
+        <div class="title" style="text-align: center;">
+          <strong>Notifikacija za jutarnji zikr: </strong>
+          <p> {{notificationsService.minutesMorningDhikr??0}} minuta poslije zore ({{getNotificationTime(prayerTimesService.prayerTimes.fajr, notificationsService.minutesMorningDhikr)}})</p>
+        </div>
+
+        <ion-item>
+          <ion-range min="0"
+          [(ngModel)]="notificationsService.minutesMorningDhikr"
+          (ionBlur)="notificationsService.scheduleNotifications()"
+            max="{{getMinutesBetweenDates(prayerTimesService.prayerTimes.sunrise, prayerTimesService.prayerTimes.fajr)}}" pin="true"
+            color="secondary" #morningDhikrRange (ionChange)="onMorningDhikrRangeChanged(morningDhikrRange.value)">
+            <ion-label slot="start">Zora: {{getHoursAndMinutesFromDate(prayerTimesService.prayerTimes.fajr)}}</ion-label>
+            <ion-label slot="end">Izlazak sunca: {{getHoursAndMinutesFromDate(prayerTimesService.prayerTimes.sunrise)}}
+            </ion-label>
+          </ion-range>
+        </ion-item>
+      </div>
+
+      <div style="padding: 10px 0;">
+        <div class="title" style="text-align: center;">
+          <strong>Notifikacija za vecernji zikr: </strong>
+          <p>{{notificationsService.minutesEveningDhikr??0}} minuta poslije ikindije ({{getNotificationTime(prayerTimesService.prayerTimes.asr, notificationsService.minutesEveningDhikr)}})</p>
+
+        </div>
+
+        <ion-item>
+          <ion-range min="0"
+          [(ngModel)]="notificationsService.minutesEveningDhikr"
+          (ionBlur)="notificationsService.scheduleNotifications()"
+            max="{{getMinutesBetweenDates(prayerTimesService.prayerTimes.maghrib, prayerTimesService.prayerTimes.asr)}}" pin="true"
+            color="secondary" #eveningDhikrRange (ionChange)="onEveningDhikrRangeChanged(eveningDhikrRange.value)">
+            <ion-label slot="start">Ikindija: {{getHoursAndMinutesFromDate(prayerTimesService.prayerTimes.asr)}}</ion-label>
+            <ion-label slot="end">Aksam: {{getHoursAndMinutesFromDate(prayerTimesService.prayerTimes.maghrib)}}</ion-label>
+          </ion-range>
+        </ion-item>
+      </div>
+    </ng-container>
+  </ng-container>
+
+</ion-content>

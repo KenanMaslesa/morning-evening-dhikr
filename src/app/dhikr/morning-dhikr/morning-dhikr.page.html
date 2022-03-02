@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Jutarnji zikr
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-icon class="settings-icon" name="settings-outline" routerLink="/settings"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-dhikr-template [dhikrs]="morningDhikrs"></app-dhikr-template>
+</ion-content>
