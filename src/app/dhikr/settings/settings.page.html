@@ -81,4 +81,8 @@
     </ng-container>
   </ng-container>
 
+  <h4 style="text-align: center; margin-bottom: 0;">Izaberite temu</h4>
+  <div class="color-wrapper">
+    <div *ngFor="let color of colors" class="color" style="background: {{color}}" (click)="onColorChanged(color)"></div>
+  </div>
 </ion-content>
