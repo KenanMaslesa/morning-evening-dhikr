@@ -8,5 +8,12 @@ import { NotificationsService } from './shared/notifications.service';
 export class AppComponent {
   constructor(private notificationService: NotificationsService) {
     this.notificationService.scheduleNotifications();
+    const themeColor = localStorage.getItem('theme');
+    if(themeColor){
+      document.documentElement.style.setProperty(
+        `--ion-color-primary`,
+        `${JSON.parse(themeColor)}`
+      );
+    }
   }
 }
