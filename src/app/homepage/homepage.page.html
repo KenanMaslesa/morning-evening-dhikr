@@ -15,8 +15,10 @@
   <main>
     <div class="card-wrapper">
       <div class="card" [routerLink]="card.url" *ngFor="let card of cards">
+        <div>
           <ion-icon name="{{card.icon}}"></ion-icon>
-        <p>{{card.title}}</p>
+          <p>{{card.title}}</p>
+        </div>
       </div>
     </div>
     <p class="ayah">"Sjećajte se vi Mene, i Ja ću se vas sjetiti, i zahvaljujte Mi, i na blagodatima Mojim nemojte neblagodarni biti!"</p>

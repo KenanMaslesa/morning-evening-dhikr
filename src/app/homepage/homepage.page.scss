@@ -24,7 +24,9 @@ main {
     flex-wrap: wrap;
 
     .card {
-      display: inline-block;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       text-align: center;
       position: relative;
       border-radius: 45px;
@@ -53,6 +55,6 @@ main {
   position: fixed;
   top: 70px;
   font-style: italic;
-  font-weight: 500;
-  padding: 5px;
+  font-weight: bold;
+  padding: 5px 15px;
 }
