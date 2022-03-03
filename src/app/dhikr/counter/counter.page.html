@@ -4,17 +4,18 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-icon class="settings-icon" name="settings-outline" routerLink="/settings"></ion-icon>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 <div class="counter-wrapper">
   <div class="counter">
-    <div class="display-wrapper">
       <div class="display">
         {{counter}}
       </div>
-    </div>
     <div class="increaseBtn" (click)="increaseCounter()"></div>
     <div class="resetBtn" (click)="resetCounter()"></div>
   </div>

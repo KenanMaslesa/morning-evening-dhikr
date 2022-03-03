@@ -20,7 +20,7 @@ export class CounterPage implements OnInit {
 
   resetCounter(){
     this.counter = 0;
-    this.notificationsService.vibrate(1000);
+    this.notificationsService.vibrate(80);
   }
 
 }
