@@ -51,12 +51,13 @@
         </ng-container>
       </div>
 
-      <div class="slide__card slide__card--benefits" *ngIf="dhikr.benefits.length >= 1">
+      <div class="slide__card slide__card--benefits" *ngIf="dhikr.benefits.bosnian">
         <header class="slide__card__header">
           <h2>Koristi</h2>
         </header>
-        <ng-container *ngFor="let benefit of dhikr.benefits">
-          <p>{{benefit?.bosnian}}</p>
+        <ng-container *ngFor="let benefit of dhikr.benefits.bosnian">
+          <h5>{{benefit.title}}</h5>
+          <p>{{benefit.source}}</p>
         </ng-container>
       </div>
 

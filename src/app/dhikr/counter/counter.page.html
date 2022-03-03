@@ -8,13 +8,15 @@
 </ion-header>
 
 <ion-content>
-<section style="background-image: url(assets/img/counter.png);background-repeat: no-repeat;
-background-position: center;">
-
-  <div class="circle" (click)="increaseCounter()"></div>
-  <div class="result">{{counter}}</div>
-  <div class="reset" (click)="resetCounter()"></div>
-
-</section>
-
+<div class="counter-wrapper">
+  <div class="counter">
+    <div class="display-wrapper">
+      <div class="display">
+        {{counter}}
+      </div>
+    </div>
+    <div class="increaseBtn" (click)="increaseCounter()"></div>
+    <div class="resetBtn" (click)="resetCounter()"></div>
+  </div>
+</div>
 </ion-content>

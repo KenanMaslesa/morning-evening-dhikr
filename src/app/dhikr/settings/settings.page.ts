@@ -52,12 +52,10 @@ export class SettingsPage {
     return this.getHoursAndMinutesFromDate(date);
   }
 
-  onMorningDhikrRangeChanged(value) {
-    this.notificationsService.onMorningDhikrNotificationTimeChanged(value);
-  }
-
-  onEveningDhikrRangeChanged(value) {
-    this.notificationsService.onEveningDhikrNotificationTimeChanged(value);
+  scheduleNotifications(isToggleEnabled: boolean) {
+    if (isToggleEnabled) {
+      this.notificationsService.scheduleNotifications();
+    }
   }
 
   getLocationAndPrayerTimes(isToggleEnabled: boolean) {

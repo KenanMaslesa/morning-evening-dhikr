@@ -1,35 +1,107 @@
-section {
+.counter-wrapper {
   height: 100%;
-  background: #1b1e1e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(/assets/img/background.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 
-  .result {
+  &::before {
+    content: "";
     position: absolute;
-    top: 33%;
-    left: 70px;
-    background: #7c8884;
-    right: 70px;
-    height: 78px;
-    color: white;
-    display: flex;
-    justify-content: right;
-    align-items: center;
-    font-size: 55px;
-    padding-right: 10px;
-  }
-
-  .circle {
-    position: absolute;
-    top: 60%;
-    left: 31%;
-    width: 126px;
-    height: 106px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.85);
   }
 
-  .reset {
-    position: absolute;
-    top: 53%;
-    right: 20%;
-    height: 50px;
-    width: 55px;
+
+  .counter {
+    background: #9797a5;
+    background: #c7c7c7;
+    height: 350px;
+    width: 85%;
+    position: relative;
+    border-radius: 70px;
+    border: 10px solid var(--ion-color-primary);
+    margin: 0 auto;
+
+    background-image: url(/assets/img/background.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 60px;
+    }
+
+    .display {
+      background: var(--ion-color-primary);
+      height: 90px;
+      position: absolute;
+      top: 30px;
+      left: 30px;
+      right: 30px;
+      border-radius: 15px;
+      display: flex;
+      justify-content: end;
+      align-items: center;
+      font-size: 60px;
+      font-weight: bold;
+      padding-right: 20px;
+      border: 5px solid #b8b8b8;
+      font-family: digital;
+      letter-spacing: 1px;
+    }
+
+    .increaseBtn {
+      background: var(--ion-color-primary);
+      width: 130px;
+      height: 130px;
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 50%;
+      border: 5px solid #b8b8b8;
+
+      &:active {
+        width: 132px;
+        height: 132px;
+      }
+    }
+
+    .resetBtn {
+      background: var(--ion-color-primary);
+      width: 45px;
+      height: 45px;
+      position: absolute;
+      bottom: 125px;
+      transform: translateX(-50%);
+      border-radius: 50%;
+      right: 20px;
+      border: 3px solid #b8b8b8;
+
+      &:active {
+        width: 47px;
+        height: 47px;
+      }
+    }
   }
-  }
+}
+
+@font-face {
+  font-family: digital;
+  src: url(digital.ttf);
+  font-weight: 400;
+}

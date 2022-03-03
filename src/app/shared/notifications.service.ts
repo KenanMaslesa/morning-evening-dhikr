@@ -7,8 +7,6 @@ import { Vibration } from '@awesome-cordova-plugins/vibration/ngx';
 import { PrayerTimesService } from './prayer-times.service';
 
 export enum NotificationsLocalStorage {
-  'morningDhikrNotificationTime',
-  'eveningDhikrNotificationTime',
   'minutesMorningDhikr',
   'minutesEveningDhikr',
   'isNotificationEnabled'
@@ -30,16 +28,6 @@ export class NotificationsService {
   }
 
   setInitialValues() {
-    const morningDhikrNotificationTime = localStorage.getItem(
-      NotificationsLocalStorage[
-        NotificationsLocalStorage.morningDhikrNotificationTime
-      ]
-    );
-    const eveningDhikrNotificationTime = localStorage.getItem(
-      NotificationsLocalStorage[
-        NotificationsLocalStorage.eveningDhikrNotificationTime
-      ]
-    );
     const minutesMorningDhikr = localStorage.getItem(
       NotificationsLocalStorage[NotificationsLocalStorage.minutesMorningDhikr]
     );
@@ -62,6 +50,9 @@ export class NotificationsService {
     if (isNotificationEnabled) {
       this.isNotificationEnabled = JSON.parse(isNotificationEnabled);
     }
+    else {
+      this.isNotificationEnabled = true;
+    }
   }
 
   isNotificationEnabledChanged(value: boolean) {
@@ -74,41 +65,33 @@ export class NotificationsService {
     );
   }
 
-  showNotification(notification: ILocalNotification) {
-    this.localNotifications.schedule(notification);
-  }
-
-  onMorningDhikrNotificationTimeChanged(value) {
-    this.minutesMorningDhikr = value;
-    localStorage.setItem(
-      NotificationsLocalStorage[NotificationsLocalStorage.minutesMorningDhikr],
-      JSON.stringify(this.minutesMorningDhikr)
-    );
-    this.scheduleNotifications();
-  }
-
-  onEveningDhikrNotificationTimeChanged(value) {
-    this.minutesEveningDhikr = value;
-    localStorage.setItem(
-      NotificationsLocalStorage[NotificationsLocalStorage.minutesEveningDhikr],
-      JSON.stringify(this.minutesEveningDhikr)
-    );
-    this.scheduleNotifications();
-  }
-
   vibrate(duration: number) {
     this.vibration.vibrate(duration);
   }
 
   getMorningDhikrNotificationTime(): Date {
-    const date = new Date(this.prayerTimesService.prayerTimes.fajr);
-    date.setMinutes(date.getMinutes() + this.minutesMorningDhikr);
+    let date;
+    if(this.prayerTimesService.prayerTimes) {
+      date = new Date(this.prayerTimesService.prayerTimes.fajr);
+    }
+    else {
+      date = new Date();
+      date.setHours(0);
+      date.setMinutes(57);
+    }
     return date;
   }
 
   getEveningDhikrNotificationTime(): Date {
-    const date = new Date(this.prayerTimesService.prayerTimes.asr);
-    date.setMinutes(date.getMinutes() + this.minutesEveningDhikr);
+    let date;
+    if(this.prayerTimesService.prayerTimes){
+      date = new Date(this.prayerTimesService.prayerTimes.asr);
+    }
+    else {
+      date = new Date();
+      date.setHours(1);
+      date.setMinutes(0);
+    }
     return date;
   }
 
@@ -132,6 +115,9 @@ export class NotificationsService {
     }
   }
 
+  showNotification(notification: ILocalNotification) {
+    this.localNotifications.schedule(notification);
+  }
 
   private scheduleNotificationForMorningDhikr(hour = 6, minute = 30) {
     this.showNotification({
