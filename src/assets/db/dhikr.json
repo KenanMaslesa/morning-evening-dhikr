@@ -331,6 +331,70 @@
     ]
   },
   {
+    "arabic": "حَسْبِيَ الله لاَ إِلهَ إِلاَّ هُوَ عَلَيْهِ تَوَكَّلتُ وَهُوَ رَبُّ الْعَرشِ الْعَظِيمِ",
+    "audio": "assets/audio/hasbijallahu.mp3",
+    "category": "MORNING&EVENING",
+    "recitate": 7,
+    "translation": {
+      "bosnian": "Allah mi je dovoljan, nema boga osim Njega! Na Njega se oslanjam, i On je Gospodar Arša veličanstvenog!",
+      "english": ""
+    },
+    "transcription": {
+      "bosnian": "",
+      "english": ""
+    },
+    "source": {
+      "bosnian": "Ebu Davud 5081",
+      "english": "Abu Davud 5081"
+    },
+    "benefits":
+      {
+        "bosnian": [
+          {
+            "title": "Zastita i spas od svih briga",
+            "source": "Allahov Poslanik ﷺ je rekao: ”Čovjeku koji ujutro i navečer sedam puta izgovori: “Hasbijallahu la ilahe illa huve alejhi tevekkeltu ve huve Rabbul-Aršil-azim! – Dovoljan mi je Allah, nema boga osim Njega, na Njega sam se oslonio, a On je Gospodar Arša veličanstvenog!”, Allah će otkloniti brige dunjaluka i ahireta!”"
+          }
+        ],
+        "english": [
+          {
+            "title": "",
+            "source": ""
+          }
+        ]
+      }
+    ,
+    "sentences": [
+      {
+        "bosnian": "Allah mi je dovoljan,",
+        "arabic": "حَسْبِيَ الله",
+        "transcription": "",
+        "startSecond": 0.1,
+        "endSecond": 1.5
+      },
+      {
+        "bosnian": "nema boga osim Njega!",
+        "arabic": "لاَ إِلهَ إِلاَّ هُوَ",
+        "transcription": "",
+        "startSecond": 1.6,
+        "endSecond": 5.3
+      },
+      {
+        "bosnian": "Na Njega se oslanjam,",
+        "arabic": "عَلَيْهِ تَوَكَّلتُ",
+        "transcription": "",
+        "startSecond": 5.4,
+        "endSecond": 7.2
+      },
+      {
+        "bosnian": "i On je Gospodar Arša veličanstvenog!",
+        "arabic": "وَهُوَ رَبُّ الْعَرشِ الْعَظِيمِ",
+        "transcription": "",
+        "startSecond": 7.3,
+        "endSecond": 11.5
+      }
+    ]
+  },
+  {
     "arabic": "اللهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي الدُّنْيَا وَالْآخِرَةِ، اللهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي دِينِي وَدُنْيَايَ وَأَهْلِي وَمَالِي، اللهُمَّ اسْتُرْ عَوْرَاتِي، وَآمِنْ رَوْعَاتِي، اللهُمَّ احْفَظْنِي مِنْ بَيْنِ يَدَيَّ، وَمِنْ خَلْفِي، وَعَنْ يَمِينِي، وَعَنْ شِمَالِي، وَمِنْ فَوْقِي، وَأَعُوذُ بِعَظَمَتِكَ أَنْ أُغْتَالَ مِنْ تَحْتِي",
     "audio": "assets/audio/afve.mp3",
     "category": "MORNING&EVENING",

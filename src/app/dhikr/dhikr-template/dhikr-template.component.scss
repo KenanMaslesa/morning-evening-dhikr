@@ -71,7 +71,7 @@ ion-content {
             border-radius: 10px;
             width: 95%;
             margin: 0 auto;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
 
             &__header {
               h2 {
@@ -109,8 +109,9 @@ ion-content {
             }
 
             &--arabic {
-                font-size: 22px;
+                font-size: 24px;
                 direction: rtl;
+                font-family: arabic;
             }
 
             &--active {
@@ -197,4 +198,9 @@ ion-content {
         }
     }
   }
+}
+
+@font-face {
+  font-family: arabic;
+  src: url(arabic.ttf);
 }
