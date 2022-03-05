@@ -87,16 +87,16 @@ export class NotificationsService {
           notificationDate.setMinutes(fajr.minutes);
           notificationDate.setSeconds(0);
           this.scheduleNotification(
-            'Jutarnji zikr test',
-            'Opis za jutarnji zikr',
+            'Jutarnji zikr',
+            'Vrijeme je za jutarnji zikr',
             index,
             notificationDate
           );
           notificationDate.setHours(asr.hours);
           notificationDate.setMinutes(asr.minutes);
           this.scheduleNotification(
-            'Vecernji zikr test',
-            'Opis za vecernji zikr',
+            'Vecernji zikr',
+            'Vrijeme je za vecernji zikr',
             index + 40,
             notificationDate
           );
@@ -114,13 +114,14 @@ export class NotificationsService {
       trigger: {
         at: date,
       },
-      led: 'FF0000',
       badge: 1,
       vibrate: true,
       lockscreen: true,
       foreground: true,
       sticky: true,
       priority: 2,
+      autoClear: false,
+      wakeup: true
     });
   }
 

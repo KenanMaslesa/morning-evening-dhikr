@@ -9,12 +9,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { Geolocation } from '@awesome-cordova-plugins/geolocation/ngx';
 import { LocalNotifications } from '@awesome-cordova-plugins/local-notifications/ngx';
 import { Vibration } from '@awesome-cordova-plugins/vibration/ngx';
-import { IonicStorageModule } from '@ionic/storage-angular';
-import * as CordovaSQLiteDriver from 'localforage-cordovasqlitedriver';
-import { Drivers } from '@ionic/storage';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -22,14 +18,10 @@ import { Drivers } from '@ionic/storage';
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    HttpClientModule,
-    IonicStorageModule.forRoot({
-      driverOrder: [CordovaSQLiteDriver._driver, Drivers.IndexedDB]
-    }),
+    HttpClientModule
   ],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    Geolocation,
     LocalNotifications,
     Vibration
   ],

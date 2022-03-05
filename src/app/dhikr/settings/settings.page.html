@@ -36,12 +36,9 @@
   <ion-item>
     <ion-label>Prikazi notifikacije za zikr</ion-label>
     <ion-toggle #isNotificationEnabled [(ngModel)]="notificationsService.isNotificationEnabled"
-      (ngModelChange)="notificationsService.isNotificationEnabledChanged(isNotificationEnabled.checked); scheduleNotifications(isNotificationEnabled.checked)">
+      (ngModelChange)="notificationsService.isNotificationEnabledChanged(isNotificationEnabled.checked);">
     </ion-toggle>
   </ion-item>
-  <ng-container *ngIf="notificationsService.isNotificationEnabled">
-    <p>Notifikacije ce biti prikazane tada i tada</p>
-  </ng-container>
 
   <h4 style="text-align: center; margin-bottom: 0;">Izaberite temu</h4>
   <div class="color-wrapper">
