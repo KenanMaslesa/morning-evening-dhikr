@@ -11,18 +11,23 @@
 </ion-header>
 
 <ion-content>
-  <div class="selectedDhikr" *ngIf="tasbeehService.selectedDhikr">
-    <div>
-      <h1>{{tasbeehService.selectedDhikr.arabic}}</h1>
+  <main>
+    <div class="selectedDhikr" routerLink='/tasbeeh/tabs/dhikrs' *ngIf="tasbeehService.selectedDhikr">
+      <div>
+        <h1>{{tasbeehService.selectedDhikr.arabic}}</h1>
+        <p>{{tasbeehService.selectedDhikr.bosnian}}</p>
+      </div>
     </div>
-  </div>
-<div class="counter-wrapper">
-  <div class="counter">
-      <div class="display" *ngIf="tasbeehService.selectedDhikr">
+
+    <div class="icons">
+      <ion-icon (click)="resetCounter()" name="refresh-circle-outline"></ion-icon>
+    </div>
+
+    <div class="counter" (click)="increaseCounter()" *ngIf="tasbeehService.selectedDhikr">
+      <div role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"
+        style="--value:{{tasbeehService.selectedDhikr.counter>100?tasbeehService.selectedDhikr.counter%100:tasbeehService.selectedDhikr.counter}}">
         {{tasbeehService.selectedDhikr.counter}}
       </div>
-    <div class="increaseBtn" (click)="increaseCounter()"></div>
-    <div class="resetBtn" (click)="resetCounter()"></div>
-  </div>
-</div>
+    </div>
+  </main>
 </ion-content>
