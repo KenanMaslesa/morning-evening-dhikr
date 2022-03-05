@@ -48,7 +48,7 @@ export class TasbeehService {
         (item) => item.arabic === selectedDhikr2.arabic
       )[0];
     } else {
-      this.selectedDhikr = this.dhikrs[0];
+      this.selectedDhikr = {counter: 0};
     }
   }
 
