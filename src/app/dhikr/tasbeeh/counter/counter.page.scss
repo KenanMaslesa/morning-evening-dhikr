@@ -21,6 +21,9 @@
 }
 
 main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100%;
   position: relative;
   overflow: hidden;
@@ -41,65 +44,77 @@ main {
     z-index: -1;
   }
 
-  .selectedDhikr {
-    color: black;
-    z-index: 9;
-    text-align: center;
-    width: 100%;
-    padding: 5px;
-    max-height: 180px;
-    height: 100%;
-    overflow: scroll;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
-
-    h1 {
-      font-size: 28px;
-    }
-  }
-
-  .icons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 50px;
-    margin-top: 20px;
-    color: var(--ion-color-primary);
-  }
-
-  .counter {
-    height: 100%;
+  .counter-wrapper {
 
     &:active {
       div[role="progressbar"] {
-        box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.40);
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.25);
       }
     }
 
-    div[role="progressbar"] {
-      --size: 18rem;
-      --fg: var(--ion-color-primary);
-      --bg: #def;
-      --pgPercentage: var(--value);
-      animation: growProgressBar 1.5s 1 forwards;
-      width: var(--size);
-      height: var(--size);
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      background: radial-gradient(closest-side, white 90%, transparent 0 99.9%, white 0),
-        conic-gradient(var(--fg) calc(var(--pgPercentage) * 1%), var(--bg) 0);
-      font-family: Helvetica, Arial, sans-serif;
-      font-size: calc(var(--size) / 5);
-      color: var(--fg);
-      margin: 10px auto;
-      font-family: digital;
-      font-size: 90px;
-      overflow-x: scroll;
-      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.25);
-      transition: 0.8s;
+    .counter {
+
+      div[role="progressbar"] {
+        --size: 18rem;
+        --fg: var(--ion-color-primary);
+        --bg: #def;
+        --pgPercentage: var(--value);
+        animation: growProgressBar 1.5s 1 forwards;
+        width: var(--size);
+        height: var(--size);
+        border-radius: 50%;
+        background: radial-gradient(closest-side, white 92%, transparent 0 99.9%, white 0),
+          conic-gradient(var(--fg) calc(var(--pgPercentage) * 1%), var(--bg) 0);
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: calc(var(--size) / 5);
+        color: var(--fg);
+        margin: 10px auto;
+        font-family: digital;
+        font-size: 120px;
+        overflow-x: auto;
+        transition: 0.8s;
+        position: relative;
+
+        span {
+          position: absolute;
+          top: 45%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+
+    .selectedDhikr {
+      z-index: 9;
+      text-align: center;
+      padding: 0 5px;
+      overflow: auto;
+      justify-content: center;
+      margin-top: 10px;
+      display: flex;
+      align-items: flex-start;
+      border-radius: 30px;
+      width: 95%;
+      margin-left: auto;
+      margin-right: auto;
+
+      h1 {
+        font-size: 28px;
+        margin: 8px 0;
+        line-height: 50px;
+      }
+      p {
+        font-size: 16px;
+        font-style: italic;
+      }
+    }
+
+    .icons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 50px;
+      color: var(--ion-color-primary);
     }
   }
 }

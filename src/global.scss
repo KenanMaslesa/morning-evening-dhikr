@@ -43,21 +43,9 @@ html {
   }
 }
 
-ion-tab-bar, ion-header{
-  transition: all 0.3s;
-  justify-content: flex-start;
-
-  &.show {
-    opacity: 1;
-  }
-  &.hide {
-    height: 0;
-    opacity: 0;
-  }
-}
-
 ion-tab-bar {
   overflow-x: scroll;
+  justify-content: center;
 }
 
 .settings-icon {

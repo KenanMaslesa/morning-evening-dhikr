@@ -25,7 +25,7 @@ export class CounterPage implements OnInit {
   }
 
   resetCounter(){
-    this.counter = 0;
+    this.counter = -1;
     this.notificationsService.vibrate(100);
     this.tasbeehService.resetCounter();
   }
