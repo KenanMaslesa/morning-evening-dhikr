@@ -45,13 +45,21 @@ export class TasbeehService {
     if (dhikrsFromStorage) {
       this.dhikrsFromStorage = JSON.parse(dhikrsFromStorage);
     }
-    if (this.dhikrsFromStorage) {
+    if (this.dhikrsFromStorage.length > 0) {
       this.dhikrsFromStorage.filter((item) => {
         const currentDate = this.getCurrentDateAsString(new Date());
         if (item.date === currentDate) {
           this.dhikrs = item.dhikrs;
         }
       });
+    }
+    else {
+      const obj = {
+        date: this.getCurrentDateAsString(new Date()),
+        dhikrs: this.dhikrs,
+      };
+      this.dhikrsFromStorage.push(obj);
+      localStorage.setItem('dhikrs', JSON.stringify(this.dhikrsFromStorage));
     }
   }
 
@@ -94,7 +102,7 @@ export class TasbeehService {
 
   resetCounter() {
     this.selectedDhikr.counter = -1;
-    localStorage.setItem('dhikrs', JSON.stringify(this.dhikrs));
+    localStorage.setItem('dhikrs', JSON.stringify(this.dhikrsFromStorage));
     localStorage.setItem('selectedDhikr', JSON.stringify(this.selectedDhikr));
   }
 }

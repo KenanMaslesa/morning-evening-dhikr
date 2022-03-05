@@ -17,6 +17,10 @@ const routes: Routes = [
         loadChildren: () => import('./counter/counter.module').then( m => m.CounterPageModule)
       },
       {
+        path: 'tracker',
+        loadChildren: () => import('./tracker/tracker.module').then( m => m.TrackerPageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/dhikrs',
         pathMatch: 'full'

@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Tracker</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-icon class="settings-icon" name="settings-outline" routerLink="/settings"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ng-container *ngIf="tasbeehService.dhikrsFromStorage">
+
+    <ion-list>
+      <ng-container *ngFor="let dhikr of tasbeehService.dhikrsFromStorage">
+        <h3 style="text-align: center;">{{dhikr.date}}</h3>
+
+        <ion-item-sliding *ngFor="let item of dhikr.dhikrs">
+          <ion-item>
+            <ion-label>
+              <h2>{{item.arabic}}</h2>
+              <p>{{item.bosnian}}</p>
+            </ion-label>
+            <ion-note slot="end">
+              {{item.counter}}
+            </ion-note>
+          </ion-item>
+        </ion-item-sliding>
+      </ng-container>
+    </ion-list>
+  </ng-container>
+
+</ion-content>
