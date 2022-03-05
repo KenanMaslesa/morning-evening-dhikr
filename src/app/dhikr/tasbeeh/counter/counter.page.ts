@@ -8,7 +8,6 @@ import { TasbeehService } from '../tasbeeh.service';
   styleUrls: ['./counter.page.scss'],
 })
 export class CounterPage implements OnInit {
-  counter = 0;
   constructor(private notificationsService: NotificationsService, public tasbeehService: TasbeehService) { }
 
   ngOnInit() {
@@ -25,7 +24,6 @@ export class CounterPage implements OnInit {
   }
 
   resetCounter(){
-    this.counter = -1;
     this.notificationsService.vibrate(100);
     this.tasbeehService.resetCounter();
   }

@@ -74,7 +74,7 @@ export class TasbeehService {
   }
 
   resetCounter() {
-    this.selectedDhikr.counter = 0;
+    this.selectedDhikr.counter = -1;
     localStorage.setItem('dhikrs', JSON.stringify(this.dhikrs));
     localStorage.setItem('selectedDhikr', JSON.stringify(this.selectedDhikr));
   }
