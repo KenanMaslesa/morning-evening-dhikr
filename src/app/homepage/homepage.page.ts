@@ -24,13 +24,8 @@ export class HomepagePage implements OnInit {
     },
     {
       title: 'Zikrilo',
-      url: '/counter',
+      url: '/tasbeeh',
       icon: 'finger-print-outline'
-    },
-    {
-      title: 'Koristi zikra',
-      url: '/benefits',
-      icon: 'trophy-outline'
     },
     {
       title: 'O zikru',

@@ -1,0 +1,20 @@
+
+ion-list {
+  text-align: center;
+
+  ion-item {
+    h2 {
+      font-size: 20px;
+      direction: rtl;
+      text-align: left;
+    }
+
+    ion-note {
+      font-size: 18px;
+    }
+  }
+
+  .addBtn {
+    margin-top: 15px;
+  }
+}

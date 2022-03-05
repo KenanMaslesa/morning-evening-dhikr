@@ -36,11 +36,15 @@ const routes: Routes = [
   },
   {
     path: 'counter',
-    loadChildren: () => import('./dhikr/counter/counter.module').then( m => m.CounterPageModule)
+    loadChildren: () => import('./dhikr/tasbeeh/counter/counter.module').then( m => m.CounterPageModule)
   },
   {
     path: 'benefits',
     loadChildren: () => import('./dhikr/benefits/benefits.module').then( m => m.BenefitsPageModule)
+  },
+  {
+    path: 'tasbeeh',
+    loadChildren: () => import('./dhikr/tasbeeh/tabs.module').then( m => m.TabsPageModule)
   },
 ];
 @NgModule({

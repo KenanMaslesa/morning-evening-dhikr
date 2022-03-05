@@ -11,10 +11,15 @@
 </ion-header>
 
 <ion-content>
+  <div class="selectedDhikr" *ngIf="tasbeehService.selectedDhikr">
+    <div>
+      <h1>{{tasbeehService.selectedDhikr.arabic}}</h1>
+    </div>
+  </div>
 <div class="counter-wrapper">
   <div class="counter">
-      <div class="display">
-        {{counter}}
+      <div class="display" *ngIf="tasbeehService.selectedDhikr">
+        {{tasbeehService.selectedDhikr.counter}}
       </div>
     <div class="increaseBtn" (click)="increaseCounter()"></div>
     <div class="resetBtn" (click)="resetCounter()"></div>

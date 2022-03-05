@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { NotificationsService } from './shared/notifications.service';
-import { PrayerTimesService } from './shared/prayer-times.service';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -8,12 +7,9 @@ import { PrayerTimesService } from './shared/prayer-times.service';
 })
 export class AppComponent {
   constructor(
-    private notificationService: NotificationsService,
-    private prayerTimesService: PrayerTimesService
+    private notificationService: NotificationsService
   ) {
-    this.prayerTimesService.getPrayerTimes().subscribe(() => {
-      this.notificationService.scheduleNotifications();
-    });
+    this.notificationService.scheduleNotificationsForMonth();
 
     const themeColor = localStorage.getItem('theme');
     if (themeColor) {

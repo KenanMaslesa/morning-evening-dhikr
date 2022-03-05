@@ -4,14 +4,13 @@ import {
   LocalNotifications,
 } from '@awesome-cordova-plugins/local-notifications/ngx';
 import { Vibration } from '@awesome-cordova-plugins/vibration/ngx';
-import { PrayerTimesService } from './prayer-times.service';
 
 export enum NotificationsLocalStorage {
   'minutesMorningDhikr',
   'minutesEveningDhikr',
-  'isNotificationEnabled'
+  'isNotificationEnabled',
 }
-
+const vaktija = require('@kmaslesa/vaktija');
 @Injectable({
   providedIn: 'root',
 })
@@ -21,8 +20,7 @@ export class NotificationsService {
   isNotificationEnabled: boolean;
   constructor(
     private localNotifications: LocalNotifications,
-    private vibration: Vibration,
-    private prayerTimesService: PrayerTimesService
+    private vibration: Vibration
   ) {
     this.setInitialValues();
   }
@@ -49,8 +47,7 @@ export class NotificationsService {
 
     if (isNotificationEnabled) {
       this.isNotificationEnabled = JSON.parse(isNotificationEnabled);
-    }
-    else {
+    } else {
       this.isNotificationEnabled = true;
     }
   }
@@ -69,54 +66,62 @@ export class NotificationsService {
     this.vibration.vibrate(duration);
   }
 
-  getMorningDhikrNotificationTime(): Date {
-    let date;
-    if(this.prayerTimesService.prayerTimes) {
-      date = new Date(this.prayerTimesService.prayerTimes.fajr);
-    }
-    else {
-      date = new Date();
-      date.setHours(0);
-      date.setMinutes(57);
-    }
-    return date;
-  }
-
-  getEveningDhikrNotificationTime(): Date {
-    let date;
-    if(this.prayerTimesService.prayerTimes){
-      date = new Date(this.prayerTimesService.prayerTimes.asr);
-    }
-    else {
-      date = new Date();
-      date.setHours(1);
-      date.setMinutes(0);
-    }
-    return date;
-  }
-
-  scheduleNotifications() {
-    if (this.isNotificationEnabled) {
-      const morningDhikrNotificationTime =
-        this.getMorningDhikrNotificationTime();
-
-      const eveningDhikrNotificationTime =
-        this.getEveningDhikrNotificationTime();
-
-      this.scheduleNotificationForMorningDhikr(
-        morningDhikrNotificationTime.getHours(),
-        morningDhikrNotificationTime.getMinutes()
-      );
-
-      this.scheduleNotificationForEveningDhikr(
-        eveningDhikrNotificationTime.getHours(),
-        eveningDhikrNotificationTime.getMinutes()
-      );
-    }
-  }
-
   showNotification(notification: ILocalNotification) {
     this.localNotifications.schedule(notification);
+  }
+
+  scheduleNotificationsForMonth() {
+    const salahs = vaktija.getMonthlyPrayerTimes(77);
+    salahs.forEach((obj, index) => {
+      setTimeout(() => {
+        const currentDate = new Date();
+        const currentDateDay = currentDate.getDate();
+        if (index >= currentDateDay) {
+          const fajr = obj.prayerTimes[0];
+          const asr = obj.prayerTimes[0];
+          const date = obj.date;
+          const notificationDate = new Date();
+          notificationDate.setMonth(date.month - 1);
+          notificationDate.setDate(index + 1);
+          notificationDate.setHours(fajr.hours);
+          notificationDate.setMinutes(fajr.minutes);
+          notificationDate.setSeconds(0);
+          this.scheduleNotification(
+            'Jutarnji zikr test',
+            'Opis za jutarnji zikr',
+            index,
+            notificationDate
+          );
+          notificationDate.setHours(asr.hours);
+          notificationDate.setMinutes(asr.minutes);
+          this.scheduleNotification(
+            'Vecernji zikr test',
+            'Opis za vecernji zikr',
+            index + 40,
+            notificationDate
+          );
+        }
+      }, index * 250);
+    });
+  }
+
+  private scheduleNotification(title, text, id, date: Date) {
+    this.showNotification({
+      title,
+      text,
+      id,
+      sound: null,
+      trigger: {
+        at: date,
+      },
+      led: 'FF0000',
+      badge: 1,
+      vibrate: true,
+      lockscreen: true,
+      foreground: true,
+      sticky: true,
+      priority: 2,
+    });
   }
 
   private scheduleNotificationForMorningDhikr(hour = 6, minute = 30) {
@@ -130,7 +135,7 @@ export class NotificationsService {
           hour,
           minute,
         },
-        count: 366,
+        count: 1,
       },
       led: 'FF0000',
       badge: 1,
@@ -153,7 +158,7 @@ export class NotificationsService {
           hour,
           minute,
         },
-        count: 365,
+        count: 1,
       },
       led: { color: '#FF00FF', on: 500, off: 500 },
       badge: 1,

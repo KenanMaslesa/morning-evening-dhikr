@@ -105,3 +105,19 @@
   src: url(digital.ttf);
   font-weight: 400;
 }
+
+.selectedDhikr {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: black;
+    z-index: 9;
+    text-align: center;
+    width: 100%;
+    padding: 5px;
+
+    h1 {
+      font-size: 28px;
+    }
+}
