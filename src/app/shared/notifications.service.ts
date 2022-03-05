@@ -71,6 +71,9 @@ export class NotificationsService {
   }
 
   scheduleNotificationsForMonth() {
+    this.localNotifications.cancelAll();
+    this.localNotifications.clearAll();
+
     const salahs = vaktija.getMonthlyPrayerTimes(77);
     salahs.forEach((obj, index) => {
       setTimeout(() => {
@@ -82,7 +85,7 @@ export class NotificationsService {
           const date = obj.date;
           const notificationDate = new Date();
           notificationDate.setMonth(date.month - 1);
-          notificationDate.setDate(index + 1);
+          notificationDate.setDate(index);
           notificationDate.setHours(fajr.hours);
           notificationDate.setMinutes(fajr.minutes);
           notificationDate.setSeconds(0);
