@@ -32,45 +32,64 @@ export class TasbeehService {
     {
       arabic:
         'لا إِلَهَ إِلاّ اللَّهُ وَحْدَهُ لا شَرِيكَ لَهُ، لَهُ الْمُلْكُ، وَلَهُ الْحَمْدُ، وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِير',
-      bosnian: 'Nema boga osim Allaha, Jedinoga, Koji druga nema. Njemu pripada vlast nad svim i sva pohvala. On sve može.',
+      bosnian:
+        'Nema boga osim Allaha, Jedinoga, Koji druga nema. Njemu pripada vlast nad svim i sva pohvala. On sve može.',
       counter: 0,
     },
   ];
+  dhikrsFromStorage = [];
   constructor() {
-    const dhikrs = localStorage.getItem('dhikrs');
-    const selectedDhikr = localStorage.getItem('selectedDhikr');
-    if (dhikrs) {
-      this.dhikrs = JSON.parse(dhikrs);
+    this.selectedDhikr = {counter: 0};
+
+    const dhikrsFromStorage = localStorage.getItem('dhikrs');
+    if (dhikrsFromStorage) {
+      this.dhikrsFromStorage = JSON.parse(dhikrsFromStorage);
     }
-    if (selectedDhikr) {
-      const selectedDhikr2 = JSON.parse(selectedDhikr);
-      this.selectedDhikr = this.dhikrs.filter(
-        (item) => item.arabic === selectedDhikr2.arabic
-      )[0];
-    } else {
-      this.selectedDhikr = {counter: 0};
+    if (this.dhikrsFromStorage) {
+      this.dhikrsFromStorage.filter((item) => {
+        const currentDate = this.getCurrentDateAsString(new Date());
+        if (item.date === currentDate) {
+          this.dhikrs = item.dhikrs;
+        }
+      });
     }
+  }
+
+  getCurrentDateAsString(date: Date) {
+    return (
+      date.getDate().toString() +
+      '.' +
+      (date.getMonth() + 1).toString() +
+      '.' +
+      date.getFullYear().toString()
+    );
   }
 
   increaseCounter() {
     this.selectedDhikr.counter++;
-    localStorage.setItem('dhikrs', JSON.stringify(this.dhikrs));
+    const obj = {
+      date: this.getCurrentDateAsString(new Date()),
+      dhikrs: this.dhikrs,
+    };
+    let added = false;
+    if (this.dhikrsFromStorage && !added) {
+      this.dhikrsFromStorage.forEach((item) => {
+        if (item.date === this.getCurrentDateAsString(new Date())) {
+          item.dhikrs = this.dhikrs;
+          added = true;
+        }
+      });
+    }
+    if (!added) {
+      this.dhikrsFromStorage.push(obj);
+    }
+    localStorage.setItem('dhikrs', JSON.stringify(this.dhikrsFromStorage));
     localStorage.setItem('selectedDhikr', JSON.stringify(this.selectedDhikr));
   }
 
   setSelectedDhikr(dhikr) {
     this.selectedDhikr = dhikr;
     localStorage.setItem('selectedDhikr', JSON.stringify(this.selectedDhikr));
-  }
-
-  addDhikr(dhikr) {
-    this.dhikrs.push(dhikr);
-    localStorage.setItem('dhikrs', JSON.stringify(this.dhikrs));
-  }
-
-  deleteDhikr(dhikr) {
-    this.dhikrs = this.dhikrs.filter(item => item.arabic !== dhikr.arabic);
-    localStorage.setItem('dhikrs', JSON.stringify(this.dhikrs));
   }
 
   resetCounter() {
