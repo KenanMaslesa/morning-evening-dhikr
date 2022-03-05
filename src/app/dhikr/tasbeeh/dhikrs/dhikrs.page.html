@@ -4,6 +4,13 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-icon
+        class="settings-icon"
+        name="settings-outline"
+        routerLink="/settings"
+      ></ion-icon>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -15,6 +22,7 @@
           <h2>{{dhikr.arabic}}</h2>
           <p>{{dhikr.bosnian}}</p>
         </ion-label>
+        <ion-icon class="favorite" slot="end" *ngIf="dhikr.favorite" name="heart"></ion-icon>
         <ion-note slot="end">
           {{dhikr.counter}}
         </ion-note>
@@ -22,7 +30,8 @@
 
       <ion-item-options side="end">
         <ion-item-option>
-          <ion-icon slot="icon-only" name="heart"></ion-icon>
+          <ion-icon *ngIf="!dhikr.favorite" slot="icon-only" name="heart" (click)="tasbeehService.toggleFavorite(dhikr, true)"></ion-icon>
+          <ion-icon *ngIf="dhikr.favorite" slot="icon-only" name="heart-dislike" (click)="tasbeehService.toggleFavorite(dhikr, false)"></ion-icon>
         </ion-item-option>
       </ion-item-options>
     </ion-item-sliding>

@@ -3,6 +3,7 @@ ion-list {
   text-align: center;
 
   ion-item {
+
     h2 {
       font-size: 20px;
       direction: rtl;
@@ -11,6 +12,14 @@ ion-list {
 
     ion-note {
       font-size: 18px;
+      color: var(--ion-color-primary);
+      font-weight: bold;
+    }
+
+    ion-icon {
+      &.favorite {
+        color: var(--ion-color-primary)
+      }
     }
   }
 
