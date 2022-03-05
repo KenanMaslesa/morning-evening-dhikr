@@ -12,25 +12,13 @@
 
 <ion-content>
 
-  <ng-container *ngIf="tasbeehService.dhikrsFromStorage">
-
-    <ion-list>
-      <ng-container *ngFor="let dhikr of tasbeehService.dhikrsFromStorage">
-        <h3 style="text-align: center;">{{dhikr.date}}</h3>
-
-        <ion-item-sliding *ngFor="let item of dhikr.dhikrs">
-          <ion-item>
-            <ion-label>
-              <h2>{{item.arabic}}</h2>
-              <p>{{item.bosnian}}</p>
-            </ion-label>
-            <ion-note slot="end">
-              {{item.counter}}
-            </ion-note>
-          </ion-item>
-        </ion-item-sliding>
-      </ng-container>
-    </ion-list>
-  </ng-container>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Zikr po datumima</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <canvas #barChart></canvas>
+    </ion-card-content>
+  </ion-card>
 
 </ion-content>
