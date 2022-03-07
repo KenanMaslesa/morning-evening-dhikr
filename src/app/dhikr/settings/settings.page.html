@@ -29,6 +29,20 @@
         (ngModelChange)="dhikrService.onModelChange(dhikrLocalStoarge.showBosnianDhikr, dhikrService.showBosnianDhikr)">
       </ion-toggle>
     </ion-item>
+
+    <ion-item>
+      <ion-label>Prikazi koristi zikrova</ion-label>
+      <ion-toggle [(ngModel)]="dhikrService.showDhikrBenefits"
+        (ngModelChange)="dhikrService.onModelChange(dhikrLocalStoarge.showDhikrBenefits, dhikrService.showDhikrBenefits)">
+      </ion-toggle>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Prikazi izvor zikrova</ion-label>
+      <ion-toggle [(ngModel)]="dhikrService.showDhikrSource"
+        (ngModelChange)="dhikrService.onModelChange(dhikrLocalStoarge.showDhikrSource, dhikrService.showDhikrSource)">
+      </ion-toggle>
+    </ion-item>
   </ion-list>
 
   <h4 style="text-align: center;">Notifikacije</h4>
@@ -42,6 +56,8 @@
 
   <h4 style="text-align: center; margin-bottom: 0;">Izaberite temu</h4>
   <div class="color-wrapper">
-    <div *ngFor="let color of colors" class="color" style="background: {{color}}" (click)="onColorChanged(color)"></div>
+    <div *ngFor="let item of colors" class="color" style="background: {{item.color}}" (click)="onColorChanged(item.color)">
+      <ion-icon *ngIf="item.color === themeColor" name="checkmark-circle-outline"></ion-icon>
+    </div>
   </div>
 </ion-content>

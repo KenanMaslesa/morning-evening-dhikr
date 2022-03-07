@@ -1,6 +1,12 @@
 <ion-content>
   <ion-slides pager="true" pager="true" #slides (ionSlideDidChange)="slideChanged()"
     (ionSlideNextEnd)="mediaPlayerService.removePlayer()" (ionSlidePrevEnd)="mediaPlayerService.removePlayer()">
+    <ion-slide class="slide firstSlide">
+      <div class="content">
+        <ng-content select="[firstSlide]"></ng-content>
+      </div>
+    </ion-slide>
+
     <ion-slide class="slide" *ngFor="let dhikr of dhikrs; let i = index">
       <header class="slide__header">
         <h2>{{i+1}}.</h2>
@@ -24,7 +30,7 @@
       </div>
 
       <div class="recitate-counter-wrapper">
-        <div class="recitate-counter" [class.done]="dhikr.recitate <= 0" (click)="dhikr.recitate = dhikr.recitate-1">
+        <div class="recitate-counter" [class.done]="dhikr.recitate <= 0" (click)="dhikr.recitate = dhikr.recitate-1; notificationsService.vibrate(50)">
           {{dhikr.recitate >= 1? dhikr.recitate: ''}}
           <ion-icon *ngIf="dhikr.recitate<=0" name="checkmark-done-outline"></ion-icon>
         </div>
@@ -51,7 +57,7 @@
         </ng-container>
       </div>
 
-      <div class="slide__card slide__card--benefits" *ngIf="dhikr.benefits.bosnian">
+      <div class="slide__card slide__card--benefits" *ngIf="dhikr.benefits.bosnian && dhikrService.showDhikrBenefits">
         <header class="slide__card__header">
           <h2>Koristi</h2>
         </header>
@@ -61,13 +67,25 @@
         </ng-container>
       </div>
 
-      <div class="slide__card slide__card--source" *ngIf="dhikr.source.bosnian">
+      <div class="slide__card slide__card--source" *ngIf="dhikr.source.bosnian && dhikrService.showDhikrSource">
         <header class="slide__card__header">
           <h2>Izvor</h2>
         </header>
         <p>{{dhikr.source.bosnian}}</p>
       </div>
 
+    </ion-slide>
+
+    <ion-slide class="slide lastSlide">
+      <div class="content">
+        <header class="slide__header">
+          <h2>želiš još zikriti?</h2>
+        </header>
+        <div>
+          <ion-button (click)="goTo()">Nastavi zikriti</ion-button>
+        </div>
+        <ng-content select="[lastSlide]"></ng-content>
+      </div>
     </ion-slide>
   </ion-slides>
 

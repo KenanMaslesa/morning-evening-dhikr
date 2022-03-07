@@ -4,7 +4,7 @@ ion-content {
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
-    padding-bottom: 60px;
+    padding-bottom: 55px;
 
     &::before {
         content: '';
@@ -21,38 +21,10 @@ ion-content {
         overflow-y: scroll;
         padding-bottom: 20px;
 
-        &__header {
-          h2 {
-            font-size: 32px;
-            color: #111;
-            text-transform: uppercase;
-            text-align: center;
-            font-weight: 700;
-            position: relative;
-            padding-bottom: 15px;
-
-            &::before {
-              content: "";
-              position: absolute;
-              display: block;
-              width: 120px;
-              height: 1px;
-              background: #ddd;
-              bottom: 1px;
-              left: calc(50% - 60px);
-            }
-
-            &::after {
-              content: "";
-              position: absolute;
-              display: block;
-              width: 40px;
-              height: 3px;
-              background: var(--ion-color-primary);
-              bottom: 0;
-              left: calc(50% - 20px);
-            }
-          }
+        &.firstSlide, &.lastSlide {
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
 
         &__player {
@@ -160,14 +132,15 @@ ion-content {
             padding: 5px;
             color: white;
             border-radius: 50%;
-            min-width: 40px;
-            min-height: 40px;
+            min-width: 50px;
+            min-height: 50px;
             width: 50px;
             height: 50px;
             display: flex;
             justify-content: center;
             align-items: center;
             margin: 0 auto 10px;
+            font-size: 23px;
 
             &.done {
               background: #29d929;

@@ -7,7 +7,8 @@ export enum DhikrLocalStoarge {
   'showArabicDhikr',
   'showBosnianDhikr',
   'showDhikrTranslation',
-  'showSlider'
+  'showDhikrBenefits',
+  'showDhikrSource'
 }
 @Injectable({
   providedIn: 'root'
@@ -18,6 +19,8 @@ export class DhikrService {
   showArabicDhikr: boolean;
   showBosnianDhikr: boolean;
   showDhikrTranslation: boolean;
+  showDhikrBenefits: boolean;
+  showDhikrSource: boolean;
 
   constructor(private http: HttpClient) {
     this.morningDhikrPageEntered = new Subject();
@@ -47,6 +50,8 @@ export class DhikrService {
     const showArabicDhikrFromStorage = localStorage.getItem(DhikrLocalStoarge[DhikrLocalStoarge.showArabicDhikr]);
     const showBosnianDhikrFromStorage = localStorage.getItem(DhikrLocalStoarge[DhikrLocalStoarge.showBosnianDhikr]);
     const showDhikrTranslationFromStorage = localStorage.getItem(DhikrLocalStoarge[DhikrLocalStoarge.showDhikrTranslation]);
+    const showDhikrBenefitsFromStorage = localStorage.getItem(DhikrLocalStoarge[DhikrLocalStoarge.showDhikrBenefits]);
+    const showDhikrSourceFromStorage = localStorage.getItem(DhikrLocalStoarge[DhikrLocalStoarge.showDhikrSource]);
 
     if(showArabicDhikrFromStorage){
       this.showArabicDhikr = JSON.parse(showArabicDhikrFromStorage);
@@ -68,6 +73,20 @@ export class DhikrService {
     else {
       this.showDhikrTranslation = false;
     }
+
+    if(showDhikrBenefitsFromStorage){
+      this.showDhikrBenefits = JSON.parse(showDhikrBenefitsFromStorage);
+    }
+    else {
+      this.showDhikrBenefits = true;
+    }
+
+    if(showDhikrSourceFromStorage){
+      this.showDhikrSource = JSON.parse(showDhikrSourceFromStorage);
+    }
+    else {
+      this.showDhikrSource = true;
+    }
   }
 
   onModelChange(item: DhikrLocalStoarge, value: boolean) {
@@ -80,13 +99,11 @@ export class DhikrService {
     else if(item === DhikrLocalStoarge.showBosnianDhikr){
       localStorage.setItem(DhikrLocalStoarge[DhikrLocalStoarge.showBosnianDhikr], JSON.stringify(value));
     }
-  }
-
-  onShowSliderModelChange(value) {
-      localStorage.setItem(DhikrLocalStoarge[DhikrLocalStoarge.showSlider], JSON.stringify(value));
-  }
-
-  getLocation() {
-    return this.http.get<any>('http://geolocation-db.com/json/');
+    else if(item === DhikrLocalStoarge.showDhikrBenefits){
+      localStorage.setItem(DhikrLocalStoarge[DhikrLocalStoarge.showDhikrBenefits], JSON.stringify(value));
+    }
+    else if(item === DhikrLocalStoarge.showDhikrSource){
+      localStorage.setItem(DhikrLocalStoarge[DhikrLocalStoarge.showDhikrSource], JSON.stringify(value));
+    }
   }
 }

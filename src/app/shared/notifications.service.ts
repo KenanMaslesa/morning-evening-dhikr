@@ -91,7 +91,7 @@ export class NotificationsService {
           notificationDate.setSeconds(0);
           this.scheduleNotification(
             'Jutarnji zikr',
-            'Vrijeme je za jutarnji zikr',
+            'Zapocni dan spominjanjem Allaha Uzvisenog i tako se zastiti i u svoj zivot unesi bereket',
             index,
             notificationDate
           );
@@ -99,7 +99,7 @@ export class NotificationsService {
           notificationDate.setMinutes(asr.minutes);
           this.scheduleNotification(
             'Vecernji zikr',
-            'Vrijeme je za vecernji zikr',
+            'Zavrsi dan spominjanjem Allaha Uzvisenog i tako se zastiti i u svoj zivot unesi bereket',
             index + 40,
             notificationDate
           );

@@ -1,6 +1,8 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { IonSlides } from '@ionic/angular';
 import { MediaPlayerService } from 'src/app/shared/media-player.service';
+import { NotificationsService } from 'src/app/shared/notifications.service';
 import { DhikrLocalStoarge, DhikrService } from '../../shared/dhikr.service';
 @Component({
   selector: 'app-dhikr-template',
@@ -18,9 +20,13 @@ export class DhikrTemplateComponent implements OnInit {
   sliderActiveIndex = 0;
   dhikrLocalStoarge = DhikrLocalStoarge;
   activeAudio: any;
+  backgroundImage: string;
+
   constructor(
     public dhikrService: DhikrService,
-    public mediaPlayerService: MediaPlayerService
+    public mediaPlayerService: MediaPlayerService,
+    private router: Router,
+    public notificationsService: NotificationsService
   ) {}
 
   ngOnInit() {
@@ -58,5 +64,9 @@ export class DhikrTemplateComponent implements OnInit {
 
   slidePrev() {
     this.slides.slidePrev();
+  }
+
+  goTo() {
+    this.router.navigate(['/tasbeeh/tabs/counter']);
   }
 }

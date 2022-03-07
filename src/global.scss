@@ -26,7 +26,6 @@
 @import "~@ionic/angular/css/flex-utils.css";
 
 html {
-  background-image: url(assets/img/background.jpeg);
   height: 100%;
   background-size: cover;
   background-position: center;
@@ -51,4 +50,54 @@ ion-tab-bar {
 .settings-icon {
   font-size: 25px;
   margin-right: 10px;
+}
+
+.firstSlide, .lastSlide {
+  .content {
+    position: relative;
+
+    ul {
+      text-align: left;
+
+      li {
+        margin: 15px 0;
+      }
+    }
+  }
+}
+
+.slide {
+  &__header {
+    h2 {
+      font-size: 32px;
+      color: #111;
+      text-transform: uppercase;
+      text-align: center;
+      font-weight: 700;
+      position: relative;
+      padding-bottom: 15px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 120px;
+        height: 1px;
+        background: #ddd;
+        bottom: 1px;
+        left: calc(50% - 60px);
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 40px;
+        height: 3px;
+        background: var(--ion-color-primary);
+        bottom: 0;
+        left: calc(50% - 20px);
+      }
+    }
+  }
 }

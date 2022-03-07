@@ -6,16 +6,21 @@ import { NotificationsService } from './shared/notifications.service';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor(
-    private notificationService: NotificationsService
-  ) {
+  constructor(private notificationService: NotificationsService) {
     this.notificationService.scheduleNotificationsForMonth();
 
     const themeColor = localStorage.getItem('theme');
+    const themeBackgroundColor = localStorage.getItem('themeBackgroundColor');
     if (themeColor) {
       document.documentElement.style.setProperty(
         `--ion-color-primary`,
         `${JSON.parse(themeColor)}`
+      );
+    }
+    if (themeBackgroundColor) {
+      document.documentElement.style.setProperty(
+        `--background-color`,
+        `${JSON.parse(themeBackgroundColor)}`
       );
     }
   }

@@ -22,14 +22,14 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: '/tabs/dhikrs',
+        redirectTo: '/tabs/counter',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tasbeeh/tabs/dhikrs',
+    redirectTo: '/tasbeeh/tabs/counter',
     pathMatch: 'full'
   }
 ];

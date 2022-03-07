@@ -13,5 +13,15 @@
 </ion-header>
 
 <ion-content>
-  <app-dhikr-template [dhikrs]="dhikrs"></app-dhikr-template>
+  <app-dhikr-template [dhikrs]="dhikrs">
+    <ng-container firstSlide>
+      <header class="slide__header">
+        <h2>Zikr prije spavanja</h2>
+      </header>
+    </ng-container>
+
+    <ng-container lastSlide>
+      Last slide
+    </ng-container>
+  </app-dhikr-template>
 </ion-content>
