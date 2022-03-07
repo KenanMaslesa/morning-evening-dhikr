@@ -40,22 +40,44 @@ export class HomepagePage implements OnInit {
   ];
 
   ayahs = [
-    '“Sjećajte se vi Mene, i Ja ću se vas sjetiti, i zahvaljujte Mi, i na blagodatima Mojim nezahvalni nemojte biti." (El-Bekara 152)',
-    '“I spominji Gospodara svoga ujutro i naveče u sebi, ponizno i sa strahopoštovanjem i ne podižući jako glas, i ne budi nemaran.” (El-Araf 205)',
-    '“O vjernici, često Allaha spominjite i hvalite i ujutro i naveče ga veličajte.” (Ahzab:41)',
-    '“O, vjernici, neka vas imanja vaša i djeca vaša ne zabave od sjećanja na Allaha. Oni koji to dopuste, bit će izgubljeni.” (El-Munafikun 9)',
-    '„I muškarcima koji mnogo spominju Allaha i ženama koje mnogo spominju Allaha, Allah je, doista, za sve njih oprost i veliku nagradu pripremio“ (El-Ahzab, 35).',
-    ' „O vi koji vjerujete, Allaha mnogo spominjite“ (El-Ahzab, 41)',
-    'Allahov Poslanik, s.a.v.s., kaže: „Neka ti jezik bude neprestalno navlažen spominjanjem Allaha.“',
-    '“I veličaj Gospodara svoga  i zahvaljuj Mu prije sunčeva izlaska i prije zalaska.” (Kaf:39)',
-    '“Pa hvaljen neka je Allah, kad god omrknete i kad god osvanete.” (Rum:17)',
-    '”Primjer onoga koji zikr čini (spominje) svoga Gospodara i onoga koji ga ne spominje je kao primjer živog i mrtvog.”',
+    {
+      ayah: '“Sjećajte se vi Mene, i Ja ću se vas sjetiti, i zahvaljujte Mi, i na blagodatima Mojim nezahvalni nemojte biti."',
+      source: '(El-Bekara 152)'
+    },
+    {
+      ayah: '“Pa hvaljen neka je Allah, kad god omrknete i kad god osvanete.”',
+      source: '(Rum:17)'
+    },
+    {
+      ayah: '“I veličaj Gospodara svoga  i zahvaljuj Mu prije sunčeva izlaska i prije zalaska.”',
+      source: '(Kaf:39)'
+    },
+    {
+      ayah: '„O vi koji vjerujete, Allaha mnogo spominjite“',
+      source: '(El-Ahzab, 41)'
+    },
+    {
+      ayah: '„I muškarcima koji mnogo spominju Allaha i ženama koje mnogo spominju Allaha, Allah je, doista, za sve njih oprost i veliku nagradu pripremio“',
+      source: '(El-Ahzab, 35)'
+    },
+    {
+      ayah: '“O, vjernici, neka vas imanja vaša i djeca vaša ne zabave od sjećanja na Allaha. Oni koji to dopuste, bit će izgubljeni.”',
+      source: '(El-Munafikun, 9)'
+    },
+    {
+      ayah: '“O vjernici, često Allaha spominjite i hvalite i ujutro i naveče ga veličajte.”',
+      source: '(Ahzab:41)'
+    },
+    {
+      ayah: '“I spominji Gospodara svoga ujutro i naveče u sebi, ponizno i sa strahopoštovanjem i ne podižući jako glas, i ne budi nemaran.”',
+      source: '(El-Araf:205)'
+    },
   ];
-  ayah: string;
+  randomAyah: {ayah: string; source: string};
   constructor() {}
 
   ngOnInit() {
-    this.ayah = this.ayahs[this.randomNum()];
+    this.randomAyah = this.ayahs[this.randomNum()];
   }
 
   randomNum() {
