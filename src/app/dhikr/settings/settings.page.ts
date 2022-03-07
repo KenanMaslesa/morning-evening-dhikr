@@ -15,6 +15,10 @@ export class SettingsPage {
       backgroundColor: 'linear-gradient(to right, rgba(36, 69, 145, 0.8) 0%, rgba(83, 106, 158, 0.8) 100%)'
     },
     {
+      color: '#31739d',
+      backgroundColor: 'linear-gradient(to right, rgba(39, 70, 133, 0.8) 0%, rgba(61, 179, 197, 0.8) 100%)'
+    },
+    {
       color: '#04b3ef',
       backgroundColor: 'linear-gradient(to right, rgba(13, 124, 162, 0.8) 0%, rgba(4, 179, 239, 0.8) 100%)'
     },

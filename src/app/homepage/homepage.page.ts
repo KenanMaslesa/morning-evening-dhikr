@@ -42,15 +42,15 @@ export class HomepagePage implements OnInit {
   ayahs = [
     {
       ayah: '“Sjećajte se vi Mene, i Ja ću se vas sjetiti, i zahvaljujte Mi, i na blagodatima Mojim nezahvalni nemojte biti."',
-      source: '(El-Bekara 152)'
+      source: '(El-Bekara, 152)'
     },
     {
       ayah: '“Pa hvaljen neka je Allah, kad god omrknete i kad god osvanete.”',
-      source: '(Rum:17)'
+      source: '(Rum, 17)'
     },
     {
       ayah: '“I veličaj Gospodara svoga  i zahvaljuj Mu prije sunčeva izlaska i prije zalaska.”',
-      source: '(Kaf:39)'
+      source: '(Kaf, 39)'
     },
     {
       ayah: '„O vi koji vjerujete, Allaha mnogo spominjite“',
@@ -66,12 +66,20 @@ export class HomepagePage implements OnInit {
     },
     {
       ayah: '“O vjernici, često Allaha spominjite i hvalite i ujutro i naveče ga veličajte.”',
-      source: '(Ahzab:41)'
+      source: '(Ahzab, 41)'
     },
     {
       ayah: '“I spominji Gospodara svoga ujutro i naveče u sebi, ponizno i sa strahopoštovanjem i ne podižući jako glas, i ne budi nemaran.”',
-      source: '(El-Araf:205)'
+      source: '(El-Araf, 205)'
     },
+    {
+      ayah: '„A kad se molitva obavi, onda se po zemlji raziđite i Allahovu blagodat tražite i Allaha mnogo spominjite, da biste postigli što želite.“',
+      source: '(El- Džumu’a, 10)'
+    },
+    {
+      ayah: '„One koji vjeruju i čija se srca, kad se Allah spomene, smiruju – a srca se doista, kad se Allah spomene smiruju!”',
+      source: '(Er- Ra’ad, 28)'
+    }
   ];
   randomAyah: {ayah: string; source: string};
   constructor() {}

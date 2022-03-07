@@ -197,4 +197,31 @@ export class TasbeehService {
     localStorage.setItem('dhikrs', JSON.stringify(this.dhikrsFromStorage));
     localStorage.setItem('selectedDhikr', JSON.stringify(this.selectedDhikr));
   }
+
+  getDhikrsByMonth(month: string) {
+    return this.dhikrsFromStorage.filter(item => this.getMonthFromDate(item.date) === month);
+  }
+
+  getParticularDhikrByMonth(selectedDhikr: any, month: string){
+    const dhikrsByDate = this.dhikrsFromStorage.filter(item => this.getMonthFromDate(item.date) === month);
+    const dhikrs = []; const dates = [];
+    dhikrsByDate.forEach(item => {
+      dates.push(item.date);
+      item.dhikrs.forEach(dhikr => {
+        if(dhikr.arabic === selectedDhikr.arabic){
+          dhikrs.push(dhikr);
+        }
+      });
+    });
+    const obj = {
+      labels: dates,
+      data: dhikrs.map(item => item.counter)
+    };
+    return obj;
+  }
+
+  getMonthFromDate(date: string){
+    const month = date.split('.')[1];
+    return month;
+  }
 }
