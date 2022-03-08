@@ -123,7 +123,6 @@ export class TasbeehService {
   dhikrsFromStorage = [];
   constructor() {
     this.selectedDhikr = { counter: 0 };
-
     const dhikrsFromStorage = localStorage.getItem('dhikrs');
     if (dhikrsFromStorage) {
       this.dhikrsFromStorage = JSON.parse(dhikrsFromStorage);
@@ -132,7 +131,7 @@ export class TasbeehService {
       this.dhikrsFromStorage.filter((item) => {
         const currentDate = this.getCurrentDateAsString(new Date());
         if (item.date === currentDate) {
-          this.dhikrs = item.dhikrs.sort((a, b) => b.favorite - a.favorite);
+          this.dhikrs = JSON.parse(JSON.stringify(item.dhikrs.sort((a, b) => b.favorite - a.favorite)));
         }
       });
     } else {
@@ -140,7 +139,7 @@ export class TasbeehService {
       for(let i = 1; i <= this.getDaysNumberOfCurrentMonth(); i++) {
         const obj = {
           date: this.getCurrentDateAsString(new Date(new Date().setDate(i))),
-          dhikrs: this.dhikrs,
+          dhikrs: JSON.parse(JSON.stringify(this.dhikrs))
         };
 
         this.dhikrsFromStorage.push(obj);
@@ -160,15 +159,16 @@ export class TasbeehService {
   }
 
   increaseCounter() {
-      this.dhikrsFromStorage.forEach((item) => {
-        if (item.date === this.getCurrentDateAsString(new Date())) {
-          item.dhikrs.forEach(element => {
-            if(element.arabic === this.selectedDhikr.arabic){
-              element.counter ++;
-            }
-          });
-        }
-      });
+    this.dhikrsFromStorage.forEach((item) => {
+      if (item.date === this.getCurrentDateAsString(new Date())) {
+        item.dhikrs.forEach(element => {
+          if(element.arabic === this.selectedDhikr.arabic){
+            element.counter ++;
+          }
+        });
+      }
+    });
+    this.selectedDhikr.counter++;
     localStorage.setItem('dhikrs', JSON.stringify(this.dhikrsFromStorage));
     localStorage.setItem('selectedDhikr', JSON.stringify(this.selectedDhikr));
   }
@@ -179,6 +179,15 @@ export class TasbeehService {
   }
 
   resetCounter() {
+    this.dhikrsFromStorage.forEach((item) => {
+      if (item.date === this.getCurrentDateAsString(new Date())) {
+        item.dhikrs.forEach(element => {
+          if(element.arabic === this.selectedDhikr.arabic){
+            element.counter = -1;
+          }
+        });
+      }
+    });
     this.selectedDhikr.counter = -1;
     localStorage.setItem('dhikrs', JSON.stringify(this.dhikrsFromStorage));
     localStorage.setItem('selectedDhikr', JSON.stringify(this.selectedDhikr));
