@@ -110,6 +110,7 @@ export class TrackerPage implements OnInit {
   }
 
   ionViewDidEnter() {
+    this.dhikrsByMonth = this.tasbeehService.getDhikrsByMonth((this.currentDate.getMonth()+1).toString());
     this.daily();
   }
 
