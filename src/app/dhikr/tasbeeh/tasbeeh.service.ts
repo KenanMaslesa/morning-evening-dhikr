@@ -125,8 +125,13 @@ export class TasbeehService {
   currentDate: Date;
   constructor() {
     this.currentDate = new Date();
-    this.localStorageKey = (this.currentDate.getMonth()+1).toString() + '.' + this.currentDate.getFullYear().toString();
+    this.localStorageKey = 'date '+(this.currentDate.getMonth()+1).toString() + '.' + this.currentDate.getFullYear().toString();
     this.selectedDhikr = { counter: 0 };
+    this.getLocalStorageDhikr();
+    this.clearLocalStorageExpiredData();
+  }
+
+  getLocalStorageDhikr() {
     const dhikrsFromStorage = localStorage.getItem(this.localStorageKey);
     if (dhikrsFromStorage) {
       this.dhikrsFromStorage = JSON.parse(dhikrsFromStorage);
@@ -150,6 +155,17 @@ export class TasbeehService {
       }
       localStorage.setItem(this.localStorageKey, JSON.stringify(this.dhikrsFromStorage));
     }
+  }
+  clearLocalStorageExpiredData(){
+    // eslint-disable-next-line guard-for-in
+    for (const key in localStorage){
+      if(key.indexOf('date') !== -1){
+        if(key.indexOf(new Date().getFullYear().toString()) === -1){ //not found
+          console.log(key);
+          localStorage.removeItem(key);
+        }
+      }
+   }
   }
 
   getCurrentDateAsString(date: Date) {
@@ -208,7 +224,7 @@ export class TasbeehService {
   }
 
   getDhikrsByMonth(month: string) {
-    const localStorageKey = month + '.' + this.currentDate.getFullYear().toString();
+    const localStorageKey = 'date ' + month + '.' + this.currentDate.getFullYear().toString();
     const dhikrByMonthFromStorage = localStorage.getItem(localStorageKey);
     if(dhikrByMonthFromStorage) {
       return JSON.parse(dhikrByMonthFromStorage);
@@ -219,7 +235,7 @@ export class TasbeehService {
   }
 
   getParticularDhikrByMonth(selectedDhikr: any, month: string) {
-    const localStorageKey = month + '.' + this.currentDate.getFullYear().toString();
+    const localStorageKey = 'date ' +month + '.' + this.currentDate.getFullYear().toString();
     const dhikrByMonthFromStorage = localStorage.getItem(localStorageKey);
     const dhikrs = [];
     const dates = [];
