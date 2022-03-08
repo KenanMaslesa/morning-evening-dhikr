@@ -219,6 +219,7 @@ export class TasbeehService {
         item.favorite = value ? true : false;
       }
     });
+
     this.dhikrsFromStorage.forEach((item) => {
       if (item.date === this.getCurrentDateAsString(new Date())) {
         item.dhikrs.forEach(element => {
@@ -226,6 +227,14 @@ export class TasbeehService {
             element.favorite = value ? true : false;
           }
         });
+      }
+    });
+
+    //sort
+    this.dhikrsFromStorage.filter((item) => {
+      const currentDate = this.getCurrentDateAsString(new Date());
+      if (item.date === currentDate) {
+        this.dhikrs = JSON.parse(JSON.stringify(item.dhikrs.sort((a, b) => b.favorite - a.favorite)));
       }
     });
     localStorage.setItem(this.localStorageKey, JSON.stringify(this.dhikrsFromStorage));
