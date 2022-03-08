@@ -135,25 +135,23 @@ export class TasbeehService {
     const dhikrsFromStorage = localStorage.getItem(this.localStorageKey);
     if (dhikrsFromStorage) {
       this.dhikrsFromStorage = JSON.parse(dhikrsFromStorage);
-    }
-    if (this.dhikrsFromStorage.length > 0) {
       this.dhikrsFromStorage.filter((item) => {
         const currentDate = this.getCurrentDateAsString(new Date());
         if (item.date === currentDate) {
-          this.dhikrs = JSON.parse(JSON.stringify(item.dhikrs.sort((a, b) => b.favorite - a.favorite)));
+          this.dhikrs = JSON.parse(JSON.stringify(item.dhikrs));
         }
       });
-    } else {
+    }
+    if (this.dhikrsFromStorage.length === 0) {
+        for(let i = 1; i <= this.getDaysNumberOfCurrentMonth(); i++) {
+          const obj = {
+            date: this.getCurrentDateAsString(new Date(new Date().setDate(i))),
+            dhikrs: JSON.parse(JSON.stringify(this.dhikrs))
+          };
 
-      for(let i = 1; i <= this.getDaysNumberOfCurrentMonth(); i++) {
-        const obj = {
-          date: this.getCurrentDateAsString(new Date(new Date().setDate(i))),
-          dhikrs: JSON.parse(JSON.stringify(this.dhikrs))
-        };
-
-        this.dhikrsFromStorage.push(obj);
-      }
-      localStorage.setItem(this.localStorageKey, JSON.stringify(this.dhikrsFromStorage));
+          this.dhikrsFromStorage.push(obj);
+        }
+        localStorage.setItem(this.localStorageKey, JSON.stringify(this.dhikrsFromStorage));
     }
   }
   clearLocalStorageExpiredData(){
@@ -209,34 +207,6 @@ export class TasbeehService {
       }
     });
     this.selectedDhikr.counter = -1;
-    localStorage.setItem(this.localStorageKey, JSON.stringify(this.dhikrsFromStorage));
-    localStorage.setItem('selectedDhikr', JSON.stringify(this.selectedDhikr));
-  }
-
-  toggleFavorite(dhikr, value: boolean) {
-    this.dhikrs.forEach((item) => {
-      if (item.arabic === dhikr.arabic) {
-        item.favorite = value ? true : false;
-      }
-    });
-
-    this.dhikrsFromStorage.forEach((item) => {
-      if (item.date === this.getCurrentDateAsString(new Date())) {
-        item.dhikrs.forEach(element => {
-          if(element.arabic === dhikr.arabic){
-            element.favorite = value ? true : false;
-          }
-        });
-      }
-    });
-
-    //sort
-    this.dhikrsFromStorage.filter((item) => {
-      const currentDate = this.getCurrentDateAsString(new Date());
-      if (item.date === currentDate) {
-        this.dhikrs = JSON.parse(JSON.stringify(item.dhikrs.sort((a, b) => b.favorite - a.favorite)));
-      }
-    });
     localStorage.setItem(this.localStorageKey, JSON.stringify(this.dhikrsFromStorage));
     localStorage.setItem('selectedDhikr', JSON.stringify(this.selectedDhikr));
   }
