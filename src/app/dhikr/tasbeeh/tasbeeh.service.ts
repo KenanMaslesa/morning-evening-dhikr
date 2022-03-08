@@ -120,10 +120,14 @@ export class TasbeehService {
       favorite: false,
     },
   ];
+  localStorageKey: string;
   dhikrsFromStorage = [];
+  currentDate: Date;
   constructor() {
+    this.currentDate = new Date();
+    this.localStorageKey = (this.currentDate.getMonth()+1).toString() + '.' + this.currentDate.getFullYear().toString();
     this.selectedDhikr = { counter: 0 };
-    const dhikrsFromStorage = localStorage.getItem('dhikrs');
+    const dhikrsFromStorage = localStorage.getItem(this.localStorageKey);
     if (dhikrsFromStorage) {
       this.dhikrsFromStorage = JSON.parse(dhikrsFromStorage);
     }
@@ -144,7 +148,7 @@ export class TasbeehService {
 
         this.dhikrsFromStorage.push(obj);
       }
-      localStorage.setItem('dhikrs', JSON.stringify(this.dhikrsFromStorage));
+      localStorage.setItem(this.localStorageKey, JSON.stringify(this.dhikrsFromStorage));
     }
   }
 
@@ -169,7 +173,7 @@ export class TasbeehService {
       }
     });
     this.selectedDhikr.counter++;
-    localStorage.setItem('dhikrs', JSON.stringify(this.dhikrsFromStorage));
+    localStorage.setItem(this.localStorageKey, JSON.stringify(this.dhikrsFromStorage));
     localStorage.setItem('selectedDhikr', JSON.stringify(this.selectedDhikr));
   }
 
@@ -189,7 +193,7 @@ export class TasbeehService {
       }
     });
     this.selectedDhikr.counter = -1;
-    localStorage.setItem('dhikrs', JSON.stringify(this.dhikrsFromStorage));
+    localStorage.setItem(this.localStorageKey, JSON.stringify(this.dhikrsFromStorage));
     localStorage.setItem('selectedDhikr', JSON.stringify(this.selectedDhikr));
   }
 
@@ -204,25 +208,35 @@ export class TasbeehService {
   }
 
   getDhikrsByMonth(month: string) {
-    return this.dhikrsFromStorage.filter(
-      (item) => this.getMonthFromDate(item.date) === month
-    );
+    const localStorageKey = month + '.' + this.currentDate.getFullYear().toString();
+    const dhikrByMonthFromStorage = localStorage.getItem(localStorageKey);
+    if(dhikrByMonthFromStorage) {
+      return JSON.parse(dhikrByMonthFromStorage);
+    }
+    else {
+      return [];
+    }
   }
 
   getParticularDhikrByMonth(selectedDhikr: any, month: string) {
-    const dhikrsByDate = this.dhikrsFromStorage.filter(
-      (item) => this.getMonthFromDate(item.date) === month
-    );
+    const localStorageKey = month + '.' + this.currentDate.getFullYear().toString();
+    const dhikrByMonthFromStorage = localStorage.getItem(localStorageKey);
     const dhikrs = [];
     const dates = [];
-    dhikrsByDate.forEach((item) => {
-      dates.push(item.date);
-      item.dhikrs.forEach((dhikr) => {
-        if (dhikr.arabic === selectedDhikr.arabic) {
-          dhikrs.push(dhikr);
-        }
+    let dhikrsByDate;
+    if(dhikrByMonthFromStorage) {
+      dhikrsByDate = JSON.parse(dhikrByMonthFromStorage);
+
+      dhikrsByDate.forEach((item) => {
+        dates.push(item.date);
+        item.dhikrs.forEach((dhikr) => {
+          if (dhikr.arabic === selectedDhikr.arabic) {
+            dhikrs.push(dhikr);
+          }
+        });
       });
-    });
+    }
+
     const obj = {
       labels: dates,
       data: dhikrs.map((item) => item.counter),
