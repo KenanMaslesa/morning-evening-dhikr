@@ -219,7 +219,16 @@ export class TasbeehService {
         item.favorite = value ? true : false;
       }
     });
-    localStorage.setItem('dhikrs', JSON.stringify(this.dhikrsFromStorage));
+    this.dhikrsFromStorage.forEach((item) => {
+      if (item.date === this.getCurrentDateAsString(new Date())) {
+        item.dhikrs.forEach(element => {
+          if(element.arabic === dhikr.arabic){
+            element.favorite = value ? true : false;
+          }
+        });
+      }
+    });
+    localStorage.setItem(this.localStorageKey, JSON.stringify(this.dhikrsFromStorage));
     localStorage.setItem('selectedDhikr', JSON.stringify(this.selectedDhikr));
   }
 
