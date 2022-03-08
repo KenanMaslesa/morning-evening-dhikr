@@ -18,7 +18,8 @@ ion-list {
 
     ion-icon {
       &.favorite {
-        color: var(--ion-color-primary)
+        color: var(--ion-color-primary);
+        margin-top: 0;
       }
     }
   }
