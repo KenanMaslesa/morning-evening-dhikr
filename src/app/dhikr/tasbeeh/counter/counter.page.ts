@@ -8,24 +8,28 @@ import { TasbeehService } from '../tasbeeh.service';
   styleUrls: ['./counter.page.scss'],
 })
 export class CounterPage implements OnInit {
-  constructor(private notificationsService: NotificationsService, public tasbeehService: TasbeehService) { }
+  constructor(
+    private notificationsService: NotificationsService,
+    public tasbeehService: TasbeehService
+  ) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   increaseCounter() {
-    if(this.tasbeehService.selectedDhikr.counter === 33 || this.tasbeehService.selectedDhikr.counter === 100) {
-      this.notificationsService.vibrate(80);
-    }
-    else {
+    this.tasbeehService.increaseCounter();
+    if (
+      this.tasbeehService.selectedDhikr.counter === 33 ||
+      this.tasbeehService.selectedDhikr.counter === 66 ||
+      this.tasbeehService.selectedDhikr.counter === 100
+    ) {
+      this.notificationsService.vibrate(200);
+    } else {
       this.notificationsService.vibrate(50);
     }
-    this.tasbeehService.increaseCounter();
   }
 
-  resetCounter(){
-    this.notificationsService.vibrate(100);
+  resetCounter() {
+    this.notificationsService.vibrate(500);
     this.tasbeehService.resetCounter();
   }
-
 }

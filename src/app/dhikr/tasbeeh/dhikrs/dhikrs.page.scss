@@ -17,10 +17,9 @@ ion-reorder-group {
     }
 
     ion-icon {
-      &.favorite {
         color: var(--ion-color-primary);
         margin-top: 0;
-      }
+        font-size: 20px;
     }
   }
 
