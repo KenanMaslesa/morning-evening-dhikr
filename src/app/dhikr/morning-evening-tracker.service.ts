@@ -207,6 +207,17 @@ export class MorningEveningTrackerService {
     }
   }
 
+  getEveningDhikrsByMonth(month: string): Observable<any[]> {
+    const localStorageKey = 'eveningDhikr ' + month + '.' + this.currentDate.getFullYear().toString();
+    const eveningDhikrByMonthFromStorage = localStorage.getItem(localStorageKey);
+    if(eveningDhikrByMonthFromStorage) {
+      return of(JSON.parse(eveningDhikrByMonthFromStorage));
+    }
+    else {
+      return of([]);
+    }
+  }
+
   getTodaysMorningDhikrCounters(): Observable<any[]> {
     let result = [];
     this.morningDhikrsFromStorage.forEach((item) => {

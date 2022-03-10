@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-title>
-      Jutarnji zikr - Tracker
+      Večernji zikr - Tracker
     </ion-title>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/"></ion-back-button>
@@ -18,11 +18,11 @@
   </ion-item>
 
   <section>
-    <p class="no-dhikrs" *ngIf="dhikrsByMonth.length === 0">Nemate proučenog jutarnjeg zikra za odabrani mjesec</p>
+    <p class="no-dhikrs" *ngIf="dhikrsByMonth.length === 0">Nemate proučenog večernjeg zikra za odabrani mjesec</p>
 
     <ion-card>
       <ion-card-header>
-        <ion-card-subtitle>Ukupan broj proučenog jutarnjeg zikra po danima</ion-card-subtitle>
+        <ion-card-subtitle>Ukupan broj proučenog večernjeg zikra po danima</ion-card-subtitle>
       </ion-card-header>
       <ion-card-content>
         <div class="graph-wrapper">
