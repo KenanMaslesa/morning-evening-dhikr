@@ -1,1 +1,24 @@
-<ion-router-outlet></ion-router-outlet>
+<ion-app>
+  <ion-split-pane contentId="main-content">
+    <ion-menu contentId="main-content" type="overlay">
+      <ion-content>
+       <div class="menu-header-bg"></div>
+       <div class="header-content">
+         <img src="assets/img/background.jpeg" alt="">
+         <ion-label>
+           <h2>Jutarnji i večernji zikr</h2>
+         </ion-label>
+       </div>
+
+       <ion-list class="menu-items" lines="none">
+         <ion-menu-toggle>
+          <ion-item *ngFor="let page of pages" menuClose routerLink="{{page.url}}" routerLinkActive="active">
+            <ion-icon name="{{page.icon}}"></ion-icon> {{page.title}}
+          </ion-item>
+         </ion-menu-toggle>
+      </ion-list>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

@@ -6,6 +6,33 @@ import { NotificationsService } from './shared/notifications.service';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
+  pages = [
+    {
+      title: 'Jutarnji zikr',
+      url: '/morning-dhikr',
+      icon: 'sunny',
+    },
+    {
+      title: 'Večernji zikr',
+      url: '/evening-dhikr',
+      icon: 'moon',
+    },
+    {
+      title: 'Zikr prije spavanja',
+      url: '/dhikr-before-sleeping',
+      icon: 'bed',
+    },
+    {
+      title: 'Zikrilo',
+      url: '/tasbeeh',
+      icon: 'finger-print',
+    },
+    {
+      title: 'Postavke',
+      url: '/settings',
+      icon: 'settings',
+    },
+  ];
   constructor(private notificationService: NotificationsService) {
     this.notificationService.scheduleNotificationsForMonth();
 
