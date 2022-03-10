@@ -147,11 +147,11 @@ export class MorningEveningTrackerService {
         this.morningDhikrsFromStorage.push({
           date,
           total: 0,
-          dhikrs: this.morningDhikr,
+          dhikrs: JSON.parse(JSON.stringify(this.morningDhikr)),
         });
       }
       if (eveningDhikrs) {
-        this.eveningDhikrsFromStorage.push({ date, total: 0, dhikrs: this.eveningDhikr });
+        this.eveningDhikrsFromStorage.push({ date, total: 0, dhikrs:JSON.parse(JSON.stringify(this.eveningDhikr)) });
       }
     }
     if (morningDhikrs) {
@@ -236,14 +236,14 @@ export class MorningEveningTrackerService {
   }
 
   setTotalCounterForEveningDhikr() {
-    this.morningDhikrsFromStorage.forEach((item) => {
+    this.eveningDhikrsFromStorage.forEach((item) => {
       if (item.date === this.getCurrentDateAsString(new Date())) {
         item.total++;
       }
     });
     localStorage.setItem(
-      this.localStorageKeyMorningDhikr,
-      JSON.stringify(this.morningDhikrsFromStorage)
+      this.localStorageKeyEveningDhikr,
+      JSON.stringify(this.eveningDhikrsFromStorage)
     );
   }
 
