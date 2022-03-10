@@ -4,6 +4,8 @@
     "audio": "assets/audio/sejjidul-istigfar.mp3",
     "category": "MORNING&EVENING",
     "recitate": 1,
+    "counter": 0,
+    "id": 1,
     "translation": {
       "bosnian": "Allahu, Ti si Gospodar moj, nema boga osim Tebe. Stvorio si me i ja sam Tvoj rob. Ja sam na tragu zavjeta i obećanja datom Tebi, koliko sam u mogućnosti. Tebi se sklanjam pred zlom koje sam počinio. Priznajem blagodati Tvoje prema meni i Tebi priznajem svoje grijehe. Stoga, oprosti mi, jer osim Tebe niko drugi grijehe ne oprašta.",
       "english": "O Allah, You are my Lord, there is none worthy of worship but You. You created me and I am your slave. I keep Your covenant, and my pledge to You so far as I am able. I seek refuge in You from the evil of what I have done. I admit to Your blessings upon me, and I admit to my misdeeds. Forgive me, for there is none who may forgive sins but You."
@@ -12,22 +14,20 @@
       "bosnian": "ALLĀHUMME ENTE RABBĪ,LĀ ILĀHE ILLĀ ENTE,HALEKTENĪ VE ENE ‘ABDUKE ( žene će reći: HALEKTENĪ VE ENE EMETUKE),VE ENE ‘ALĀ ‘AHDIKE VE VA‘DIKE MESTETA‘TU,E‘ŪZU BIKE MIN ŠERRI MĀ SANA‘TU,EBŪ-U LEKE BI NI‘METIKE ‘ALEJJE,VE EBŪ-U BIZENBĪ,FAGFIRLĪ FE INNEHU LĀ JAGFIRU-Z-ZUNŪBE ILLĀ ENTE.",
       "english": "Allaahumma 'Anta Rabbee laa 'ilaaha 'illaa 'Anta, khalaqtanee wa 'anaa 'abduka, wa 'anaa 'alaa 'ahdika wa wa'dika mas-tata'tu, 'a'oothu bika min sharri maa sana'tu, 'aboo'u laka bini'matika 'alayya, wa 'aboo'u bithanbee faghfir lee fa'innahu laa yaghfiruth-thunooba 'illaa 'Anta."
     },
-    "benefits":
-      {
-        "bosnian": [
-          {
-            "title": "Obecan je ulazak u Dzennet",
-            "source": "„Ko izgovori ovaj istigfar (dovu) ujutro, čvrsto vjerujući u njegove riječi, te umre tog dana prije nego omrkne, on je od stanovnika Dženneta, ako ga kaže u toku noći čvrsto uvjeren u te riječi, i umre prije nego svane, pa i on je od stanovnika Dženneta.“"
-          }
-        ],
-        "english": [
-          {
-            "title": "",
-            "source": "Whoever recites this with conviction in the evening and dies during that night shall enter Paradise, and whoever recites it with conviction in the morning and dies during that day shall enter Paradise."
-          }
-        ]
-      }
-    ,
+    "benefits": {
+      "bosnian": [
+        {
+          "title": "Obecan je ulazak u Dzennet",
+          "source": "„Ko izgovori ovaj istigfar (dovu) ujutro, čvrsto vjerujući u njegove riječi, te umre tog dana prije nego omrkne, on je od stanovnika Dženneta, ako ga kaže u toku noći čvrsto uvjeren u te riječi, i umre prije nego svane, pa i on je od stanovnika Dženneta.“"
+        }
+      ],
+      "english": [
+        {
+          "title": "",
+          "source": "Whoever recites this with conviction in the evening and dies during that night shall enter Paradise, and whoever recites it with conviction in the morning and dies during that day shall enter Paradise."
+        }
+      ]
+    },
     "source": {
       "bosnian": "Buhari 7/150, Nesai, Tirmizi",
       "english": "Al-Bukhari 7/150. Other reports are in An-Nasa'i and At-Tirmithi."
@@ -207,6 +207,8 @@
     "audio": "assets/audio/raditu.mp3",
     "category": "MORNING&EVENING",
     "recitate": 3,
+    "counter": 0,
+    "id": 2,
     "translation": {
       "bosnian": "Zadovoljan sam da mi je Allah Gospodar, vjera islam, Muhammed, sallallahu alejhi ve sellem, vjerovjesnik.",
       "english": "I am pleased with Allah as my Lord, with Islam as my religion and with Muhammad (peace and blessings of Allah be upon him) as my Prophet."
@@ -219,22 +221,20 @@
       "bosnian": "Ahmed 4/337, Tirmizi 5/465, Ebu Dawud 4/318",
       "english": "Ahmad 4/ 337, Abu Dawud 4/318, An-Nasa'i, 'Amalul-Yawm wal-Laylah p. 4, Ibn As-Sunni (no. 68), At-Tirmithi 5/465. Its chain of transmission is good (Hasan), Ibn Baz, p. 39."
     },
-    "benefits":
-      {
-        "bosnian": [
-          {
-            "title": "Obecan je ulazak u Dzennet",
-            "source": "Rekao je Allahov Poslanik ﷺ: ”Ko ujutro ustane i kaze ove rijeci, ja sam mu garant, odnosno ja cu ga uzeti za ruku i uvesti u Dzennet.”"
-          }
-        ],
-        "english": [
-          {
-            "title": "",
-            "source": "Allah has promised that anyone who says this three times every morning or evening will be pleased on the Day of Resurrection."
-          }
-        ]
-      }
-    ,
+    "benefits": {
+      "bosnian": [
+        {
+          "title": "Obecan je ulazak u Dzennet",
+          "source": "Rekao je Allahov Poslanik ﷺ: ”Ko ujutro ustane i kaze ove rijeci, ja sam mu garant, odnosno ja cu ga uzeti za ruku i uvesti u Dzennet.”"
+        }
+      ],
+      "english": [
+        {
+          "title": "",
+          "source": "Allah has promised that anyone who says this three times every morning or evening will be pleased on the Day of Resurrection."
+        }
+      ]
+    },
     "sentences": [
       {
         "bosnian": "Zadovoljan sam",
@@ -271,6 +271,8 @@
     "audio": "assets/audio/bismillahillezi.mp3",
     "category": "MORNING&EVENING",
     "recitate": 3,
+    "counter": 0,
+    "id": 3,
     "translation": {
       "bosnian": "U ime Onoga s čijim imenom ništa ne može naštetiti ni na Zemlji, ni na nebu, a On sve čuje i sve zna.",
       "english": "In the Name of Allah, Who with His Name nothing can cause harm in the earth nor in the heavens, and He is the All-Hearing, the All-Knowing."
@@ -283,22 +285,20 @@
       "bosnian": "Ebu Dawud 4/323, Tirmizi 5/465, Ibn Madze 2/332, Ahmed",
       "english": "Abu Dawud 4/323, At-Tirmithi 5/465, Ibn Majah 2/332, Ahmad. Ibn Majah's chain of transmission is good (Hasan), Ibn Baz, p. 39."
     },
-    "benefits":
-      {
-        "bosnian": [
-          {
-            "title": "Zastita od nesreca",
-            "source": "Allahov Poslanik ﷺ je rekao: ”Koji god vjernik ujutro svakog dana, i u akšam svake noći, tri puta kaže: ”Bismillahillezi la jedurru me‘asmihi šej’un fil erdi ve la fis-semai ve huves- semi‘ul-‘alim – U ime Allaha s čijim imenom ništa ne može nauditi ni na Zemlji ni na nebu, i On sve čuje i zna, toga dana ili noći mu se neće dogoditi nikakva nesreća.”"
-          }
-        ],
-        "english": [
-          {
-            "title": "",
-            "source": "Whoever recites it three times in the morning will not be afflicted by any calamity before evening, and whoever recites it three times in the evening will not be overtaken by any calamity before morning."
-          }
-        ]
-      }
-    ,
+    "benefits": {
+      "bosnian": [
+        {
+          "title": "Zastita od nesreca",
+          "source": "Allahov Poslanik ﷺ je rekao: ”Koji god vjernik ujutro svakog dana, i u akšam svake noći, tri puta kaže: ”Bismillahillezi la jedurru me‘asmihi šej’un fil erdi ve la fis-semai ve huves- semi‘ul-‘alim – U ime Allaha s čijim imenom ništa ne može nauditi ni na Zemlji ni na nebu, i On sve čuje i zna, toga dana ili noći mu se neće dogoditi nikakva nesreća.”"
+        }
+      ],
+      "english": [
+        {
+          "title": "",
+          "source": "Whoever recites it three times in the morning will not be afflicted by any calamity before evening, and whoever recites it three times in the evening will not be overtaken by any calamity before morning."
+        }
+      ]
+    },
     "sentences": [
       {
         "bosnian": "U ime Onoga s čijim imenom ništa ne može naštetiti",
@@ -335,6 +335,8 @@
     "audio": "assets/audio/hasbijallahu.mp3",
     "category": "MORNING&EVENING",
     "recitate": 7,
+    "counter": 0,
+    "id": 4,
     "translation": {
       "bosnian": "Allah mi je dovoljan, nema boga osim Njega! Na Njega se oslanjam, i On je Gospodar Arša veličanstvenog!",
       "english": ""
@@ -347,22 +349,20 @@
       "bosnian": "Ebu Davud 5081",
       "english": "Abu Davud 5081"
     },
-    "benefits":
-      {
-        "bosnian": [
-          {
-            "title": "Zastita i spas od svih briga",
-            "source": "Allahov Poslanik ﷺ je rekao: ”Čovjeku koji ujutro i navečer sedam puta izgovori: “Hasbijallahu la ilahe illa huve alejhi tevekkeltu ve huve Rabbul-Aršil-azim! – Dovoljan mi je Allah, nema boga osim Njega, na Njega sam se oslonio, a On je Gospodar Arša veličanstvenog!”, Allah će otkloniti brige dunjaluka i ahireta!”"
-          }
-        ],
-        "english": [
-          {
-            "title": "",
-            "source": ""
-          }
-        ]
-      }
-    ,
+    "benefits": {
+      "bosnian": [
+        {
+          "title": "Zastita i spas od svih briga",
+          "source": "Allahov Poslanik ﷺ je rekao: ”Čovjeku koji ujutro i navečer sedam puta izgovori: “Hasbijallahu la ilahe illa huve alejhi tevekkeltu ve huve Rabbul-Aršil-azim! – Dovoljan mi je Allah, nema boga osim Njega, na Njega sam se oslonio, a On je Gospodar Arša veličanstvenog!”, Allah će otkloniti brige dunjaluka i ahireta!”"
+        }
+      ],
+      "english": [
+        {
+          "title": "",
+          "source": ""
+        }
+      ]
+    },
     "sentences": [
       {
         "bosnian": "Allah mi je dovoljan,",
@@ -399,6 +399,8 @@
     "audio": "assets/audio/afve.mp3",
     "category": "MORNING&EVENING",
     "recitate": 1,
+    "counter": 0,
+    "id": 5,
     "translation": {
       "bosnian": "Allahu, molim Te za oprost i zaštitu Tvojuna dunjaluku i na ahiretu. Allahu, molim Te za oprost i zaštitu Tvojuu vjeri, na dunjaluku, u porodici i mojoj imovini. Allahu, zakloni moja sramna djela, a umiri moju bojazan. Allahu, sačuvaj me sa moje prednje strane, te od svega što me može zadesiti sa leđa, sa desne ili lijeve strane i odozgo. Prizivam Tvoju Veličinu da ne budem ščepan odozdo.",
       "english": "O Allah, I seek Your forgiveness and Your protection in this world and the next. O Allah, I seek Your forgiveness and Your protection in my religion, in my worldly affairs, in my family and in my wealth. O Allah, conceal my secrets and preserve me from anguish. O Allah, guard me from what is in front of me and behind me, from my left, and from my right, and from above me. I seek refuge in Your Greatness from being struck down from beneath me."
@@ -497,6 +499,8 @@
     "audio": "assets/audio/asbahna.mp3",
     "category": "MORNING",
     "recitate": 1,
+    "counter": 0,
+    "id": 6,
     "translation": {
       "bosnian": "Osvanusmo i osvanu svekolika Allahova vlast. Hvala Allahu i nema boga osim Njega Jedinog, Koji druga nema. Njemu pripada sva vlast i svaka pohvala i on nad svačim ima moć. Allahu, molim Te za sva dobra ovog dana i za dobra poslije njega. I utječem ti se od zla ovog dana i zla poslije njega. Gospodaru moj, Tebi se sklanjam pred lijenošću i zlohudom ohološću. Tebi se sklanjam pred kaznom Džehennema i kaburskom kaznom.",
       "english": "We have entered a new day and with it all dominion is Allah's. Praise is to Allah. None has the right to be worshipped but Allah alone, Who has no partner. To Allah belongs the dominion, and to Him is the praise and He is Able to do all things. My Lord, I ask You for the goodness of this day and of the days that come after it, and I seek refuge in You from the evil of this day and of the days that come after it. My Lord, I seek refuge in You from laziness and helpless old age. My Lord, I seek refuge in You from the punishment of Hell-fire , and from the punishment of the grave."
@@ -574,6 +578,8 @@
     "audio": "assets/audio/asbahna2.mp3",
     "category": "MORNING",
     "recitate": 1,
+    "counter": 0,
+    "id": 7,
     "translation": {
       "bosnian": "Allahu, Tvojom voljom dočekasmo jutro i Tvojom voljom uđosmo u noć. Tvojom voljom živimo, prema Tvojoj volji umiremo i prema Tvojoj volji bivamo ponovo proživljeni.",
       "english": "O Allah , by You we enter the morning and by You we enter the evening, by You we live and and by You we die, and to You is the Final Return."
@@ -630,6 +636,8 @@
     "audio": "assets/audio/asbahna'ala fitreti-l-islami.mp3",
     "category": "MORNING",
     "recitate": 1,
+    "counter": 0,
+    "id": 8,
     "translation": {
       "bosnian": "Jutro smo dočekali u krilu islama, na principima šehadeta (riječi: la ilahe illellah), u vjeri vjerovjesnika našega Muhammeda sallallahu ’alejhi ve sellem i u vjeri praoca našeg Ibrahima, a.s., iskrenog monoteiste, muslimana, koji nije bio idolopoklonik.",
       "english": "We have entered a new day upon the natural religion of Islam, the word of sincere devotion, the religion of our Prophet Muhammad (peace and blessings of Allah be upon him), and the faith of our father Ibrahim. He was upright (in worshipping Allah), and a Muslim. He was not of those who worship others besides Allah."
@@ -686,6 +694,8 @@
     "audio": "assets/audio/adede-halkih.mp3",
     "category": "MORNING",
     "recitate": 3,
+    "counter": 0,
+    "id": 9,
     "translation": {
       "bosnian": "Neka je slavljen i hvaljen Allah u razmjerama brojnosti Njegovih stvorenih bića, u razmjeri Njegovog zadovoljstva, težine Njegova prijestolja (Arša) i mnoštva osebujnosti Njegovih riječi.",
       "english": "Glory is to Allah and praise is to Him, by the multitude of His creation, by His Pleasure, by the weight of His Throne, and by the extent of His Words."
@@ -694,22 +704,20 @@
       "bosnian": "SUBHĀNALLĀHI VE BI HAMDIH, ‘ADEDE HALKIH, VE RIDĀ NEFSIH, VE ZINETE ‘ARŠIH, VE MIDĀDE KELIMĀTIH.",
       "english": "Subhaanallaahi wa bihamdihi: 'Adada khalqihi, wa ridhaa nafsihi, wa zinata 'arshihi wa midaada kalimaatihi."
     },
-    "benefits":
-      {
-        "bosnian": [
-          {
-            "title": "Medju najvrijednijim zikrovima",
-            "source": "Od majke pravovjernih Džuvejrije r.a. se prenosi da je Allahov Poslanik ﷺ izašao od nje rano, nakon što je klanjao sabah, a ona je ostala na mjestu gdje je klanjala. Zatim se vratio kada ja nastupilo vrijeme duha (namaza), a ona je i dalje sjedila na svom mjestu, pa joj je rekao: “Još uvijek si ondje gdje sam te ostavio?” Rekla sam: da. Tada je Allahov Poslanik ﷺ rekao: “Nakon što sam otišao rekao sam četiri riječi tri puta, kada bi ih vagali s onim što si rekla (proučila) od jutros bile bi teže od njih, a te riječi su: Neka je slavljen i hvaljen Allah u razmjerama brojnosti Njegovih stvorenih bića, u razmjeri Njegovog zadovoljstva, težine Njegova prijestolja (Arša) i mnoštva osebujnosti Njegovih riječi."
-          }
-        ],
-        "english": [
-          {
-            "title": "",
-            "source": "Juwairiyah bint Al-Harith (May Allah be pleased with her) reported, the Mother of the Believers:The Prophet (sallallaahu ’alayhi wa sallam) came out from my apartment in the morning as I was busy in performing the dawn prayer. He came back in the forenoon and found me sitting there. The Prophet (sallallaahu ’alayhi wa sallam) said, “Are you still in the same position as I left you.” I replied in the affirmative. Thereupon the Prophet said, “I recited four words three times after I had left you. If these are to be weighed against all you have recited since morning, these will be heavier. These are: Subhan-Allahi wa bihamdihi, `adada khalqihi, wa rida nafsihi, wa zinatah `arshihi, wa midada kalimatihi"
-          }
-        ]
-      }
-    ,
+    "benefits": {
+      "bosnian": [
+        {
+          "title": "Medju najvrijednijim zikrovima",
+          "source": "Od majke pravovjernih Džuvejrije r.a. se prenosi da je Allahov Poslanik ﷺ izašao od nje rano, nakon što je klanjao sabah, a ona je ostala na mjestu gdje je klanjala. Zatim se vratio kada ja nastupilo vrijeme duha (namaza), a ona je i dalje sjedila na svom mjestu, pa joj je rekao: “Još uvijek si ondje gdje sam te ostavio?” Rekla sam: da. Tada je Allahov Poslanik ﷺ rekao: “Nakon što sam otišao rekao sam četiri riječi tri puta, kada bi ih vagali s onim što si rekla (proučila) od jutros bile bi teže od njih, a te riječi su: Neka je slavljen i hvaljen Allah u razmjerama brojnosti Njegovih stvorenih bića, u razmjeri Njegovog zadovoljstva, težine Njegova prijestolja (Arša) i mnoštva osebujnosti Njegovih riječi."
+        }
+      ],
+      "english": [
+        {
+          "title": "",
+          "source": "Juwairiyah bint Al-Harith (May Allah be pleased with her) reported, the Mother of the Believers:The Prophet (sallallaahu ’alayhi wa sallam) came out from my apartment in the morning as I was busy in performing the dawn prayer. He came back in the forenoon and found me sitting there. The Prophet (sallallaahu ’alayhi wa sallam) said, “Are you still in the same position as I left you.” I replied in the affirmative. Thereupon the Prophet said, “I recited four words three times after I had left you. If these are to be weighed against all you have recited since morning, these will be heavier. These are: Subhan-Allahi wa bihamdihi, `adada khalqihi, wa rida nafsihi, wa zinatah `arshihi, wa midada kalimatihi"
+        }
+      ]
+    },
     "source": {
       "bosnian": "Muslim 4/2090",
       "english": "Muslim 4/2090"
@@ -757,6 +765,8 @@
     "audio": "assets/audio/euzubikellimatillahi.mp3",
     "category": "EVENING",
     "recitate": 3,
+    "counter": 0,
+    "id": 10,
     "translation": {
       "bosnian": "Utječem se savršenim Allahovim riječima od zla onoga što je stvorio.",
       "english": "I seek refuge in the Perfect Words of Allah from the evil of what He has created."
@@ -765,25 +775,24 @@
       "bosnian": "E‘ŪZU BIKELIMĀTILLĀHI-T-TĀMMĀTI MIN ŠERRI MĀ HALEK.",
       "english": "A'oothu bikalimaatil-laahit-taammaati min sharri maa khalaqa"
     },
-    "benefits":
-      {
-        "bosnian": [
-          {
-            "title": "Zastita od insekata",
-            "source": "Muslim u svom Sahihu bilježi predanje Ebu Hurejre r.a., koji prenosi da je jedan čovjek došao Allahovom Poslaniku ﷺ i rekao: “Allahov Poslaniče, kakve sam samo bolove podnio sinoć nakon što me ujeo akrep „Allahov Poslanik ﷺ mu reče: “Da si, kada si omrknuo, rekao: „Euzu bi kelimatillahit-tamati min šerri ma halek“ (Utječem se Allahu savršenim riječima od zla svega što je stvorio), ne bi ti akrep mogao nauditi.“"
-          },
-          {
-            "title": "Osiguranje u nekom mjestu",
-            "source": "Kaže Allahov Poslanik ﷺ: “Ko dođe u neko mjesto pa prouči ‘Euzu bi kelimatillahi tammati min šerri ma halek’ – ‘Utječem se sa Allahovim potpunim riječima od zla koje je stvorio’ – ništa mu neće moći nauditi dok boravi na tom mjestu.“"
-          }
-        ],
-        "english": [
-          {
-            "title": "",
-            "source": "Whoever recites this three times in the evening will be protected from insect stings."
-          }
-        ]
-      },
+    "benefits": {
+      "bosnian": [
+        {
+          "title": "Zastita od insekata",
+          "source": "Muslim u svom Sahihu bilježi predanje Ebu Hurejre r.a., koji prenosi da je jedan čovjek došao Allahovom Poslaniku ﷺ i rekao: “Allahov Poslaniče, kakve sam samo bolove podnio sinoć nakon što me ujeo akrep „Allahov Poslanik ﷺ mu reče: “Da si, kada si omrknuo, rekao: „Euzu bi kelimatillahit-tamati min šerri ma halek“ (Utječem se Allahu savršenim riječima od zla svega što je stvorio), ne bi ti akrep mogao nauditi.“"
+        },
+        {
+          "title": "Osiguranje u nekom mjestu",
+          "source": "Kaže Allahov Poslanik ﷺ: “Ko dođe u neko mjesto pa prouči ‘Euzu bi kelimatillahi tammati min šerri ma halek’ – ‘Utječem se sa Allahovim potpunim riječima od zla koje je stvorio’ – ništa mu neće moći nauditi dok boravi na tom mjestu.“"
+        }
+      ],
+      "english": [
+        {
+          "title": "",
+          "source": "Whoever recites this three times in the evening will be protected from insect stings."
+        }
+      ]
+    },
     "source": {
       "bosnian": "Muslim, Ahmed 2/290, Tirmizi 3/187",
       "english": "Ahmad 2/290, An-Nasa'i, 'Amalul-Yawm wal-Laylah no. 590, At-Tirmithi 3/187, Ibn As-Sunni no. 68. According to Al-Albani, Ibn Majah's (2/266) chain of transmission is sound (Sahih), and following Ibn Baz 45, At-Tirmithi's report is good (Hasan)."
@@ -811,6 +820,8 @@
     "audio": "assets/audio/emsejna.mp3",
     "category": "EVENING",
     "recitate": 1,
+    "counter": 0,
+    "id": 11,
     "translation": {
       "bosnian": "U noć uđosmo i noć dočeka svekolika Allahova vlast. Hvala Allahu i nema boga osim Njega Jedinog, Koji druga nema. Njemu pripada sva vlast i svaka pohvala i on nad svačim ima moć. Allahu, molim Te za sva dobra ove noći i za dobra poslije nje. I utječem Ti se od zla ove noći i zla poslije nje. Gospodaru moj, Tebi se sklanjam pred lijenošću i zlohudom ohološću. Tebi se sklanjam pred kaznom Džehennema i kaburskom kaznom.",
       "english": "We have entered a new day and with it all dominion is Allah's. Praise is to Allah. None has the right to be worshipped but Allah alone, Who has no partner. To Allah belongs the dominion, and to Him is the praise and He is Able to do all things. My Lord, I ask You for the goodness of this day and of the days that come after it, and I seek refuge in You from the evil of this day and of the days that come after it. My Lord, I seek refuge in You from laziness and helpless old age. My Lord, I seek refuge in You from the punishment of Hell-fire , and from the punishment of the grave."
@@ -909,6 +920,8 @@
     "audio": "assets/audio/emsejna2.mp3",
     "category": "EVENING",
     "recitate": 1,
+    "counter": 0,
+    "id": 12,
     "translation": {
       "bosnian": "Allahu, Tvojom voljom u noć ulazimo i jutro dočekujemo, Tvojom voljom živimo i umiremo i Tebi se vraćamo.",
       "english": "O Allah, You bring us the end of the day as You bring us its beginning, You bring us life and you bring us death, and to You is our fate."
@@ -965,6 +978,8 @@
     "audio": "assets/audio/emsejna'ala-fitreti-l-islam.mp3",
     "category": "EVENING",
     "recitate": 1,
+    "counter": 0,
+    "id": 13,
     "translation": {
       "bosnian": "Noć smo dočekali u krilu islama, na principima šehadeta (riječi: la ilahe illellah), u vjeri vjerovjesnika našega, Muhammeda i u vjeri praoca našeg Ibrahima, a.s., iskrenog monoteiste, muslimana, koji nije bio idolopoklonik.",
       "english": "We end this day upon the natural religion of Islam, the word of sincere devotion, the religion of our Prophet Muhammad (peace and blessings of Allah be upon him), and the faith of our father Ibrahim. He was upright (in worshipping Allah), and a Muslim. He was not of those who worship others besides Allah."
@@ -1022,6 +1037,8 @@
     "audio": "assets/audio/alimel-gajbi.mp3",
     "category": "MORNING&EVENING",
     "recitate": 1,
+    "counter": 0,
+    "id": 14,
     "translation": {
       "bosnian": "Allahu, Poznavaoče skrivenog i pojavnog (svijeta), Sazdavatelju nebesa i Zemlje, Gospodaru svega i njegov Posjedovatelju: svjedočim da nema boga osim Tebe, Tebi se sklanjam pred zlom moje duše, i pred zlom šejtana i njegovog širka, te da me sačuvaš od činjenja zla prema sebi ili bilo kom muslimanu.",
       "english": "O Allah, Knower of the unseen and the evident, Maker of the heavens and the earth, Lord of everything and its Possessor, I bear witness that there is none worthy of worship but You. I seek refuge in You from the evil of my soul and from the evil of Satan and his helpers. (I seek refuge in You) from bringing evil upon my soul and from harming any Muslim."
@@ -1092,6 +1109,8 @@
     "audio": "assets/audio/jaHajju.mp3",
     "category": "MORNING&EVENING",
     "recitate": 1,
+    "counter": 0,
+    "id": 15,
     "translation": {
       "bosnian": "O Ti, Živi, Postojani Održavatelju, molim Te za Tvoju obilatu milost – popravi moje stanje u svakom pogledu i ne prepusti me meni samome ni jednoga trena.",
       "english": "O Ever Living One, O Eternal One, by Your mercy I call on You to set right all my affairs. Do not place me in charge of my soul even for the blinking of an eye (i.e. a moment)."
@@ -1148,6 +1167,8 @@
     "audio": "assets/audio/salavati.mp3",
     "category": "MORNING&EVENING",
     "recitate": 10,
+    "counter": 0,
+    "id": 16,
     "translation": {
       "bosnian": "O Allahu, blagoslovi našeg poslanika Muhammeda."
     },
@@ -1158,17 +1179,15 @@
       "bosnian": "Nesai i Ahmed",
       "english": "An-Nasa'i, Ahmad"
     },
-    "benefits":
-      {
-        "bosnian": [
-          {
-            "title": "Allah tebe spominje",
-            "source": "Rekao je Poslanik ﷺ: ”Onoga ko mene jednim salavatom spomene, Allah će ga deset puta spomenuti, biće mu oprošteno deset grijeha i biće podignut za deset stepeni.”"
-          }
-        ],
-        "english": []
-      }
-    ,
+    "benefits": {
+      "bosnian": [
+        {
+          "title": "Allah tebe spominje",
+          "source": "Rekao je Poslanik ﷺ: ”Onoga ko mene jednim salavatom spomene, Allah će ga deset puta spomenuti, biće mu oprošteno deset grijeha i biće podignut za deset stepeni.”"
+        }
+      ],
+      "english": []
+    },
     "sentences": [
       {
         "bosnian": "O Allahu, blagoslovi našeg poslanika Muhammeda ﷺ.",
@@ -1184,6 +1203,8 @@
     "audio": "assets/audio/subhanallahiVeBihamdih.mp3",
     "category": "MORNING&EVENING",
     "recitate": 100,
+    "counter": 0,
+    "id": 17,
     "translation": {
       "bosnian": "Slavljen je Allah i Njemu pripada sva hvala",
       "english": "Glory is to Allah and praise is to Him."
@@ -1196,22 +1217,20 @@
       "bosnian": "Muslim 4/2071",
       "english": "Muslim 4/2071"
     },
-    "benefits":
-      {
-        "bosnian": [
-          {
-            "title": "Oprost grijeha pa makar ih bilo kao morske pjene",
-            "source": "Rekao je Poslanik ﷺ: ”Ko kaže u toku jednog dana sto puta: Subhanallahi ve bi hamdihi (Slavljen je Allah i Njemu pripada sva hvala), oprošteni su mu grijesi, pa makar ih bilo kao morske pjene.”"
-          }
-        ],
-        "english": [
-          {
-            "title": "",
-            "source": "Whoever recites this one hundred times in the morning and in the evening will not be surpassed on the Day of Resurrection by anyone having done better than this except for someone who had recited it more."
-          }
-        ]
-      }
-    ,
+    "benefits": {
+      "bosnian": [
+        {
+          "title": "Oprost grijeha pa makar ih bilo kao morske pjene",
+          "source": "Rekao je Poslanik ﷺ: ”Ko kaže u toku jednog dana sto puta: Subhanallahi ve bi hamdihi (Slavljen je Allah i Njemu pripada sva hvala), oprošteni su mu grijesi, pa makar ih bilo kao morske pjene.”"
+        }
+      ],
+      "english": [
+        {
+          "title": "",
+          "source": "Whoever recites this one hundred times in the morning and in the evening will not be surpassed on the Day of Resurrection by anyone having done better than this except for someone who had recited it more."
+        }
+      ]
+    },
     "sentences": [
       {
         "bosnian": "Slavljen je Allah",
@@ -1234,6 +1253,8 @@
     "audio": "assets/audio/lailaheillallah.mp3",
     "category": "MORNING&EVENING",
     "recitate": 100,
+    "counter": 0,
+    "id": 18,
     "translation": {
       "bosnian": "Nema boga osim Allaha, Jedinoga, Koji druga nema. Njemu pripada vlast nad svim i sva pohvala. On sve može.",
       "english": "None has the right to be worshipped but Allah alone, Who has no partner. His is the dominion and His is the praise and He is Able to do all things."
@@ -1246,22 +1267,20 @@
       "bosnian": "Bukhari 4/95",
       "english": "Al-Bukhari 4/95"
     },
-    "benefits":
-      {
-        "bosnian": [
-          {
-            "title": "Oprost grijeha, zastita od sejtana, nagrada oslobadjanja roba..",
-            "source": "Prenosi se od Ebu Hurejre, r.a, da je Poslanik ﷺ rekao da onaj ko u jednom danu kaže stotinu puta ove riječi, kao da je oslobodio deset robova, upiše mu se stotinu dobrih djela i pobriše stotinu loših. Biće mu zaštita od šejtana toga dana sve dok ne omrkne. Niko neće učiniti bolje od onoga što je on uradio, osim onoga ko to više puta izgovori."
-          }
-        ],
-        "english": [
-          {
-            "title": "",
-            "source": "Whoever recites this one hundred times a day will have the reward of freeing ten slaves. One hundred Hasanaat (rewards) will be written for him, and one hundred misdeeds will be washed away. He will be shielded from Satan until the evening. No one will be able to present anything better than this except for someone who has recited more than this. (Al-Bukhari 4/95, Muslim 4/2071)"
-          }
-        ]
-      }
-    ,
+    "benefits": {
+      "bosnian": [
+        {
+          "title": "Oprost grijeha, zastita od sejtana, nagrada oslobadjanja roba..",
+          "source": "Prenosi se od Ebu Hurejre, r.a, da je Poslanik ﷺ rekao da onaj ko u jednom danu kaže stotinu puta ove riječi, kao da je oslobodio deset robova, upiše mu se stotinu dobrih djela i pobriše stotinu loših. Biće mu zaštita od šejtana toga dana sve dok ne omrkne. Niko neće učiniti bolje od onoga što je on uradio, osim onoga ko to više puta izgovori."
+        }
+      ],
+      "english": [
+        {
+          "title": "",
+          "source": "Whoever recites this one hundred times a day will have the reward of freeing ten slaves. One hundred Hasanaat (rewards) will be written for him, and one hundred misdeeds will be washed away. He will be shielded from Satan until the evening. No one will be able to present anything better than this except for someone who has recited more than this. (Al-Bukhari 4/95, Muslim 4/2071)"
+        }
+      ]
+    },
     "sentences": [
       {
         "bosnian": "Nema boga",

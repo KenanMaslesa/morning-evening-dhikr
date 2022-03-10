@@ -30,9 +30,11 @@
       </div>
 
       <div class="recitate-counter-wrapper">
-        <div class="recitate-counter" [class.done]="dhikr.recitate <= 0" (click)="dhikr.recitate = dhikr.recitate-1; notificationsService.vibrate(50)">
-          {{dhikr.recitate >= 1? dhikr.recitate: ''}}
-          <ion-icon *ngIf="dhikr.recitate<=0" name="checkmark-done-outline"></ion-icon>
+        <div class="recitate-counter" [class.done]="dhikr.counter >= dhikr.recitate" (click)="onCounterClick(dhikr)">
+          <ng-container *ngIf="dhikr.counter < dhikr.recitate">
+            {{dhikr.counter}}/{{dhikr.recitate}}
+          </ng-container>
+          <ion-icon *ngIf="dhikr.counter >= dhikr.recitate" name="checkmark-done-outline"></ion-icon>
         </div>
       </div>
 

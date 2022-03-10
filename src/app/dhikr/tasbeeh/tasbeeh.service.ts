@@ -143,7 +143,7 @@ export class TasbeehService {
       });
     }
     if (this.dhikrsFromStorage.length === 0) {
-        for(let i = 1; i <= this.getDaysNumberOfCurrentMonth(); i++) {
+        for(let i = new Date().getDate(); i <= this.getDaysNumberOfCurrentMonth(); i++) {
           const obj = {
             date: this.getCurrentDateAsString(new Date(new Date().setDate(i))),
             dhikrs: JSON.parse(JSON.stringify(this.dhikrs))

@@ -7,6 +7,9 @@
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
     <ion-buttons slot="end">
+      <ion-icon (click)="presentModal()" name="stats-chart-outline"></ion-icon>
+    </ion-buttons>
+    <ion-buttons slot="end">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
   </ion-toolbar>
@@ -14,7 +17,7 @@
 
 <ion-content [fullscreen]="true">
   <ion-content>
-    <app-dhikr-template [dhikrs]="eveningDhikrs">
+    <app-dhikr-template [dhikrType]="dhikrType" [dhikrs]="eveningDhikrs">
       <ng-container firstSlide>
         <header class="slide__header">
           <h2>Večernji zikr</h2>

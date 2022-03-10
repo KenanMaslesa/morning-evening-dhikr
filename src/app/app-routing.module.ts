@@ -45,7 +45,7 @@ const routes: Routes = [
   {
     path: 'tasbeeh',
     loadChildren: () => import('./dhikr/tasbeeh/tabs.module').then( m => m.TabsPageModule)
-  },
+  }
 ];
 @NgModule({
   imports: [

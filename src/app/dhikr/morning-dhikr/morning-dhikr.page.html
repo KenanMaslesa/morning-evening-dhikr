@@ -7,13 +7,16 @@
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
     <ion-buttons slot="end">
+      <ion-icon (click)="presentModal()" name="stats-chart-outline"></ion-icon>
+    </ion-buttons>
+    <ion-buttons slot="end">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <app-dhikr-template [dhikrs]="morningDhikrs">
+  <app-dhikr-template [dhikrType]="dhikrType" [dhikrs]="morningDhikrs">
     <ng-container firstSlide>
       <header class="slide__header">
         <h2>Jutarnji zikr</h2>
