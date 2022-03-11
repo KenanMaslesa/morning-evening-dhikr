@@ -18,11 +18,9 @@
   </ion-item>
 
   <section>
-    <p class="no-dhikrs" *ngIf="dhikrsByMonth.length === 0">Nemate proučenog jutarnjeg zikra za odabrani mjesec</p>
-
     <ion-card>
       <ion-card-header>
-        <ion-card-subtitle>Ukupan broj proučenog jutarnjeg zikra po danima</ion-card-subtitle>
+        <ion-card-subtitle>{{dhikrsByMonth.length === 0? 'Nemate proučenog jutarnjeg zikra za odabrani mjesec':'Ukupan broj proučenog jutarnjeg zikra po danima' }} </ion-card-subtitle>
       </ion-card-header>
       <ion-card-content>
         <div class="graph-wrapper">
