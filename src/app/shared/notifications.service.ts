@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {
+  ELocalNotificationTriggerUnit,
   ILocalNotification,
   LocalNotifications,
 } from '@awesome-cordova-plugins/local-notifications/ngx';
@@ -61,48 +62,76 @@ export class NotificationsService {
       const salahs = vaktija.getDailyPrayerTimes(77);
       const fajr = salahs.prayerTimes[0];
       const asr = salahs.prayerTimes[3];
+      const isha = salahs.prayerTimes[5];
       this.scheduleNotificationForMorningDhikr(fajr.hours, fajr.minutes);
       this.scheduleNotificationForEveningDhikr(asr.hours, asr.minutes);
+      this.scheduleNotificationForDhikrBeforeSleeping(isha.hours, isha.minutes);
     }
   }
 
   private scheduleNotificationForMorningDhikr(hour = 6, minute = 30) {
+    const date = new Date();
+    date.setHours(hour);
+    date.setMinutes(minute);
     this.showNotification({
       title: `Vrijeme je za jutarnji zikr`,
       text: 'Započni dan spominjanjem Allaha Uzvišenog i tako se zaštiti i u svoj život unesi sreću i bereket',
       id: 10,
       trigger: {
-        every: {
-          hour,
-          minute,
-        },
-        count: 10,
+        every: ELocalNotificationTriggerUnit.DAY,
+        count: 5,
+        firstAt: date
       },
       badge: 1,
       vibrate: true,
       lockscreen: true,
-      foreground: true,
+      foreground: false,
       sticky: true,
       priority: 2,
     });
   }
 
   private scheduleNotificationForEveningDhikr(hour = 15, minute = 30) {
+    const date = new Date();
+    date.setHours(hour);
+    date.setMinutes(minute);
+    date.setSeconds(0);
     this.showNotification({
       title: `Vrijeme je za večernji zikr`,
       text: 'Završi dan spominjanjem Allaha Uzvišenog i tako se zaštiti i u svoj život unesi sreću i bereket',
       id: 11,
       trigger: {
-        every: {
-          hour,
-          minute,
-        },
-        count: 10,
+        every: ELocalNotificationTriggerUnit.DAY,
+        count: 5,
+        firstAt: date
       },
       badge: 1,
       vibrate: true,
       lockscreen: true,
-      foreground: true,
+      foreground: false,
+      sticky: true,
+      priority: 2,
+    });
+  }
+
+  private scheduleNotificationForDhikrBeforeSleeping(hour = 22, minute = 0) {
+    const date = new Date();
+    date.setHours(hour);
+    date.setMinutes(minute);
+    date.setSeconds(0);
+    this.showNotification({
+      title: `Vrijeme je za zikr prije spavanja`,
+      text: 'Allah ti se smilovao, prouči zikr prije spavanja da budeš siguran na dunjaluku i ahiretu',
+      id: 12,
+      trigger: {
+        every: ELocalNotificationTriggerUnit.MINUTE,
+        count: 5,
+        firstAt: date
+      },
+      badge: 1,
+      vibrate: true,
+      lockscreen: true,
+      foreground: false,
       sticky: true,
       priority: 2,
     });

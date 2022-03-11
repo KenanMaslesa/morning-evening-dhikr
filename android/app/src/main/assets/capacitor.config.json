@@ -1,6 +1,6 @@
 {
-	"appId": "zikr",
-	"appName": "zikr",
+	"appId": "com.keno.zikr",
+	"appName": "Zikr",
 	"webDir": "www",
 	"bundledWebRuntime": false
 }
