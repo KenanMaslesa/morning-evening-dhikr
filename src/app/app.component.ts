@@ -45,7 +45,7 @@ export class AppComponent {
       );
     }
     else {
-      localStorage.setItem('theme', '#536a9e');
+      localStorage.setItem('theme', JSON.stringify('#536a9e'));
     }
     if (themeBackgroundColor) {
       document.documentElement.style.setProperty(
