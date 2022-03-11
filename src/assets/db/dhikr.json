@@ -1339,6 +1339,8 @@
     "audio": "assets/audio/bismikeRabbi.mp3",
     "category": "BEFORE-SLEEPING",
     "recitate": 1,
+    "counter": 0,
+    "id": 19,
     "translation": {
       "bosnian": "S Tvojim imenom, Gospodaru moj, legoh na bok i ako bude Tvoja volja, podići ću se. Ako uzmeš moju dušu, budi milostiv prema njoj, a ako je vratiš, zaštiti je kao što si zaštitio Svoje dobre robove.",
       "english": ""
@@ -1395,6 +1397,8 @@
     "audio": "assets/audio/AllahumeInnekeHalakteNefsi.mp3",
     "category": "BEFORE-SLEEPING",
     "recitate": 1,
+    "counter": 0,
+    "id": 20,
     "translation": {
       "bosnian": "Allahu, Ti si, doista, stvorio moju dušu i Ti je umrtvljuješ. Tebi pripada njena smrt i njen život, pa ako je oživiš – zaštiti je, a ako je umrtviš – oprosti joj. Allahu, Tebe molim za oprost.",
       "english": ""
@@ -1458,6 +1462,8 @@
     "audio": "assets/audio/AllahummeQiniAzabeke.mp3",
     "category": "BEFORE-SLEEPING",
     "recitate": 1,
+    "counter": 0,
+    "id": 21,
     "translation": {
       "bosnian": "Allahu, sačuvaj me od kazne Svoje na dan kada budeš oživio Svoje robove.",
       "english": ""
@@ -1493,6 +1499,8 @@
     "audio": "assets/audio/bismikallahummeEmutuVeAhja.mp3",
     "category": "BEFORE-SLEEPING",
     "recitate": 1,
+    "counter": 0,
+    "id": 22,
     "translation": {
       "bosnian": "S Tvojim imenom, Allahu moj, umirem i živim.",
       "english": ""
@@ -1535,6 +1543,8 @@
     "audio": "assets/audio/subhanallah.mp3",
     "category": "BEFORE-SLEEPING",
     "recitate": 33,
+    "counter": 0,
+    "id": 23,
     "translation": {
       "bosnian": "Slavljen neka je Allah",
       "english": ""
@@ -1563,6 +1573,8 @@
     "audio": "assets/audio/elhamdulillah.mp3",
     "category": "BEFORE-SLEEPING",
     "recitate": 33,
+    "counter": 0,
+    "id": 24,
     "translation": {
       "bosnian": "Hvala Allahu.",
       "english": ""
@@ -1591,6 +1603,8 @@
     "audio": "assets/audio/tekbir.mp3",
     "category": "BEFORE-SLEEPING",
     "recitate": 34,
+    "counter": 0,
+    "id": 25,
     "translation": {
       "bosnian": "Allah je najveci",
       "english": ""
@@ -1619,6 +1633,8 @@
     "audio": "assets/audio/ajetul-kursij.mp3",
     "category": "BEFORE-SLEEPING",
     "recitate": 1,
+    "counter": 0,
+    "id": 26,
     "translation": {
       "bosnian": "Allah je – nema boga osim Njega – Živi i Vječni! Ne obuzima Ga ni drijemež ni san! Njegovo je ono što je na nebesima i ono što je na Zemlji! Ko se može pred Njim zauzimati za nekoga bez dopuštenja Njegova?! On zna šta je bilo i prije njih i šta će biti poslije njih, a od onoga što On zna – drugi znaju samo onoliko koliko On želi. Moć Njegova obuhvata i nebesa i Zemlju i Njemu ne dojadi održavanje njihovo; On je Svevišnji, Veličanstveni!",
       "english": ""
@@ -1647,6 +1663,8 @@
     "audio": "assets/audio/amenerrasulu.mp3",
     "category": "BEFORE-SLEEPING",
     "recitate": 1,
+    "counter": 0,
+    "id": 27,
     "translation": {
       "bosnian": "Poslanik vjeruje u ono što mu se objavljuje od Gospodara Njegova, i vjernici, svaki od njih vjeruje u Allaha, i meleke Njegove, i Knjige Njegove, i poslanike Njegove, mi među poslanicima Njegovim ne pravimo podjelu! Oni govore: 'Čujemo i pokoravamo se. Molimo Te za oprost, Gospodaru naš, i Tebi se vraćamo! Allah nijednu osobu ne opterećuje preko mogućnosti njene; njoj u korist pripada ono što je stekla, a protiv nje je što je stekla (zla)! 'Gospodaru naš, ne uzmi nam u grijeh ako zaboravimo ili nehotice pogriješimo! Gospodaru naš, ne tovari na nas breme kao što si ga natovario na one prije nas! Gospodaru naš, ne opterećuj nas onim za što nemamo snage! Ti preko grijeha nam prijeđi, oprosti nam i smiluj nam se! Ti si Gospodar naš, pa pomozi nas protiv naroda koji ne vjeruje!'",
       "english": ""
