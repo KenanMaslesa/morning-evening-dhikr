@@ -108,17 +108,22 @@ main {
         font-style: italic;
       }
     }
+  }
+}
 
-    .icons {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 50px;
-      color: var(--ion-color-primary);
+.icons {
+  position: absolute;
+  top: 10px;
+  z-index: 99;
+  left: 50%;
+  transform: translate(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  color: var(--ion-color-primary);
 
-      .reset-icon {
-        margin-right: 10px;
-      }
-    }
+  .reset-icon {
+    margin-right: 10px;
   }
 }

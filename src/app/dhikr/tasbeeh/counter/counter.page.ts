@@ -16,7 +16,7 @@ export class CounterPage implements OnInit {
     private alertController: AlertController
   ) {
     const vibrate = localStorage.getItem('vibrate');
-    if(vibrate) {
+    if (vibrate) {
       this.vibrate = JSON.parse(vibrate);
     }
   }
@@ -28,11 +28,13 @@ export class CounterPage implements OnInit {
     if (
       this.tasbeehService.selectedDhikr.counter === 33 ||
       this.tasbeehService.selectedDhikr.counter === 66 ||
-      this.tasbeehService.selectedDhikr.counter === 100 && this.vibrate
+      this.tasbeehService.selectedDhikr.counter === 100
     ) {
-      this.notificationsService.vibrate(250);
+      if (this.vibrate) {
+        this.notificationsService.vibrate(250);
+      }
     } else {
-      if(this.vibrate){
+      if (this.vibrate) {
         this.notificationsService.vibrate(50);
       }
     }
@@ -57,16 +59,17 @@ export class CounterPage implements OnInit {
           text: 'NE',
           role: 'cancel',
           cssClass: 'secondary',
-        }, {
+        },
+        {
           text: 'Da',
           handler: () => {
-            if(this.vibrate){
+            if (this.vibrate) {
               this.notificationsService.vibrate(500);
             }
             this.tasbeehService.resetCounter();
-          }
-        }
-      ]
+          },
+        },
+      ],
     });
 
     await alert.present();
