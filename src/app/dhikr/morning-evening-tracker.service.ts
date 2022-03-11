@@ -10,8 +10,10 @@ export enum DhikrType {
 export class MorningEveningTrackerService {
   localStorageKeyMorningDhikr: string;
   localStorageKeyEveningDhikr: string;
+  localStorageKeyDhikrBeforeSleeping: string;
   morningDhikrsFromStorage = [];
   eveningDhikrsFromStorage = [];
+  dhikrBeforeSleepingFromStorage = [];
   currentDate: Date;
   morningAndEveningDhikr = [
     {
@@ -91,6 +93,44 @@ export class MorningEveningTrackerService {
       counter: 0
     }
   ];
+  dhikrBeforeSleeping = [
+    {
+      id: 19,
+      counter: 0
+    },
+    {
+      id: 20,
+      counter: 0
+    },
+    {
+      id: 21,
+      counter: 0
+    },
+    {
+      id: 22,
+      counter: 0
+    },
+    {
+      id: 23,
+      counter: 0
+    },
+    {
+      id: 24,
+      counter: 0
+    },
+    {
+      id: 25,
+      counter: 0
+    },
+    {
+      id: 26,
+      counter: 0
+    },
+    {
+      id: 27,
+      counter: 0
+    },
+  ];
 
   constructor() {
     this.morningDhikr.push(...this.morningAndEveningDhikr);
@@ -104,9 +144,11 @@ export class MorningEveningTrackerService {
 
     this.localStorageKeyMorningDhikr = 'morningDhikr ' + monthAndYear;
     this.localStorageKeyEveningDhikr = 'eveningDhikr ' + monthAndYear;
+    this.localStorageKeyDhikrBeforeSleeping = 'beforeSleeping ' + monthAndYear;
 
     this.getMonthlyMorningDhikrFromLocalStorage();
     this.getMonthlyEveningDhikrFromLocalStorage();
+    this.getMonthlyDhikrBeforeSleepingFromLocalStorage();
 
     this.clearLocalStorageExpiredData();
   }
@@ -118,7 +160,7 @@ export class MorningEveningTrackerService {
     if (eveningDhikrFromStorage) {
       this.eveningDhikrsFromStorage = JSON.parse(eveningDhikrFromStorage);
     } else {
-      this.setInitailValuesForDhikrForCurrentMonth(false, true);
+      this.setInitailValuesForDhikrForCurrentMonth(false, true, false);
     }
   }
 
@@ -129,13 +171,25 @@ export class MorningEveningTrackerService {
     if (morningDhikrFromStorage) {
       this.morningDhikrsFromStorage = JSON.parse(morningDhikrFromStorage);
     } else {
-      this.setInitailValuesForDhikrForCurrentMonth(true, false);
+      this.setInitailValuesForDhikrForCurrentMonth(true, false, false);
+    }
+  }
+
+  getMonthlyDhikrBeforeSleepingFromLocalStorage() {
+    const dhikrBeforeSleepingFromStorage = localStorage.getItem(
+      this.localStorageKeyDhikrBeforeSleeping
+    );
+    if (dhikrBeforeSleepingFromStorage) {
+      this.dhikrBeforeSleepingFromStorage = JSON.parse(dhikrBeforeSleepingFromStorage);
+    } else {
+      this.setInitailValuesForDhikrForCurrentMonth(false, false, true);
     }
   }
 
   setInitailValuesForDhikrForCurrentMonth(
     morningDhikrs = false,
-    eveningDhikrs = false
+    eveningDhikrs = false,
+    beforeSleeping = false
   ) {
     for (
       let i = new Date().getDate();
@@ -153,6 +207,9 @@ export class MorningEveningTrackerService {
       if (eveningDhikrs) {
         this.eveningDhikrsFromStorage.push({ date, total: 0, dhikrs:JSON.parse(JSON.stringify(this.eveningDhikr)) });
       }
+      if(beforeSleeping) {
+        this.dhikrBeforeSleepingFromStorage.push({ date, total: 0, dhikrs:JSON.parse(JSON.stringify(this.dhikrBeforeSleeping)) });
+      }
     }
     if (morningDhikrs) {
       localStorage.setItem(
@@ -164,6 +221,12 @@ export class MorningEveningTrackerService {
       localStorage.setItem(
         this.localStorageKeyEveningDhikr,
         JSON.stringify(this.eveningDhikrsFromStorage)
+      );
+    }
+    if(beforeSleeping) {
+      localStorage.setItem(
+        this.localStorageKeyDhikrBeforeSleeping,
+        JSON.stringify(this.dhikrBeforeSleepingFromStorage)
       );
     }
   }
@@ -184,6 +247,22 @@ export class MorningEveningTrackerService {
     );
   }
 
+  increaseCounterForDhikrBeforeSleeping(dhikr) {
+    this.dhikrBeforeSleepingFromStorage.forEach((item) => {
+      if (item.date === this.getCurrentDateAsString(new Date())) {
+        item.dhikrs.forEach((element) => {
+          if (element.id === dhikr.id) {
+            element.counter++;
+          }
+        });
+      }
+    });
+    localStorage.setItem(
+      this.localStorageKeyDhikrBeforeSleeping,
+      JSON.stringify(this.dhikrBeforeSleepingFromStorage)
+    );
+  }
+
   setTotalCounterForMorningDhikr() {
     this.morningDhikrsFromStorage.forEach((item) => {
       if (item.date === this.getCurrentDateAsString(new Date())) {
@@ -193,6 +272,18 @@ export class MorningEveningTrackerService {
     localStorage.setItem(
       this.localStorageKeyMorningDhikr,
       JSON.stringify(this.morningDhikrsFromStorage)
+    );
+  }
+
+  setTotalCounterForDhikrBeforeSleeping() {
+    this.dhikrBeforeSleepingFromStorage.forEach((item) => {
+      if (item.date === this.getCurrentDateAsString(new Date())) {
+        item.total++;
+      }
+    });
+    localStorage.setItem(
+      this.localStorageKeyDhikrBeforeSleeping,
+      JSON.stringify(this.dhikrBeforeSleepingFromStorage)
     );
   }
 
@@ -218,6 +309,17 @@ export class MorningEveningTrackerService {
     }
   }
 
+  getDhikrBeforeSleepingByMonth(month: string): Observable<any[]> {
+    const localStorageKey = 'beforeSleeping ' + month + '.' + this.currentDate.getFullYear().toString();
+    const dhikrBeforeSleepingByMonthFromStorage = localStorage.getItem(localStorageKey);
+    if(dhikrBeforeSleepingByMonthFromStorage) {
+      return of(JSON.parse(dhikrBeforeSleepingByMonthFromStorage));
+    }
+    else {
+      return of([]);
+    }
+  }
+
   getTodaysMorningDhikrCounters(): Observable<any[]> {
     let result = [];
     this.morningDhikrsFromStorage.forEach((item) => {
@@ -232,6 +334,17 @@ export class MorningEveningTrackerService {
   getTodaysEveningDhikrCounters(): Observable<any[]> {
     let result = [];
     this.eveningDhikrsFromStorage.forEach((item) => {
+      if (item.date === this.getCurrentDateAsString(new Date())) {
+        result = item.dhikrs;
+        return of(result);
+      }
+    });
+    return of(result);
+  }
+
+  getTodaysDhikrBeforeSleepingCounters(): Observable<any[]> {
+    let result = [];
+    this.dhikrBeforeSleepingFromStorage.forEach((item) => {
       if (item.date === this.getCurrentDateAsString(new Date())) {
         result = item.dhikrs;
         return of(result);

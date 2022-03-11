@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Zikr prije spavanja - Tracker
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item style="padding: 0 10px; font-size: 14px;">
+    <ion-label>Mjesec</ion-label>
+    <ion-select [value]="selectedMonth.value" interface="popover" #month (ionChange)="onMonthChanged(month.value)">
+      <ion-select-option *ngFor="let month of months" [value]="month.value">{{month.name}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <section>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>{{dhikrsByMonth.length === 0? 'Nemate proučenog zikra prije spavanja za odabrani mjesec':'Ukupan broj proučenog zikra prije spavanja po danima' }} </ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <div class="graph-wrapper">
+          <div class="graph">
+            <canvas #barChart height="300px" width="0"></canvas>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </section>
+</ion-content>

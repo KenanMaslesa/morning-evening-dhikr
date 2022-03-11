@@ -83,6 +83,9 @@ export class DhikrTemplateComponent implements OnInit {
       else if(this.dhikrType === DhikrType.eveningDhikr) {
         this.morningEveningTrackerService.setTotalCounterForEveningDhikr();
       }
+      else if(this.dhikrType === DhikrType.dhikrBeforeSleeping) {
+        this.morningEveningTrackerService.setTotalCounterForDhikrBeforeSleeping();
+      }
     }
     if (dhikr.counter <= dhikr.recitate){
       if(this.dhikrType === DhikrType.morningDhikr) {
@@ -90,6 +93,9 @@ export class DhikrTemplateComponent implements OnInit {
       }
       else if(this.dhikrType === DhikrType.eveningDhikr) {
         this.morningEveningTrackerService.increaseCounterForEveningDhikr(dhikr);
+      }
+      else if(this.dhikrType === DhikrType.dhikrBeforeSleeping) {
+        this.morningEveningTrackerService.increaseCounterForDhikrBeforeSleeping(dhikr);
       }
       this.notificationsService.vibrate(50);
     }

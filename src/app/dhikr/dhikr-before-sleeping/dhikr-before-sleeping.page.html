@@ -7,13 +7,16 @@
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
     <ion-buttons slot="end">
+      <ion-icon routerLink="/dhikr-before-sleeping/tracker" class="tracker-icon" name="stats-chart-outline"></ion-icon>
+    </ion-buttons>
+    <ion-buttons slot="end">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <app-dhikr-template [dhikrs]="dhikrs">
+  <app-dhikr-template [dhikrType]="dhikrType" [dhikrs]="dhikrs">
     <ng-container firstSlide>
       <header class="slide__header">
         <h2>Zikr prije spavanja</h2>

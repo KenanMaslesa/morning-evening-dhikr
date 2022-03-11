@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: DhikrBeforeSleepingPage
+  },
+  {
+    path: 'tracker',
+    loadChildren: () => import('./tracker/tracker.module').then( m => m.TrackerPageModule)
   }
 ];
 
