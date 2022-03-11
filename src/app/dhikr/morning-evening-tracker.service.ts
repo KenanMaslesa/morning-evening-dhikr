@@ -130,6 +130,18 @@ export class MorningEveningTrackerService {
       id: 27,
       counter: 0
     },
+    {
+      id: 30,
+      counter: 0
+    },
+    {
+      id: 31,
+      counter: 0
+    },
+    {
+      id: 32,
+      counter: 0
+    },
   ];
 
   constructor() {
