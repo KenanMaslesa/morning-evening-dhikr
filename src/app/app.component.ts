@@ -44,6 +44,9 @@ export class AppComponent {
         `${JSON.parse(themeColor)}`
       );
     }
+    else {
+      localStorage.setItem('theme', '#536a9e');
+    }
     if (themeBackgroundColor) {
       document.documentElement.style.setProperty(
         `--background-color`,
