@@ -34,7 +34,7 @@ export class AppComponent {
     },
   ];
   constructor(private notificationService: NotificationsService) {
-    this.notificationService.scheduleNotificationsForMonth();
+    this.notificationService.scheduleNotifications();
 
     const themeColor = localStorage.getItem('theme');
     const themeBackgroundColor = localStorage.getItem('themeBackgroundColor');
