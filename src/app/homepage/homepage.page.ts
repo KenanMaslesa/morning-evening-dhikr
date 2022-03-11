@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {SplashScreen} from '@capacitor/splash-screen';
 
 @Component({
   selector: 'app-homepage',
@@ -27,11 +28,6 @@ export class HomepagePage implements OnInit {
       url: '/tasbeeh',
       icon: 'finger-print-outline',
     },
-    // {
-    //   title: 'O zikru',
-    //   url: '/benefits',
-    //   icon: 'information-circle-outline',
-    // },
     {
       title: 'Postavke',
       url: '/settings',
@@ -86,6 +82,9 @@ export class HomepagePage implements OnInit {
 
   ngOnInit() {
     this.randomAyah = this.ayahs[this.randomNum()];
+      setTimeout(() => {
+        SplashScreen.hide();
+      }, 2000);
   }
   ionViewWillEnter() {
     this.randomAyah = this.ayahs[this.randomNum()];

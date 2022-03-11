@@ -1,4 +1,4 @@
-package io.ionic.starter;
+package com.keno.zikr;
 
 import com.getcapacitor.BridgeActivity;
 
