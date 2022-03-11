@@ -73,12 +73,6 @@ export class TasbeehService {
       favorite: false,
     },
     {
-      arabic: 'اَللّٰهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ',
-      bosnian: '',
-      counter: 0,
-      favorite: false,
-    },
-    {
       arabic: 'سُبْحَانَ اللّٰهِ وَ بِحَمْدِهِ ، سُبْحَانَ اللّٰهِ الْعَظِيْمِ',
       bosnian: '',
       counter: 0,
@@ -108,13 +102,6 @@ export class TasbeehService {
     {
       arabic:
         'أَسْتَغْفِرُ اللّٰهَ الْعَظِيْمَ الَّذِي لَٓا إِلَهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّوْمُ وَ أَتُوْبُ إِلَيْهِ',
-      bosnian: '',
-      counter: 0,
-      favorite: false,
-    },
-    {
-      arabic:
-        'اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ، كَمَا صَلَّيْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ، إِنَّكَ حَمِيدٌ مَجِيدٌ  اللَّهُمَّ بَارِكْ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ، كَمَا بَارَكْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ، إِنَّكَ حَمِيدٌ مَجِيدٌ',
       bosnian: '',
       counter: 0,
       favorite: false,
@@ -201,12 +188,12 @@ export class TasbeehService {
       if (item.date === this.getCurrentDateAsString(new Date())) {
         item.dhikrs.forEach(element => {
           if(element.arabic === this.selectedDhikr.arabic){
-            element.counter = -1;
+            element.counter = 0;
           }
         });
       }
     });
-    this.selectedDhikr.counter = -1;
+    this.selectedDhikr.counter = 0;
     localStorage.setItem(this.localStorageKey, JSON.stringify(this.dhikrsFromStorage));
     localStorage.setItem('selectedDhikr', JSON.stringify(this.selectedDhikr));
   }

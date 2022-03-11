@@ -22,12 +22,14 @@
     height: 80px;
     border-radius: 50%;
     border: 7px solid var(--ion-color-primary);
+    object-fit: cover;
   }
 
   h2 {
     font-weight: 400;
     color: #fff;
     margin-left: 15px;
+    font-size: 22px;
   }
 }
 
