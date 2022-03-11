@@ -16,7 +16,7 @@
 @import "~@ionic/angular/css/normalize.css";
 @import "~@ionic/angular/css/structure.css";
 @import "~@ionic/angular/css/typography.css";
-@import '~@ionic/angular/css/display.css';
+@import "~@ionic/angular/css/display.css";
 
 /* Optional CSS utils that can be commented out */
 @import "~@ionic/angular/css/padding.css";
@@ -53,7 +53,14 @@ ion-tab-bar {
   margin-right: 10px;
 }
 
-.firstSlide, .lastSlide {
+.tracker-icon {
+  margin-right: 10px;
+  font-size: 19px;
+  margin-top: -3px;
+}
+
+.firstSlide,
+.lastSlide {
   .content {
     position: relative;
 
