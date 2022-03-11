@@ -87,6 +87,9 @@ export class HomepagePage implements OnInit {
   ngOnInit() {
     this.randomAyah = this.ayahs[this.randomNum()];
   }
+  ionViewWillEnter() {
+    this.randomAyah = this.ayahs[this.randomNum()];
+  }
 
   randomNum() {
     return Math.floor(Math.random() * (this.ayahs.length - 0)) + 0; // You can remove the Math.floor if you don't want it to be an integer
