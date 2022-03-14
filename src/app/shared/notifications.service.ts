@@ -32,7 +32,7 @@ export class NotificationsService {
     if (isNotificationEnabled) {
       this.isNotificationEnabled = JSON.parse(isNotificationEnabled);
     } else {
-      this.isNotificationEnabled = true;
+      this.isNotificationEnabled = false; //disabled by default
     }
   }
 
