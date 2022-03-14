@@ -367,28 +367,28 @@
       {
         "bosnian": "Allah mi je dovoljan,",
         "arabic": "حَسْبِيَ الله",
-        "transcription": "",
+        "transcription": "HASBIJALLAH,",
         "startSecond": 0.1,
         "endSecond": 1.5
       },
       {
         "bosnian": "nema boga osim Njega!",
         "arabic": "لاَ إِلهَ إِلاَّ هُوَ",
-        "transcription": "",
+        "transcription": "LA ILAHE ILLA HUVE",
         "startSecond": 1.6,
         "endSecond": 5.3
       },
       {
         "bosnian": "Na Njega se oslanjam,",
         "arabic": "عَلَيْهِ تَوَكَّلتُ",
-        "transcription": "",
+        "transcription": "ALEJHI TEVEKELTU,",
         "startSecond": 5.4,
         "endSecond": 7.2
       },
       {
         "bosnian": "i On je Gospodar Arša veličanstvenog!",
         "arabic": "وَهُوَ رَبُّ الْعَرشِ الْعَظِيمِ",
-        "transcription": "",
+        "transcription": "VE HUVE RABBUL ARŠIL AZIM",
         "startSecond": 7.3,
         "endSecond": 11.5
       }
