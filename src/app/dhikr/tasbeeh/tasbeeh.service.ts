@@ -18,13 +18,13 @@ export class TasbeehService {
     },
     {
       arabic: 'الْحَمْدُ لِلَّهِ',
-      bosnian: 'Hvala Allahu',
+      bosnian: 'Hvaljen neka je Allah',
       counter: 0,
       favorite: false,
     },
     {
       arabic: 'اللَّهُ أَكْبَرُ',
-      bosnian: 'Allah je najveci',
+      bosnian: 'Allah je najveći',
       counter: 0,
       favorite: false,
     },
@@ -36,7 +36,7 @@ export class TasbeehService {
     },
     {
       arabic: 'اللَّهُــمَّ صَلِّ وَسَـــلِّمْ على نَبِيِّنَـــا مُحمَّد',
-      bosnian: 'O Allahu, blagoslovi našeg poslanika Muhammeda ﷺ.',
+      bosnian: 'O Allahu, blagoslovi našeg poslanika Muhammeda ﷺ',
       counter: 0,
       favorite: false,
     },
@@ -56,53 +56,46 @@ export class TasbeehService {
     },
     {
       arabic: 'أَسْتَغْفِرُ اللّٰهَ الْعَظِیْمَ',
-      bosnian: '',
+      bosnian: 'Molim oprost od Svemogućeg Allaha',
       counter: 0,
       favorite: false,
     },
     {
       arabic: 'لَٓا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللّٰهِ',
-      bosnian: '',
+      bosnian: 'Nema snage niti moći osim kod Allaha',
       counter: 0,
       favorite: false,
     },
     {
       arabic: 'لَٓا إِلَهَ إِلّاَ اللّٰهُ مُحَمَّدٌ رَسُوْلُ اللّٰهِ',
-      bosnian: '',
+      bosnian: 'Nema boga osim Allaha, Muhammed je Njegov Poslanik',
       counter: 0,
       favorite: false,
     },
     {
       arabic: 'سُبْحَانَ اللّٰهِ وَ بِحَمْدِهِ ، سُبْحَانَ اللّٰهِ الْعَظِيْمِ',
-      bosnian: '',
+      bosnian: 'Neka je slavljen i hvaljen Uzvišeni Allah, neka je slavljen Allah Veličanstveni',
       counter: 0,
       favorite: false,
     },
     {
       arabic:
         'سُبْحَانَ اللّٰهِ ، وَالْحَمْدُلِلّٰهِ ، وَ لَٓا إِلَهَ إِلّاَ اللّٰهُ ، وَ اللّٰهُ أَكْبَرُ',
-      bosnian: '',
-      counter: 0,
-      favorite: false,
-    },
-    {
-      arabic:
-        'اَللّٰهُمَّ إِنَّكَ عَفُوٌّ كَرِيْمٌ تُحِبُّ الْعَفْوَ فَاعْفُ عَنِّي',
-      bosnian: '',
+      bosnian: 'Neka je slavljen i hvaljen Allah, nema boga osim Allaha, Allah je najveći',
       counter: 0,
       favorite: false,
     },
     {
       arabic:
         'لَٓا إِلَهَ إِلّاَ أَنْتَ سُبْحَانَكَ إِنِّي كُنْتُ مِنَ الظَّالِمِيْنَ',
-      bosnian: '',
+      bosnian: 'Nema boga, osim Tebe, hvaljen neka si, ja sam se zaista ogriješio prema sebi!',
       counter: 0,
       favorite: false,
     },
     {
       arabic:
         'أَسْتَغْفِرُ اللّٰهَ الْعَظِيْمَ الَّذِي لَٓا إِلَهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّوْمُ وَ أَتُوْبُ إِلَيْهِ',
-      bosnian: '',
+      bosnian: 'Tražim oprosta od Tebe Uzvišeni Allahu, osim Kojeg drugog boga nema, Živog i Postojanog Održavatelja, i Tebi se kajem.',
       counter: 0,
       favorite: false,
     },
