@@ -5,7 +5,7 @@ main {
   background-position: center;
   overflow: auto;
   position: relative;
-  min-height: 76vh;
+  min-height: 73vh;
 
   &::before {
     content: "";
@@ -74,7 +74,7 @@ main {
   background: var(--background-color), url(/assets/img/background.jpeg);
   position: relative;
   width: 101%;
-  min-height: 24vh;
+  min-height: 27vh;
   z-index: -1;
   display: flex;
   justify-content: center;
@@ -116,4 +116,25 @@ main {
       font-style: italic;
     }
   }
+}
+
+.share-icon {
+  position: absolute;
+    top: 0;
+    left: 15px;
+    font-size: 25px;
+    height: 48px;
+    transition: all 0.5s;
+
+    &:active {
+      color: var(--ion-color-primary);
+      font-size: 30px;
+    }
+}
+
+ion-menu-button {
+  position: absolute;
+  top: 0;
+  right: 15px;
+  font-size: 25px;
 }

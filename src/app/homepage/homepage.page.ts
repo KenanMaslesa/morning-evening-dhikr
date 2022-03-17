@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SocialSharing } from '@awesome-cordova-plugins/social-sharing/ngx';
 import {SplashScreen} from '@capacitor/splash-screen';
 
 @Component({
@@ -7,8 +8,6 @@ import {SplashScreen} from '@capacitor/splash-screen';
   styleUrls: ['./homepage.page.scss'],
 })
 export class HomepagePage implements OnInit {
-  toggleHeight = false;
-  height = 24;
   cards = [
     {
       title: 'Jutarnji zikr',
@@ -80,7 +79,9 @@ export class HomepagePage implements OnInit {
     }
   ];
   randomAyah: {ayah: string; source: string};
-  constructor() {}
+  appUrl = 'https://play.google.com/store/apps/details?id=com.keno.zikr';
+
+  constructor(private socialSharing: SocialSharing) {}
 
   ngOnInit() {
     this.randomAyah = this.ayahs[this.randomNum()];
@@ -96,10 +97,7 @@ export class HomepagePage implements OnInit {
     return Math.floor(Math.random() * (this.ayahs.length - 0)) + 0; // You can remove the Math.floor if you don't want it to be an integer
   }
 
-  increaseHeight(){
-    this.toggleHeight = !this.toggleHeight;
-    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-    this.toggleHeight? this.height = 35: this.height = 24;
-    this.randomAyah = this.ayahs[this.randomNum()];
+  shareApp() {
+    this.socialSharing.share('','','',this.appUrl);
   }
 }
