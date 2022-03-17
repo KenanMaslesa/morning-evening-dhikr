@@ -1,5 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 import { Chart, registerables } from 'chart.js';
+import { ChartComponent } from 'src/app/shared/components/chart/chart.component';
+import { DhikrService } from 'src/app/shared/dhikr.service';
 Chart.register(...registerables);
 import { MorningEveningTrackerService } from '../../morning-evening-tracker.service';
 
@@ -18,68 +21,78 @@ export class TrackerPage implements OnInit {
     name: string;
     value: string;
   };
+  showTotalSegment = true;
+  showByDhikrSegment = false;
+  eveningDhikr = [];
   months = [
     {
       name: 'Januar',
-      value: '1'
+      value: '1',
     },
     {
       name: 'Februar',
-      value: '2'
+      value: '2',
     },
     {
       name: 'Mart',
-      value: '3'
+      value: '3',
     },
     {
       name: 'April',
-      value: '4'
+      value: '4',
     },
     {
       name: 'Maj',
-      value: '5'
+      value: '5',
     },
     {
       name: 'Juni',
-      value: '6'
+      value: '6',
     },
     {
       name: 'Juli',
-      value: '7'
+      value: '7',
     },
     {
       name: 'August',
-      value: '8'
+      value: '8',
     },
     {
       name: 'Septembar',
-      value: '9'
+      value: '9',
     },
     {
       name: 'Oktobar',
-      value: '10'
+      value: '10',
     },
     {
       name: 'Novembar',
-      value: '11'
+      value: '11',
     },
     {
       name: 'Decembar',
-      value: '12'
-    }
+      value: '12',
+    },
   ];
-  constructor(private morningEveningTrackerService: MorningEveningTrackerService) {
+  constructor(
+    public morningEveningTrackerService: MorningEveningTrackerService,
+    private modalController: ModalController,
+    private dhikrService: DhikrService
+  ) {
     const currentMonthNumber = this.currentDate.getMonth() + 1;
     this.selectedMonth = {
       name: this.months[currentMonthNumber].name,
-      value: currentMonthNumber.toString()
+      value: currentMonthNumber.toString(),
     };
-   }
+  }
 
   ngOnInit() {
+    this.dhikrService.getEveningDhikr().subscribe(response => {
+      this.eveningDhikr = response;
+    });
     const themeColor = localStorage.getItem('theme');
     if (themeColor) {
-        this.themeColor = JSON.parse(themeColor);
+      this.themeColor = JSON.parse(themeColor);
     }
   }
 
@@ -88,15 +101,17 @@ export class TrackerPage implements OnInit {
   }
 
   getEveningDhikrData() {
-      this.morningEveningTrackerService.getEveningDhikrsByMonth(this.selectedMonth.value).subscribe(response => {
-      this.dhikrsByMonth = response;
-      const dates = this.dhikrsByMonth.map(item => item.date);
-      const counters = this.dhikrsByMonth.map(item => item.total);
-    this.createBarChart(dates,counters);
-    });
+    this.morningEveningTrackerService
+      .getEveningDhikrsByMonth(this.selectedMonth.value)
+      .subscribe((response) => {
+        this.dhikrsByMonth = response;
+        const dates = this.dhikrsByMonth.map((item) => item.date);
+        const counters = this.dhikrsByMonth.map((item) => item.total);
+        this.createBarChart(dates, counters);
+      });
   }
 
-  ionViewDidLeave()	{
+  ionViewDidLeave() {
     this.bars.destroy();
   }
 
@@ -105,27 +120,29 @@ export class TrackerPage implements OnInit {
       type: 'line',
       data: {
         labels,
-        datasets: [{
-          label: 'Vecernji zikr',
-          data,
-          backgroundColor: this.themeColor,
-          borderColor: 'gray',
-          borderWidth: 1,
-          fill: true
-        }]
+        datasets: [
+          {
+            label: 'Vecernji zikr',
+            data,
+            backgroundColor: this.themeColor,
+            borderColor: 'gray',
+            borderWidth: 1,
+            fill: true,
+          },
+        ],
       },
       options: {
         scales: {
           y: {
-              beginAtZero: true,
-              max: 14, //number of evening dhikrs
-              min: 0,
-              ticks: {
-                stepSize: 1,
-                autoSkip: false
-            }
+            beginAtZero: true,
+            max: 14, //number of evening dhikrs
+            min: 0,
+            ticks: {
+              stepSize: 1,
+              autoSkip: false,
+            },
           },
-      },
+        },
       },
     });
   }
@@ -134,5 +151,39 @@ export class TrackerPage implements OnInit {
     this.selectedMonth.value = month;
     this.bars.destroy();
     this.getEveningDhikrData();
+  }
+
+  segmentChanged(segment) {
+    if (segment === 'total') {
+      this.showTotalSegment = true;
+      this.showByDhikrSegment = false;
+    } else if (segment === 'byDhikr') {
+      this.showTotalSegment = false;
+      this.showByDhikrSegment = true;
+    }
+  }
+
+  async presentModal(labels: any, data: any, selectedDhikr: any, maxNumber: number, stepSize: number, autoSkip: boolean) {
+    const modal = await this.modalController.create({
+      component: ChartComponent,
+      cssClass: '',
+      initialBreakpoint: 0.5,
+      // breakpoints: [0.5, 0.9],
+      componentProps: {
+        labels,
+        data,
+        selectedDhikr,
+        maxNumber,
+        stepSize,
+        autoSkip
+      },
+    });
+    return await modal.present();
+  }
+
+  getParticularDhikr(dhikr: any) {
+    const obj =
+      this.morningEveningTrackerService.getDhikrForTrackerByMonthAndDhikrID('eveningDhikr' ,this.selectedMonth.value, dhikr.id);
+    this.presentModal(obj.labels, obj.data,null, obj.recitate, (obj.recitate>10?10:1), obj.recitate>10);
   }
 }

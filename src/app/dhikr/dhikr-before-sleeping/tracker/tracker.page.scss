@@ -19,3 +19,11 @@ ion-card {
     }
   }
 }
+
+.segment {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}

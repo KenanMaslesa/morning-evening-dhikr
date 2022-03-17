@@ -18,129 +18,159 @@ export class MorningEveningTrackerService {
   morningAndEveningDhikr = [
     {
       id: 1,
-      counter: 0
+      counter: 0,
+      recitate: 1
     },
     {
       id: 2,
-      counter: 0
+      counter: 0,
+      recitate: 3
     },
     {
       id: 3,
-      counter: 0
+      counter: 0,
+      recitate: 3
     },
     {
       id: 4,
-      counter: 0
+      counter: 0,
+      recitate: 7
     },
     {
       id: 5,
-      counter: 0
+      counter: 0,
+      recitate: 1
     },
     {
       id: 14,
-      counter: 0
+      counter: 0,
+      recitate: 1
     },
     {
       id: 15,
-      counter: 0
+      counter: 0,
+      recitate: 1
     },
     {
       id: 16,
-      counter: 0
+      counter: 0,
+      recitate: 10
     },
     {
       id: 17,
-      counter: 0
+      counter: 0,
+      recitate: 100
     },
     {
       id: 18,
-      counter: 0
+      counter: 0,
+      recitate: 100
     }
   ];
   morningDhikr = [
     {
       id: 6,
-      counter: 0
+      counter: 0,
+      recitate: 1
     },
     {
       id: 7,
-      counter: 0
+      counter: 0,
+      recitate: 1
     },
     {
       id: 8,
-      counter: 0
+      counter: 0,
+      recitate: 1
     },
     {
       id: 9,
-      counter: 0
+      counter: 0,
+      recitate: 3
     }
   ];
   eveningDhikr = [
     {
       id: 10,
-      counter: 0
+      counter: 0,
+      recitate: 3
     },
     {
       id: 11,
-      counter: 0
+      counter: 0,
+      recitate: 1
     },
     {
       id: 12,
-      counter: 0
+      counter: 0,
+      recitate: 1
     },
     {
       id: 13,
-      counter: 0
+      counter: 0,
+      recitate: 1
     }
   ];
   dhikrBeforeSleeping = [
     {
       id: 19,
-      counter: 0
+      counter: 0,
+      recitate: 1
     },
     {
       id: 20,
-      counter: 0
+      counter: 0,
+      recitate: 1
     },
     {
       id: 21,
-      counter: 0
+      counter: 0,
+      recitate: 1
     },
     {
       id: 22,
-      counter: 0
+      counter: 0,
+      recitate: 1
     },
     {
       id: 23,
-      counter: 0
+      counter: 0,
+      recitate: 33
     },
     {
       id: 24,
-      counter: 0
+      counter: 0,
+      recitate: 33
     },
     {
       id: 25,
-      counter: 0
+      counter: 0,
+      recitate: 34
     },
     {
       id: 26,
-      counter: 0
+      counter: 0,
+      recitate: 1
     },
     {
       id: 27,
-      counter: 0
+      counter: 0,
+      recitate: 1
     },
     {
       id: 30,
-      counter: 0
+      counter: 0,
+      recitate: 3
     },
     {
       id: 31,
-      counter: 0
+      counter: 0,
+      recitate: 1
     },
     {
       id: 32,
-      counter: 0
+      counter: 0,
+      recitate: 1
     },
   ];
 
@@ -174,6 +204,35 @@ export class MorningEveningTrackerService {
     } else {
       this.setInitailValuesForDhikrForCurrentMonth(false, true, false);
     }
+  }
+
+  getDhikrForTrackerByMonthAndDhikrID(key, month, dhikrID) {
+    const localStorageKey = key +' ' +month + '.' + this.currentDate.getFullYear().toString();
+    const dhikrByMonthFromStorage = localStorage.getItem(localStorageKey);
+    const dhikrs = [];
+    const dates = [];
+    let recitate;
+    let dhikrsByDate;
+    if(dhikrByMonthFromStorage) {
+      dhikrsByDate = JSON.parse(dhikrByMonthFromStorage);
+
+      dhikrsByDate.forEach((item) => {
+        dates.push(item.date);
+        item.dhikrs.forEach((dhikr) => {
+          if (dhikr.id === dhikrID) {
+            dhikrs.push(dhikr);
+            recitate = dhikr.recitate;
+          }
+        });
+      });
+    }
+
+    const obj = {
+      labels: dates,
+      data: dhikrs.map((item) => item.counter),
+      recitate
+    };
+    return obj;
   }
 
   getMonthlyMorningDhikrFromLocalStorage() {

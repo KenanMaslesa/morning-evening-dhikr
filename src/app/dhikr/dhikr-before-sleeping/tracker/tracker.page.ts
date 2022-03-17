@@ -1,5 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 import { Chart, registerables } from 'chart.js';
+import { ChartComponent } from 'src/app/shared/components/chart/chart.component';
+import { DhikrService } from 'src/app/shared/dhikr.service';
 Chart.register(...registerables);
 import { MorningEveningTrackerService } from '../../morning-evening-tracker.service';
 
@@ -68,7 +71,12 @@ export class TrackerPage implements OnInit {
       value: '12'
     }
   ];
-  constructor(private morningEveningTrackerService: MorningEveningTrackerService) {
+  showTotalSegment = true;
+  showByDhikrSegment = false;
+  dhikrBeforeSleeping: any[];
+  constructor(private morningEveningTrackerService: MorningEveningTrackerService,
+    private modalController: ModalController,
+    private dhikrService: DhikrService) {
     const currentMonthNumber = this.currentDate.getMonth() + 1;
     this.selectedMonth = {
       name: this.months[currentMonthNumber].name,
@@ -77,6 +85,9 @@ export class TrackerPage implements OnInit {
    }
 
   ngOnInit() {
+    this.dhikrService.getDhikrBeforeSleeping().subscribe(response => {
+      this.dhikrBeforeSleeping = response;
+    });
     const themeColor = localStorage.getItem('theme');
     if (themeColor) {
         this.themeColor = JSON.parse(themeColor);
@@ -118,7 +129,7 @@ export class TrackerPage implements OnInit {
         scales: {
           y: {
               beginAtZero: true,
-              max: 14, //number of evening dhikrs
+              max: 12, //number of dhikrs before sleeping
               min: 0,
               ticks: {
                 stepSize: 1,
@@ -134,5 +145,39 @@ export class TrackerPage implements OnInit {
     this.selectedMonth.value = month;
     this.bars.destroy();
     this.getDhikrBeforeSleeping();
+  }
+
+  segmentChanged(segment) {
+    if (segment === 'total') {
+      this.showTotalSegment = true;
+      this.showByDhikrSegment = false;
+    } else if (segment === 'byDhikr') {
+      this.showTotalSegment = false;
+      this.showByDhikrSegment = true;
+    }
+  }
+
+  async presentModal(labels: any, data: any, selectedDhikr: any, maxNumber: number, stepSize: number, autoSkip: boolean) {
+    const modal = await this.modalController.create({
+      component: ChartComponent,
+      cssClass: '',
+      initialBreakpoint: 0.5,
+      // breakpoints: [0.5, 0.9],
+      componentProps: {
+        labels,
+        data,
+        selectedDhikr,
+        maxNumber,
+        stepSize,
+        autoSkip
+      },
+    });
+    return await modal.present();
+  }
+
+  getParticularDhikr(dhikr: any) {
+    const obj =
+      this.morningEveningTrackerService.getDhikrForTrackerByMonthAndDhikrID('beforeSleeping' ,this.selectedMonth.value, dhikr.id);
+    this.presentModal(obj.labels, obj.data,null, obj.recitate, (obj.recitate>20?3:1), obj.recitate>20);
   }
 }
