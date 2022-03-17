@@ -167,8 +167,8 @@ export class TrackerPage implements OnInit {
     const modal = await this.modalController.create({
       component: ChartComponent,
       cssClass: '',
-      initialBreakpoint: 0.5,
-      // breakpoints: [0.5, 0.9],
+      initialBreakpoint: 0.7,
+      breakpoints: [0.5, 0.9],
       componentProps: {
         labels,
         data,
@@ -184,6 +184,6 @@ export class TrackerPage implements OnInit {
   getParticularDhikr(dhikr: any) {
     const obj =
       this.morningEveningTrackerService.getDhikrForTrackerByMonthAndDhikrID('eveningDhikr' ,this.selectedMonth.value, dhikr.id);
-    this.presentModal(obj.labels, obj.data,null, obj.recitate, (obj.recitate>10?10:1), obj.recitate>10);
+    this.presentModal(obj.labels, obj.data, dhikr, obj.recitate, (obj.recitate>10?10:1), obj.recitate>10);
   }
 }

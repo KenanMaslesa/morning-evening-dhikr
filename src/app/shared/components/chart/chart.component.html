@@ -1,7 +1,6 @@
 <ion-card>
-  <ion-card-header *ngIf="selectedDhikr">
-    <ion-card-subtitle>{{selectedDhikr.arabic}}</ion-card-subtitle>
-    <ion-card-subtitle>{{selectedDhikr.bosnian}}</ion-card-subtitle>
+  <ion-card-header>
+    <ion-card-subtitle>{{selectedDhikr.title??selectedDhikr.arabic}}</ion-card-subtitle>
   </ion-card-header>
   <ion-card-content>
     <div style="width: 100%; overflow-x: auto; overflow-y: hidden">
