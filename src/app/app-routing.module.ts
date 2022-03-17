@@ -46,6 +46,10 @@ const routes: Routes = [
   {
     path: 'tasbeeh',
     loadChildren: () => import('./dhikr/tasbeeh/tabs.module').then( m => m.TabsPageModule)
+  },
+  {
+    path: 'introduction',
+    loadChildren: () => import('./introduction/introduction.module').then( m => m.IntroductionPageModule)
   }
 ];
 @NgModule({

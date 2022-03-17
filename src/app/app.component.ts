@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { NotificationsService } from './shared/notifications.service';
 @Component({
   selector: 'app-root',
@@ -6,6 +7,7 @@ import { NotificationsService } from './shared/notifications.service';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
+  showIntroPage = true;
   pages = [
     {
       title: 'Jutarnji zikr',
@@ -33,8 +35,14 @@ export class AppComponent {
       icon: 'settings',
     },
   ];
-  constructor(private notificationService: NotificationsService) {
+  constructor(private notificationService: NotificationsService, private router: Router) {
     this.notificationService.scheduleNotifications();
+
+    const showIntroPage = localStorage.getItem('showIntroPage');
+    if(showIntroPage === null) {
+      localStorage.setItem('showIntroPage', JSON.stringify(false));
+      this.router.navigate(['/introduction']);
+    }
 
     const themeColor = localStorage.getItem('theme');
     const themeBackgroundColor = localStorage.getItem('themeBackgroundColor');
