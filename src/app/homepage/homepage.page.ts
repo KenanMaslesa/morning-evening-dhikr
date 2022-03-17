@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {SplashScreen} from '@capacitor/splash-screen';
 
 @Component({
   selector: 'app-homepage',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./homepage.page.scss'],
 })
 export class HomepagePage implements OnInit {
+  toggleHeight = false;
+  height = 24;
   cards = [
     {
       title: 'Jutarnji zikr',
@@ -27,11 +30,6 @@ export class HomepagePage implements OnInit {
       url: '/tasbeeh',
       icon: 'finger-print-outline',
     },
-    // {
-    //   title: 'O zikru',
-    //   url: '/benefits',
-    //   icon: 'information-circle-outline',
-    // },
     {
       title: 'Postavke',
       url: '/settings',
@@ -86,9 +84,22 @@ export class HomepagePage implements OnInit {
 
   ngOnInit() {
     this.randomAyah = this.ayahs[this.randomNum()];
+      setTimeout(() => {
+        SplashScreen.hide();
+      }, 2000);
+  }
+  ionViewWillEnter() {
+    this.randomAyah = this.ayahs[this.randomNum()];
   }
 
   randomNum() {
     return Math.floor(Math.random() * (this.ayahs.length - 0)) + 0; // You can remove the Math.floor if you don't want it to be an integer
+  }
+
+  increaseHeight(){
+    this.toggleHeight = !this.toggleHeight;
+    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+    this.toggleHeight? this.height = 35: this.height = 24;
+    this.randomAyah = this.ayahs[this.randomNum()];
   }
 }

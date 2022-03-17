@@ -93,8 +93,9 @@ export class TrackerPage implements OnInit {
   async presentModal(labels: any, data: any, selectedDhikr: any) {
     const modal = await this.modalController.create({
       component: ChartComponent,
-      cssClass: 'my-custom-class',
-      initialBreakpoint: 0.6,
+      cssClass: '',
+      initialBreakpoint: 0.5,
+      // breakpoints: [0.5, 0.9],
       componentProps: {
         labels,
         data,

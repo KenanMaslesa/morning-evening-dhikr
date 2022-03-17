@@ -6,6 +6,10 @@ const routes: Routes = [
   {
     path: '',
     component: EveningDhikrPage,
+  },
+  {
+    path: 'tracker',
+    loadChildren: () => import('./tracker/tracker.module').then( m => m.TrackerPageModule)
   }
 ];
 

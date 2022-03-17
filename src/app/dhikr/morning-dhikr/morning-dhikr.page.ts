@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MediaPlayerService } from 'src/app/shared/media-player.service';
 import { DhikrService } from '../../shared/dhikr.service';
+import { DhikrType, MorningEveningTrackerService } from '../morning-evening-tracker.service';
 
 @Component({
   selector: 'app-morning-dhikr',
@@ -8,10 +9,13 @@ import { DhikrService } from '../../shared/dhikr.service';
 })
 export class MorningDhikrPage implements OnInit {
   morningDhikrs: any;
+  todaysDhikrCounters: any[];
+  dhikrType = DhikrType.morningDhikr;
 
   constructor(
     private morningDhikrService: DhikrService,
-    private mediaPlayerService: MediaPlayerService
+    private mediaPlayerService: MediaPlayerService,
+    private morningEveningTrackerService: MorningEveningTrackerService
   ) {}
 
   ngOnInit(): void {
@@ -29,8 +33,21 @@ export class MorningDhikrPage implements OnInit {
   }
 
   getMorningDhikr() {
-    this.morningDhikrService.getMorningDhikr().subscribe((dhikrs) => {
-      this.morningDhikrs = dhikrs;
+    this.morningEveningTrackerService.getTodaysMorningDhikrCounters().subscribe(response => {
+      this.todaysDhikrCounters = response;
+      this.morningDhikrService.getMorningDhikr().subscribe((dhikrs) => {
+        if(this.todaysDhikrCounters.length > 0){
+          dhikrs.forEach(dhikr => {
+            dhikr.counter = this.getCounterForTodaysDhikr(dhikr);
+          });
+        }
+        this.morningDhikrs = dhikrs;
+      });
     });
   }
+
+  getCounterForTodaysDhikr(dhikr){
+    return this.todaysDhikrCounters.filter(item => item.id === dhikr.id)?.map(item => item.counter)[0];
+  }
+
 }

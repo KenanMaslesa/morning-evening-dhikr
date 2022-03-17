@@ -11,6 +11,9 @@ export class ChartComponent implements OnInit {
   @Input() labels: any;
   @Input() data: any;
   @Input() selectedDhikr: any;
+  @Input() maxNumber: number;
+  @Input() stepSize: number;
+  @Input() autoSkip: boolean;
   bars: any;
   themeColor: any;
   constructor() { }
@@ -23,10 +26,10 @@ export class ChartComponent implements OnInit {
   }
 
   ionViewDidEnter() {
-    this.createBarChart(this.labels, this.data);
+    this.createBarChart(this.labels, this.data, this.maxNumber, this.stepSize, this.autoSkip);
   }
 
-  createBarChart(labels: any[], data: any[]) {
+  createBarChart(labels: any[], data: any[], maxNumber: number, stepSize = 1, autoSkip = true) {
     this.bars = new Chart(this.barChart.nativeElement, {
       type: 'line',//bar
       data: {
@@ -46,9 +49,15 @@ export class ChartComponent implements OnInit {
       options: {
         scales: {
           y: {
-              beginAtZero: true
-          }
-      }
+              beginAtZero: true,
+              max: maxNumber,
+              min: 0,
+              ticks: {
+                stepSize,
+                autoSkip
+            }
+          },
+      },
       },
     });
   }

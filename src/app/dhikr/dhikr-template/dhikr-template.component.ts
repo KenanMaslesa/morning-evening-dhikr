@@ -4,6 +4,7 @@ import { IonSlides } from '@ionic/angular';
 import { MediaPlayerService } from 'src/app/shared/media-player.service';
 import { NotificationsService } from 'src/app/shared/notifications.service';
 import { DhikrLocalStoarge, DhikrService } from '../../shared/dhikr.service';
+import { DhikrType, MorningEveningTrackerService } from '../morning-evening-tracker.service';
 @Component({
   selector: 'app-dhikr-template',
   templateUrl: './dhikr-template.component.html',
@@ -13,6 +14,7 @@ export class DhikrTemplateComponent implements OnInit {
   @Input() name: string;
   @ViewChild('slides', { static: true }) slides: IonSlides;
   @Input() dhikrs: any;
+  @Input() dhikrType: DhikrType;
   currentTime = -0.5;
   startSecond: number;
   endSecond: number;
@@ -26,7 +28,8 @@ export class DhikrTemplateComponent implements OnInit {
     public dhikrService: DhikrService,
     public mediaPlayerService: MediaPlayerService,
     private router: Router,
-    public notificationsService: NotificationsService
+    public notificationsService: NotificationsService,
+    private morningEveningTrackerService: MorningEveningTrackerService
   ) {}
 
   ngOnInit() {
@@ -68,5 +71,33 @@ export class DhikrTemplateComponent implements OnInit {
 
   goTo() {
     this.router.navigate(['/tasbeeh/tabs/counter']);
+  }
+
+  onCounterClick(dhikr){
+    dhikr.counter++;
+
+    if(dhikr.counter === dhikr.recitate){
+      if(this.dhikrType === DhikrType.morningDhikr) {
+        this.morningEveningTrackerService.setTotalCounterForMorningDhikr();
+      }
+      else if(this.dhikrType === DhikrType.eveningDhikr) {
+        this.morningEveningTrackerService.setTotalCounterForEveningDhikr();
+      }
+      else if(this.dhikrType === DhikrType.dhikrBeforeSleeping) {
+        this.morningEveningTrackerService.setTotalCounterForDhikrBeforeSleeping();
+      }
+    }
+    if (dhikr.counter <= dhikr.recitate){
+      if(this.dhikrType === DhikrType.morningDhikr) {
+        this.morningEveningTrackerService.increaseCounterForMorningDhikr(dhikr);
+      }
+      else if(this.dhikrType === DhikrType.eveningDhikr) {
+        this.morningEveningTrackerService.increaseCounterForEveningDhikr(dhikr);
+      }
+      else if(this.dhikrType === DhikrType.dhikrBeforeSleeping) {
+        this.morningEveningTrackerService.increaseCounterForDhikrBeforeSleeping(dhikr);
+      }
+      this.notificationsService.vibrate(50);
+    }
   }
 }

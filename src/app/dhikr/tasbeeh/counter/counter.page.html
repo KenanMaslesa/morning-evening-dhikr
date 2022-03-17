@@ -11,15 +11,18 @@
 </ion-header>
 
 <ion-content>
+  <div class="icons">
+    <ion-icon
+      (click)="resetCounter()"
+      name="refresh-circle-outline"
+      class="reset-icon"
+    ></ion-icon>
+    <ion-icon *ngIf="vibrate" (click)="toggleVibrate()" name="volume-high-outline"></ion-icon>
+    <ion-icon *ngIf="!vibrate" (click)="toggleVibrate()" name="volume-mute-outline"></ion-icon>
+  </div>
   <main (click)="increaseCounter()">
     <div class="counter-wrapper" *ngIf="tasbeehService.selectedDhikr">
       <div class="counter">
-        <div class="icons">
-          <ion-icon
-            (click)="resetCounter()"
-            name="refresh-circle-outline"
-          ></ion-icon>
-        </div>
         <div
           role="progressbar"
           aria-valuenow="65"

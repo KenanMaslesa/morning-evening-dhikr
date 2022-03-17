@@ -10,6 +10,7 @@
     <ion-slide class="slide" *ngFor="let dhikr of dhikrs; let i = index">
       <header class="slide__header">
         <h2>{{i+1}}.</h2>
+        <h2 style="padding: 10px; font-size: 20px;" *ngIf="dhikr.category === 'BEFORE-SLEEPING' && dhikr.title">{{dhikr.title}}</h2>
       </header>
 
       <div class="slide__player">
@@ -21,7 +22,13 @@
           *ngIf="mediaPlayerService.isPlaying && !mediaPlayerService.isPaused"></ion-icon>
       </div>
 
-      <div class="slide__card slide__card--arabic" *ngIf="dhikrService.showArabicDhikr">
+      <!--surah images-->
+      <ng-container *ngIf="dhikr.images">
+        <img class="quran-page" src="{{image}}" *ngFor="let image of dhikr.images">
+      </ng-container>
+      <!--surah images-->
+
+      <div class="slide__card slide__card--arabic" *ngIf="dhikrService.showArabicDhikr && dhikr.sentences">
         <ng-container *ngFor="let sentence of dhikr.sentences">
           <p dir="rtl"
             [class.slide__card--active]="mediaPlayerService.currentTime >= sentence.startSecond && mediaPlayerService.currentTime <= sentence.endSecond"
@@ -30,13 +37,15 @@
       </div>
 
       <div class="recitate-counter-wrapper">
-        <div class="recitate-counter" [class.done]="dhikr.recitate <= 0" (click)="dhikr.recitate = dhikr.recitate-1; notificationsService.vibrate(50)">
-          {{dhikr.recitate >= 1? dhikr.recitate: ''}}
-          <ion-icon *ngIf="dhikr.recitate<=0" name="checkmark-done-outline"></ion-icon>
+        <div class="recitate-counter" [class.done]="dhikr.counter >= dhikr.recitate" (click)="onCounterClick(dhikr)">
+          <ng-container *ngIf="dhikr.counter < dhikr.recitate">
+            {{dhikr.counter}}/{{dhikr.recitate}}
+          </ng-container>
+          <ion-icon *ngIf="dhikr.counter >= dhikr.recitate" name="checkmark-done-outline"></ion-icon>
         </div>
       </div>
 
-      <div class="slide__card" *ngIf="dhikrService.showDhikrTranslation">
+      <div class="slide__card" *ngIf="dhikrService.showDhikrTranslation && dhikr.sentences">
         <header class="slide__card__header">
           <h2>Transkripcija</h2>
         </header>
@@ -47,7 +56,7 @@
         </ng-container>
       </div>
 
-      <div class="slide__card" *ngIf="dhikrService.showBosnianDhikr">
+      <div class="slide__card" *ngIf="dhikrService.showBosnianDhikr  && dhikr.sentences">
         <header class="slide__card__header">
           <h2>Prijevod</h2>
         </header>
@@ -62,7 +71,7 @@
           <h2>Koristi</h2>
         </header>
         <ng-container *ngFor="let benefit of dhikr.benefits.bosnian">
-          <h5>{{benefit.title}}</h5>
+          <!-- <h5>{{benefit.title}}</h5> -->
           <p>{{benefit.source}}</p>
         </ng-container>
       </div>
@@ -79,10 +88,10 @@
     <ion-slide class="slide lastSlide">
       <div class="content">
         <header class="slide__header">
-          <h2>želiš još zikriti?</h2>
+          <h2>Želite li nastaviti zikriti?</h2>
         </header>
         <div>
-          <ion-button (click)="goTo()">Nastavi zikriti</ion-button>
+          <ion-button (click)="goTo()">Nastavite zikriti</ion-button>
         </div>
         <ng-content select="[lastSlide]"></ng-content>
       </div>

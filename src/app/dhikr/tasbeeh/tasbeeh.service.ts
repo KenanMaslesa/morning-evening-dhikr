@@ -18,13 +18,13 @@ export class TasbeehService {
     },
     {
       arabic: 'الْحَمْدُ لِلَّهِ',
-      bosnian: 'Hvala Allahu',
+      bosnian: 'Hvaljen neka je Allah',
       counter: 0,
       favorite: false,
     },
     {
       arabic: 'اللَّهُ أَكْبَرُ',
-      bosnian: 'Allah je najveci',
+      bosnian: 'Allah je najveći',
       counter: 0,
       favorite: false,
     },
@@ -36,7 +36,7 @@ export class TasbeehService {
     },
     {
       arabic: 'اللَّهُــمَّ صَلِّ وَسَـــلِّمْ على نَبِيِّنَـــا مُحمَّد',
-      bosnian: 'O Allahu, blagoslovi našeg poslanika Muhammeda ﷺ.',
+      bosnian: 'O Allahu, blagoslovi našeg poslanika Muhammeda ﷺ',
       counter: 0,
       favorite: false,
     },
@@ -56,66 +56,46 @@ export class TasbeehService {
     },
     {
       arabic: 'أَسْتَغْفِرُ اللّٰهَ الْعَظِیْمَ',
-      bosnian: '',
+      bosnian: 'Molim oprost od Svemogućeg Allaha',
       counter: 0,
       favorite: false,
     },
     {
       arabic: 'لَٓا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللّٰهِ',
-      bosnian: '',
+      bosnian: 'Nema snage niti moći osim kod Allaha',
       counter: 0,
       favorite: false,
     },
     {
       arabic: 'لَٓا إِلَهَ إِلّاَ اللّٰهُ مُحَمَّدٌ رَسُوْلُ اللّٰهِ',
-      bosnian: '',
-      counter: 0,
-      favorite: false,
-    },
-    {
-      arabic: 'اَللّٰهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ',
-      bosnian: '',
+      bosnian: 'Nema boga osim Allaha, Muhammed je Njegov Poslanik',
       counter: 0,
       favorite: false,
     },
     {
       arabic: 'سُبْحَانَ اللّٰهِ وَ بِحَمْدِهِ ، سُبْحَانَ اللّٰهِ الْعَظِيْمِ',
-      bosnian: '',
+      bosnian: 'Neka je slavljen i hvaljen Uzvišeni Allah, neka je slavljen Allah Veličanstveni',
       counter: 0,
       favorite: false,
     },
     {
       arabic:
         'سُبْحَانَ اللّٰهِ ، وَالْحَمْدُلِلّٰهِ ، وَ لَٓا إِلَهَ إِلّاَ اللّٰهُ ، وَ اللّٰهُ أَكْبَرُ',
-      bosnian: '',
-      counter: 0,
-      favorite: false,
-    },
-    {
-      arabic:
-        'اَللّٰهُمَّ إِنَّكَ عَفُوٌّ كَرِيْمٌ تُحِبُّ الْعَفْوَ فَاعْفُ عَنِّي',
-      bosnian: '',
+      bosnian: 'Neka je slavljen i hvaljen Allah, nema boga osim Allaha, Allah je najveći',
       counter: 0,
       favorite: false,
     },
     {
       arabic:
         'لَٓا إِلَهَ إِلّاَ أَنْتَ سُبْحَانَكَ إِنِّي كُنْتُ مِنَ الظَّالِمِيْنَ',
-      bosnian: '',
+      bosnian: 'Nema boga, osim Tebe, hvaljen neka si, ja sam se zaista ogriješio prema sebi!',
       counter: 0,
       favorite: false,
     },
     {
       arabic:
         'أَسْتَغْفِرُ اللّٰهَ الْعَظِيْمَ الَّذِي لَٓا إِلَهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّوْمُ وَ أَتُوْبُ إِلَيْهِ',
-      bosnian: '',
-      counter: 0,
-      favorite: false,
-    },
-    {
-      arabic:
-        'اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ، كَمَا صَلَّيْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ، إِنَّكَ حَمِيدٌ مَجِيدٌ  اللَّهُمَّ بَارِكْ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ، كَمَا بَارَكْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ، إِنَّكَ حَمِيدٌ مَجِيدٌ',
-      bosnian: '',
+      bosnian: 'Tražim oprosta od Tebe Uzvišeni Allahu, osim Kojeg drugog boga nema, Živog i Postojanog Održavatelja, i Tebi se kajem.',
       counter: 0,
       favorite: false,
     },
@@ -143,7 +123,7 @@ export class TasbeehService {
       });
     }
     if (this.dhikrsFromStorage.length === 0) {
-        for(let i = 1; i <= this.getDaysNumberOfCurrentMonth(); i++) {
+        for(let i = new Date().getDate(); i <= this.getDaysNumberOfCurrentMonth(); i++) {
           const obj = {
             date: this.getCurrentDateAsString(new Date(new Date().setDate(i))),
             dhikrs: JSON.parse(JSON.stringify(this.dhikrs))
@@ -201,12 +181,12 @@ export class TasbeehService {
       if (item.date === this.getCurrentDateAsString(new Date())) {
         item.dhikrs.forEach(element => {
           if(element.arabic === this.selectedDhikr.arabic){
-            element.counter = -1;
+            element.counter = 0;
           }
         });
       }
     });
-    this.selectedDhikr.counter = -1;
+    this.selectedDhikr.counter = 0;
     localStorage.setItem(this.localStorageKey, JSON.stringify(this.dhikrsFromStorage));
     localStorage.setItem('selectedDhikr', JSON.stringify(this.selectedDhikr));
   }
