@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { SocialSharing } from '@awesome-cordova-plugins/social-sharing/ngx';
 import { NotificationsService } from './shared/notifications.service';
 @Component({
   selector: 'app-root',
@@ -8,6 +9,7 @@ import { NotificationsService } from './shared/notifications.service';
 })
 export class AppComponent {
   showIntroPage = true;
+  appUrl = 'https://play.google.com/store/apps/details?id=com.keno.zikr';
   pages = [
     {
       title: 'Jutarnji zikr',
@@ -30,12 +32,30 @@ export class AppComponent {
       icon: 'finger-print',
     },
     {
+      title: 'Upute za korištenje',
+      url: '/introduction',
+      icon: 'information-circle',
+    },
+    {
+      title: 'Ocjeni nas na Google Play',
+      url: null,
+      externalUrl: this.appUrl,
+      icon: 'star',
+    },
+    {
+      title: 'Podijeli',
+      url: '',
+      externalUrl: null,
+      share: true,
+      icon: 'share',
+    },
+    {
       title: 'Postavke',
       url: '/settings',
       icon: 'settings',
     },
   ];
-  constructor(private notificationService: NotificationsService, private router: Router) {
+  constructor(private notificationService: NotificationsService, private router: Router, private socialSharing: SocialSharing) {
     this.notificationService.scheduleNotifications();
 
     const showIntroPage = localStorage.getItem('showIntroPage');
@@ -61,5 +81,13 @@ export class AppComponent {
         `${JSON.parse(themeBackgroundColor)}`
       );
     }
+  }
+
+  shareApp() {
+    this.socialSharing.share('','','',this.appUrl);
+  }
+
+  rateApp() {
+    window.location.href = this.appUrl;
   }
 }

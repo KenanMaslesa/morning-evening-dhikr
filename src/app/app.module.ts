@@ -11,6 +11,8 @@ import { AppComponent } from './app.component';
 
 import { LocalNotifications } from '@awesome-cordova-plugins/local-notifications/ngx';
 import { Vibration } from '@awesome-cordova-plugins/vibration/ngx';
+import { SocialSharing } from '@awesome-cordova-plugins/social-sharing/ngx';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -23,7 +25,8 @@ import { Vibration } from '@awesome-cordova-plugins/vibration/ngx';
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     LocalNotifications,
-    Vibration
+    Vibration,
+    SocialSharing
   ],
   bootstrap: [AppComponent],
 })

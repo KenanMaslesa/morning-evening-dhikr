@@ -12,9 +12,39 @@
 
        <ion-list class="menu-items" lines="none">
          <ion-menu-toggle>
-          <ion-item *ngFor="let page of pages" menuClose routerLink="{{page.url}}" routerLinkActive="active">
-            <ion-icon name="{{page.icon}}"></ion-icon> {{page.title}}
+
+          <ion-item menuClose routerLink="/morning-dhikr" routerLinkActive="active">
+            <ion-icon name="sunny"></ion-icon> Jutarnji zikr
           </ion-item>
+
+          <ion-item menuClose routerLink="/evening-dhikr" routerLinkActive="active">
+            <ion-icon name="moon"></ion-icon> Večernji zikr
+          </ion-item>
+
+          <ion-item menuClose routerLink="/dhikr-before-sleeping" routerLinkActive="active">
+            <ion-icon name="bed"></ion-icon> Zikr prije spavanja
+          </ion-item>
+
+          <ion-item menuClose routerLink="/tasbeeh" routerLinkActive="active">
+            <ion-icon name="finger-print"></ion-icon> Zikrilo
+          </ion-item>
+
+          <ion-item menuClose routerLink="/introduction" routerLinkActive="active">
+            <ion-icon name="information-circle"></ion-icon> Upute za korištenje
+          </ion-item>
+
+          <ion-item menuClose (click)="shareApp()">
+            <ion-icon name="share"></ion-icon> Podijeli
+          </ion-item>
+
+          <ion-item menuClose (click)="rateApp()">
+            <ion-icon name="star"></ion-icon> Ocijeni nas na Google Play
+          </ion-item>
+
+          <ion-item menuClose routerLink="/settings" routerLinkActive="active">
+            <ion-icon name="settings"></ion-icon> Postavke
+          </ion-item>
+
          </ion-menu-toggle>
       </ion-list>
       </ion-content>
