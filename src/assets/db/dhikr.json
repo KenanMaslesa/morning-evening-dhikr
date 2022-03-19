@@ -29,7 +29,7 @@
       ]
     },
     "source": {
-      "bosnian": "Buhari 7/150, Nesai, Tirmizi",
+      "bosnian": "Buhari, Nesai, Tirmizi",
       "english": "Al-Bukhari 7/150. Other reports are in An-Nasa'i and At-Tirmithi."
     },
     "sentences": [
@@ -218,7 +218,7 @@
       "english": "Radheetu billaahi Rabban, wa bil-'Islaami deenan, wa bi-Muhammadin (sallallaahu 'alayhi wa sallama) Nabiyyan."
     },
     "source": {
-      "bosnian": "Ahmed 4/337, Tirmizi 5/465, Ebu Dawud 4/318",
+      "bosnian": "Ahmed, Tirmizi, Ebu Dawud",
       "english": "Ahmad 4/ 337, Abu Dawud 4/318, An-Nasa'i, 'Amalul-Yawm wal-Laylah p. 4, Ibn As-Sunni (no. 68), At-Tirmithi 5/465. Its chain of transmission is good (Hasan), Ibn Baz, p. 39."
     },
     "benefits": {
@@ -282,7 +282,7 @@
       "english": "Bismillaahil-lathee laa yadhurru ma'as-mihi shay'un fil-'ardhi wa laa fis-samaa'i wa Huwas-Samee 'ul- 'Aleem."
     },
     "source": {
-      "bosnian": "Ebu Dawud 4/323, Tirmizi 5/465, Ibn Madze 2/332, Ahmed",
+      "bosnian": "Ebu Dawud, Tirmizi, Ibn Madze, Ahmed",
       "english": "Abu Dawud 4/323, At-Tirmithi 5/465, Ibn Majah 2/332, Ahmad. Ibn Majah's chain of transmission is good (Hasan), Ibn Baz, p. 39."
     },
     "benefits": {
@@ -346,7 +346,7 @@
       "english": ""
     },
     "source": {
-      "bosnian": "Ebu Davud 5081",
+      "bosnian": "Ebu Davud",
       "english": "Abu Davud 5081"
     },
     "benefits": {
@@ -411,7 +411,7 @@
     },
     "benefits": {},
     "source": {
-      "bosnian": "Ebu Dawud 5074, Ibn Madže 2/332",
+      "bosnian": "Ebu Dawud, Ibn Madže",
       "english": "Abu Daud 5074 and Sahih Ibn Majah 2/332"
     },
     "sentences": [
@@ -510,7 +510,7 @@
       "english": "Asbahnaa wa 'asbahal-mulku lillaahi walhamdu lillaahi, laa 'ilaaha 'illallaahu wahdahu laa shareeka lahu, lahul-mulku wa lahul-hamdu wa Huwa 'alaa kulli shay'in Qadeer. Rabbi 'as'aluka khayra maa fee haathal-yawmi wa khayra maa ba'dahu wa 'a'oothu bika min sharri maa fee haathal-yawmi wa sharri maa ba'dahu, Rabbi 'a'oothu bika minal-kasali, wa soo'il-kibari, Rabbi 'a'oothu bika min 'athaabin fin-naari wa 'athaabin fil-qabri."
     },
     "source": {
-      "bosnian": "Muslim 4/2088",
+      "bosnian": "Muslim",
       "english": "Muslim 4/2088"
     },
     "benefits": {},
@@ -539,7 +539,7 @@
       {
         "arabic": "رَبِّ أَسْأَلُكَ خَيْرَ مَا فِي هذا اليوم",
         "bosnian": "Allahu, molim Te za sva dobra ovog dana",
-        "transcription": "RABBI ESELUKE HAJRE MĀ FĪ HĀZE-L-JEVM",
+        "transcription": "RABBI ESELUKE HAJRE MĀ FĪ HĀZE-L-JEVMI",
         "startSecond": 20.2,
         "endSecond": 26
       },
@@ -590,7 +590,7 @@
     },
     "benefits": {},
     "source": {
-      "bosnian": "Tirmizi 5/466",
+      "bosnian": "Tirmizi",
       "english": "At-Tirmithi 5/466"
     },
     "sentences": [
@@ -648,7 +648,7 @@
     },
     "benefits": {},
     "source": {
-      "bosnian": "Ahmed 3/406-7, 5/123, Tirmizi 4/209.",
+      "bosnian": "Ahmed, Tirmizi",
       "english": "Ahmad 3/406-7, 5/123, An-Nasa'i, 'Amalul- Yawm wal-Laylah (no. 34), At-Tirmithi 4/209."
     },
     "sentences": [
@@ -719,7 +719,7 @@
       ]
     },
     "source": {
-      "bosnian": "Muslim 4/2090",
+      "bosnian": "Muslim",
       "english": "Muslim 4/2090"
     },
     "sentences": [
@@ -794,7 +794,7 @@
       ]
     },
     "source": {
-      "bosnian": "Muslim, Ahmed 2/290, Tirmizi 3/187",
+      "bosnian": "Muslim, Ahmed, Tirmizi",
       "english": "Ahmad 2/290, An-Nasa'i, 'Amalul-Yawm wal-Laylah no. 590, At-Tirmithi 3/187, Ibn As-Sunni no. 68. According to Al-Albani, Ibn Majah's (2/266) chain of transmission is sound (Sahih), and following Ibn Baz 45, At-Tirmithi's report is good (Hasan)."
     },
     "sentences": [
@@ -831,7 +831,7 @@
       "english": "Amsaynaa wa'amsal-mulku lillaah walhamdu lillaahi, laa 'ilaaha 'illallaahu wahdahu laa shareeka lahu, lahul-mulku wa lahul-hamdu wa Huwa 'alaa kulli shay'in Qadeer. Rabbi 'as'aluka khayra maa fee haathihil-laylati, wa khayra maa ba'dahaa, wa 'a'oothu bika min sharri maa fee haathihil-laylati wa sharri maa ba'dahaa, Rabbi 'a'oothu bika minal-kasali, wa soo'il-kibari, Rabbi 'a'oothu bika min 'athaabin fin-naari wa 'athaabin fil-qabri."
     },
     "source": {
-      "bosnian": "Muslim 4/2088",
+      "bosnian": "Muslim",
       "english": "Muslim 4/2088"
     },
     "benefits": {},
@@ -931,7 +931,7 @@
       "english": "Allaahumma bika 'amsaynaa wa bika 'asbahnaa, wa bika nahyaa, wa bika namoot, wa 'ilaykal-maseer"
     },
     "source": {
-      "bosnian": "Tirmizi 3/142",
+      "bosnian": "Tirmizi",
       "english": "Sahih At-Tirmithi 3/142"
     },
     "benefits": {},
@@ -990,7 +990,7 @@
     },
     "benefits": {},
     "source": {
-      "bosnian": "Ahmed 3/406-7, 5/123, Tirmizi 4/209.",
+      "bosnian": "Ahmed, Tirmizi",
       "english": "Ahmad 3/406-7, 5/123, An-Nasa'i, 'Amalul- Yawm wal-Laylah (no. 34), At-Tirmithi 4/209."
     },
     "sentences": [
@@ -1044,11 +1044,11 @@
       "english": "O Allah, Knower of the unseen and the evident, Maker of the heavens and the earth, Lord of everything and its Possessor, I bear witness that there is none worthy of worship but You. I seek refuge in You from the evil of my soul and from the evil of Satan and his helpers. (I seek refuge in You) from bringing evil upon my soul and from harming any Muslim."
     },
     "transcription": {
-      "bosnian": "ALLĀHUMME ‘ĀLIME-L-GAJBI VE-Š-ŠEHĀDETI, FĀTIRE-S-SEMĀVATI VE-L-ERDI, RABBI KULLI ŠEJ-IN VE MELĪKEHU: EŠHEDU EN LĀ ILĀHE ILLĀ ENTE, E‘ŪZU BIKE MIN ŠERRI NEFSĪ VE MIN ŠERRI-Š-ŠEJTĀNI VE ŠIRKIHI, VE EN AKTERIFE ‘ALĀ NEFSĪ SŪ-EN EV EDŽURREHU ILĀ MUSLIMIN.",
+      "bosnian": "ALLĀHUMME ‘ĀLIME-L-GAJBI VE-Š-ŠEHĀDETI, FĀTIRE-S-SEMĀVATI VE-L-ERDI, RABBE KULLI ŠEJ-IN VE MELĪKEH: EŠHEDU EN LĀ ILĀHE ILLĀ ENTE, E‘ŪZU BIKE MIN ŠERRI NEFSĪ VE MIN ŠERRI-Š-ŠEJTĀNI VE ŠIRKIHI, VE EN AKTERIFE ‘ALĀ NEFSĪ SŪ-EN EV EDŽURREHU ILĀ MUSLIMIN.",
       "english": "Allaahumma 'Aalimal-ghaybi wash-shahaadati faatiras-samaawaati wal'ardhi, Rabba kulli shay'in wa maleekahu, 'ash-hadu 'an laa 'ilaaha 'illaa 'Anta, 'a'oothu bika min sharri nafsee, wa min sharrish-shaytaani wa shirkihi, wa 'an 'aqtarifa 'alaa nafsee soo'an, 'aw 'ajurrahu 'ilaa Muslimin."
     },
     "source": {
-      "bosnian": "Tirmizi 3/142, Ebu Dawud",
+      "bosnian": "Tirmizi, Ebu Dawud",
       "english": "Sahih At-Tirmithi 3/142 and Abu Dawud"
     },
     "benefits": {},
@@ -1070,7 +1070,7 @@
       {
         "bosnian": "Gospodaru svega i njegov Posjedovatelju:",
         "arabic": "رَبَّ كُلِّ شَيءٍ ومَلِيْكَهُ،",
-        "transcription": "RABBI KULLI ŠEJ-IN VE MELĪKEH.",
+        "transcription": "RABBE KULLI ŠEJ-IN VE MELĪKEH.",
         "startSecond": 7.9,
         "endSecond": 11.8
       },
@@ -1120,7 +1120,7 @@
       "english": "Yaa Hayyu yaa Qayyoomu birahmatika 'astagheethu 'aslih lee sha'nee kullahu wa laa takilnee 'ilaa nafsee tarfata 'aynin."
     },
     "source": {
-      "bosnian": "Hakim 1/545",
+      "bosnian": "Hakim",
       "english": "Its chain of transmission is sound (Sahih), Al-Hakim 1/545, see Albani, Sahihut-Targhib wat-Tarhib, 1/273."
     },
     "benefits": {},
@@ -1163,17 +1163,17 @@
     ]
   },
   {
-    "arabic": "اللَّهُــمَّ صَلِّ وَسَـــلِّمْ على نَبِيِّنَـــا مُحمَّد sallallahu alejhi ve sellem ",
+    "arabic": "اللَّهُــمَّ صَلِّ وَسَـــلِّمْ على نَبِيِّنَـــا مُحمَّد ﷺ",
     "audio": "assets/audio/salavati.mp3",
     "category": "MORNING&EVENING",
     "recitate": 10,
     "counter": 0,
     "id": 16,
     "translation": {
-      "bosnian": "O Allahu, blagoslovi našeg poslanika Muhammeda."
+      "bosnian": "O Allahu, blagoslovi našeg poslanika Muhammeda ﷺ"
     },
     "transcription": {
-      "bosnian": "ALLAHUME SALLI VE SELLIM 'ALA NEBIJJINA MUHAMMED sallallahu alejhi ve sellem."
+      "bosnian": "ALLAHUME SALLI VE SELLIM 'ALA NEBIJJINA MUHAMMED"
     },
     "source": {
       "bosnian": "Nesai i Ahmed",
@@ -1190,9 +1190,9 @@
     },
     "sentences": [
       {
-        "bosnian": "O Allahu, blagoslovi našeg poslanika Muhammeda sallallahu alejhi ve sellem.",
-        "arabic": "اللَّهُــمَّ صَلِّ وَسَـــلِّمْ على نَبِيِّنَـــا مُحمَّد sallallahu alejhi ve sellem ",
-        "transcription": "ALLAHUME SALLI VE SELLIM 'ALA NEBIJJINA MUHAMMED sallallahu alejhi ve sellem.",
+        "bosnian": "O Allahu, blagoslovi našeg poslanika Muhammeda ﷺ",
+        "arabic": "اللَّهُــمَّ صَلِّ وَسَـــلِّمْ على نَبِيِّنَـــا مُحمَّد",
+        "transcription": "ALLAHUME SALLI VE SELLIM 'ALA NEBIJJINA MUHAMMED ﷺ",
         "startSecond": 0.1,
         "endSecond": 7
       }
@@ -1214,7 +1214,7 @@
       "english": "Subhaanallaahi wa bihamdihi."
     },
     "source": {
-      "bosnian": "Muslim 4/2071",
+      "bosnian": "Muslim",
       "english": "Muslim 4/2071"
     },
     "benefits": {
@@ -1264,7 +1264,7 @@
       "english": "Laa 'ilaaha 'illallaahu wahdahu laa shareeka lahu, lahul-mulku wa lahul-hamdu, wa Huwa 'alaa kulli shay'in Qadeer."
     },
     "source": {
-      "bosnian": "Bukhari 4/95",
+      "bosnian": "Bukhari",
       "english": "Al-Bukhari 4/95"
     },
     "benefits": {
