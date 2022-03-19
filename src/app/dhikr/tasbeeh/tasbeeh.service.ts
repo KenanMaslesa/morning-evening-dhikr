@@ -18,7 +18,7 @@ export class TasbeehService {
     },
     {
       arabic: 'الْحَمْدُ لِلَّهِ',
-      bosnian: 'Hvaljen neka je Allah',
+      bosnian: 'Hvala Allahu',
       counter: 0,
       favorite: false,
     },
