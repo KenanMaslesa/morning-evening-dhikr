@@ -42,7 +42,7 @@ export class TasbeehService {
     },
     {
       arabic: 'سُبْحَانَ اللَّهِ وَبِحَمْدِه',
-      bosnian: 'Slavljen je Allah i Njemu pripada sva hvala',
+      bosnian: 'Slavljen neka je Allah i Njemu pripada sva hvala',
       counter: 0,
       favorite: false,
     },
