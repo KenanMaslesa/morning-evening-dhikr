@@ -115,3 +115,8 @@ ion-tab-bar {
   src: url(me_quran-2.ttf) format("truetype");
   font-display: block;
 }
+.plt-ios {
+  .wave svg, .share-icon, .android-item {
+    display: none;
+  }
+}
