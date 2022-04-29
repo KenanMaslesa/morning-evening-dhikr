@@ -87,10 +87,6 @@ main {
   color: white;
   transition: all 0.7s;
 
-  @media(min-width: 500px) {
-    min-height: 75vh;
-  }
-
   .wave {
     overflow: hidden;
     position: absolute;
